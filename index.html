@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head><title>태그와 속성</title></head>
+
+<body>
+
+<!--heading과 paragraph 태그-->
+<div style="background-color:#fbfbfb;">
+    <div style="background-color: #bfbfbf;">
+        heading과 paragraph 태그
+    </div>
+
+    <h1>&lt;h1&gt; Welcome to GenieWorld!</h1>
+    <h2>&lt;h2&gt; Welcome to GenieWorld!</h2>
+    <h3>&lt;h3&gt; Welcome to GenieWorld!</h3>
+    <h4>&lt;h4&gt; Welcome to GenieWorld!</h4>
+    <h5>&lt;h5&gt; Welcome to GenieWorld!</h5>
+    <h6>&lt;h6&gt; Welcome to GenieWorld!</h6>
+    <p>&lt;p&gt; Welcome to GenieWorld!</p>
+</div>
+
+<!--font-weight-->
+<div style="background-color:#fbfbfb;">
+    <div style="background-color: #bfbfbf;">
+        font-weight
+    </div>
+
+    <p>
+        100 : Thin = Hairline <br>
+        200 : Extra Light = Ultra Light <br>
+        300 : Light <br>
+        <span style="color: blue;">400 : Normal = Regular</span> <br>
+        500 : Medium <br>
+        600 : Semi Bold = Demi Bold <br>
+        <span style="color: blue;">700 : Bold <br>
+        800 : Extra Bold = Ultra Bold</span> <br>
+        900 : Black = heavy
+    </p>
+
+    <p><code>lighter</code> 나 <code>bolder</code> 가 주어진 경우, 요소의 절대적인 가중치를 계산하기 위해 다음 차트가 사용된다:</p>
+    <table>
+     <thead>
+      <tr>
+       <th>상속된 값</th>
+       <th><code>bolder</code></th>
+       <th><code>lighter</code></th>
+      </tr>
+     </thead>
+     <tbody>
+      <tr>
+       <th>100</th>
+       <td>400</td>
+       <td>100</td>
+      </tr>
+      <tr>
+       <th>200</th>
+       <td>400</td>
+       <td>100</td>
+      </tr>
+      <tr>
+       <th>300</th>
+       <td>400</td>
+       <td>100</td>
+      </tr>
+      <tr>
+       <th>400</th>
+       <td>700</td>
+       <td>100</td>
+      </tr>
+      <tr>
+       <th>500</th>
+       <td>700</td>
+       <td>100</td>
+      </tr>
+      <tr>
+       <th>600</th>
+       <td>900</td>
+       <td>400</td>
+      </tr>
+      <tr>
+       <th>700</th>
+       <td>900</td>
+       <td>400</td>
+      </tr>
+      <tr>
+       <th>800</th>
+       <td>900</td>
+       <td>700</td>
+      </tr>
+      <tr>
+       <th>900</th>
+       <td>900</td>
+       <td>700</td>
+      </tr>
+     </tbody>
+    </table>
+</div>
+
+<!--태그와 속성-->
+<div style="background-color:#fbfbfb;">
+    <div style="background-color: #bfbfbf;">
+        태그와 속성
+    </div>
+
+    <p>&lt;열기태그&gt;내용&lt;닫기태그&gt;</p>
+    <p>열기태그 : &lt;tagname property="value: value;"&gt;</p>
+    <p>속성의 값은 ;(세미콜론)으로 단위 구분</p>
+
+    <div style="background-color: #00ffff;">
+        <p>&lt;a href=""&gt;</p>
+        <p>&lt;img src=""&gt; &lt;img width=""&gt; &lt;img height=""&gt; &lt;img alt=""&gt;:대체 텍스트 지정 </p>
+        <p>&lt;html lang=""&gt;</p>
+        <p>&lt;p title&gt;:단락이름 지정(툴팁박스)</p>
+    </div>
+</div>
+
+<!--Style 속성-->
+<div style="background-color:#fbfbfb;">
+    <div style="background-color: #bfbfbf;">
+        Style 속성
+    </div>
+
+    <p>&lt;tagname style="property: value;"&gt;</p>
+
+    <div style="background-color: #00ffff;"> 
+        <p>style="color: #헥사코드 or rgb(r,g,b)"</p>
+        <p>style="background-color: ;"</p>
+        <p>style="font-family: ;"</p>
+        <p>style="font-size: ;"</p>
+        <p>style="font-weight: 100~900;" (폰트에서 지원해야 함)</p>
+        <p>style="display" <br>
+            &bull;inline-block : 줄바꿈없이 옆에 붙는 것 (자동으로 사이에 4px의 공백이 생김 : margin-left:-4px) <br>
+            &bull;block : 자동으로 줄바꿈이 됨 (div는 자동으로 block이라는 display 속성을 가짐)</p>
+        <p>style="text-decoration: none;"</p>
+        <p>style="letter-spacing"</p>
+    </div>
+</div>
+
+<!--여백-->
+<div style="background-color:#fbfbfb;">
+    <div style="background-color: #bfbfbf;">
+        여백
+    </div>
+
+    <p>&lt;style="padding: ;"&gt; : 안쪽 여백</p>
+    <p>&lt;style="margin: ;"&gt; : 바깥쪽 여백</p>
+    <p>여백 없애기 : 브라우저마다 자체적인 공백이 있기 때문에 body style에 <br>
+    &lt;style="padding:0; margin:0; border:0;"&gt;</p>
+
+    <div style="margin-bottom: 20px;">
+        <div style="display: inline-block;background-color:black">
+            <div style="background-color: lightgreen;padding: 5px;">
+                상단
+            </div>
+            <div style="background-color: lightyellow;padding: 5px;">
+                padding
+            </div>
+            <div style="background-color: lightblue;padding: 5px;">
+                padding
+            </div>
+        </div>
+
+        <div style="display: inline-block;background-color:black;">
+            <div style="background-color: lightgreen;margin: 5px;">
+                상단
+            </div>
+            <div style="background-color:lightyellow;margin: 5px;">
+                margin
+            </div>
+            <div style="background-color: lightblue;margin: 5px;">
+                margin
+            </div>
+        </div>
+
+        <div style="display: inline-block;background-color:black;">
+            <div style="background-color: lightgreen;">
+                상단
+            </div>
+            <div style="background-color:lightyellow;">
+                원본
+            </div>
+            <div style="background-color: lightblue;">
+                원본
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!--배경-->
+<div style="background-color:#fbfbfb;">
+    <div style="background-color: #bfbfbf;">
+        배경
+    </div>
+
+    <p>style="background-image: url( )"</p>
+    <p>style="background-position: <수평위치><수직위치>;"</p>
+    <p>style="background-size" <br>
+        &bull;auto : 이미지 크기 <br>
+        &bull;contain : 요소 안에 들어오도록 확대or축소 <br>
+        &bull;cover : 요소를 이미지로 모두 덮도록 확대or축소</p>
+</div>
+
+<!--기타-->
+<div style="background-color:#fbfbfb;">
+    <div style="background-color: #bfbfbf;">
+        기타
+    </div>
+
+    <p>주석 : &lt;!--내용--&gt;</p>
+    <p>&lt;span&gt; : 단락중에서 특정부분만 선택하여 스타일 주고 싶을 때</p>
+    <p>페이지 단위로 잡아주기 :
+    &lt;body style="height:100vh;"&gt;
+    &lt;body style="width:100vw;"&gt;</p>
+    <p>메타 뷰포트 태그 : &lt;meta name="viewport" content="width=device-width, user-scalable=no"&gt;</p>
+</div>
+
+
+
+
+
+
+
+</body>
+
+</html>
