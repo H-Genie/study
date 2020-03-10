@@ -15,9 +15,9 @@
             ol {width: fit-content}
             li {list-style: none;}
             
-            #p1 {background-color : #00ff00; font-weight: 900;}
-            #p2 {background-color: #00ffff;}
-            #p3 {font-weight: 700; text-decoration: underline;}
+            .p1 {background-color : #00ff00; font-weight: 900;}
+            .p2 {background-color: #00ffff;}
+            .p3 {font-weight: 700; text-decoration: underline;}
         </style>
     </head>
 
@@ -25,14 +25,14 @@
     <body>
 
         <!--태그와 속성-->
-        <ul> <p id="p1">태그와 속성</p>
+        <ul> <p class="p1">태그와 속성</p>
             <p>
                 &lt;열기태그 속성="속성: 값;"&gt; 내용 &lt;/닫기태그&gt; <br><br>
                 속성의 값은 ;(세미콜론)으로 단위 구분 <br><br>
                 속성 안에(따옴표 안에) 따옴표를 쓰고 싶으면 : " '내용' " 또는 ' "내용"'
             </p>
 
-            <ol id="p2">
+            <ol class="p2">
                 <li>&lt;a href=""&gt;</li> <br>
                 <li>&lt;img src=""&gt; &lt;img width=""&gt; &lt;img height=""&gt; &lt;img alt=""&gt;:대체 텍스트 지정</li> <br>
                 <li>&lt;html lang=""&gt;</li> <br>
@@ -43,16 +43,17 @@
 
 
         <!--문서 유형 선언-->
-        <ul> <p id="p1">문서 유형 선언</p>
-            &lt;!doctype html&gt;
+        <ul> <p class="p1">문서 유형 선언</p>
+            <li>&lt;!doctype html&gt;</li> <br>
+            <li>문법 검사 : <a href="http://validator.w3.org">http://validator.w3.org</a></li>
         </ul>
 
 
         <!--head-->
-        <ul> <p id="p1">&lt;HEAD&gt;</p>
+        <ul> <p class="p1">&lt;HEAD&gt;</p>
             
             <!--meta>-->
-            <ol id="p2"> <p id="p3">META 요소</p>
+            <ol class="p2"> <p class="p3">META 요소</p>
                 <li>문자 세트 정의 : &lt;meta charset="UTF-8"&gt;</li> <br>
                 <li>웹페이지에 대한 설명 : &lt;meta name="description" content=" "&gt;</li> <br>
                 <li>검색엔진에 대한 키워드 : &lt;meta name="keyword" content=" "&gt;</li> <br>
@@ -61,13 +62,13 @@
             </ol>
 
             <!--link-->
-            <ol id="p2"> <p id="p3">LINK 요소</p>
+            <ol class="p2"> <p class="p3">LINK 요소</p>
                 <li>외부 스타일 시트에 연결하는 데 사용 : &lt;link rel="stylesheet" type="" href=""&gt;</li> <br>
                 <li>미리 파일을 로드하는 경우 : &lt;link rel="preload" as="image" href=""&gt;</li>
             </ol>
 
             <!--style-->
-            <ol id="p2"> <p id="p3">STYLE 속성</p>
+            <ol class="p2"> <p class="p3">STYLE 속성</p>
                 <li>style="color: #헥사코드 or rgb(r,g,b)"</li>
                 <li>style="background-color: ;"</li>
                 <li>style="line-height: ;"</li> <br>
@@ -149,7 +150,28 @@
 
 
         <!--BODY-->
-        <ul> <p id="p1">&lt;BODY&gt;</p>
+        <ul> <p class="p1">&lt;BODY&gt;</p>
+
+            <ol class="p2"> <p class="p3">서식 요소 : 특수한 유형의 텍스트를 표시</p>
+                <li>&lt;hr&gt; : 수평선(구분선)</li> <br>
+                <li>&lt;b&gt; <b>굵은 텍스트</b> vs &lt;strong&gt; <strong>중요한 텍스트</strong></li> <br>
+                <li>&lt;i&gt; <i>이탤릭체</i> vs &lt;em&gt; <em>강조된 텍스트</em></li> <br>
+                <li>&lt;mark&gt; <mark>표시된 텍스트</mark></li> <br>
+                <li>&lt;small&gt; <small>작은 텍스트</small></li> <br>
+                <li>&lt;del&gt; <Del>삭제된 텍스트</Del> &lt;ins&gt; <ins>삽입된 텍스트</ins></li> <br>
+                <li>&lt;sub&gt; <sub>아래 첨자</sub> &lt;sup&gt; <sup>위 첨자</sup></li>
+            </ol>
+
+            <ol class="p2"> <p class="p3">목록 요소</p>
+                <li>&lt;ul&gt; : unorderd list - &lt;li&gt;</li>
+                <li>&lt;ol&gt; : orderd list - &lt;li&gt;</li>
+                <li>&lt;dl&gt; : 설명목록을 정의 - &lt;dt&gt; &lt;dd&gt;</li>
+            </ol>
+
+            <ol class="p2"> <p class="p3">그룹핑 요소</p>
+                <li>&lt;div&gt; : block 레벨</li>
+                <li>&lt;span&gt; : inline 레벨</li>
+            </ol>
 
             <p>&lt;pre&gt; : 사전 형식화 된 텍스트를 정의</p>
 
@@ -161,32 +183,17 @@
 
             <p>작품 제목 요소 : &lt;cite&gt;-이탤릭체로 표시 &lt;del&gt; &lt;ins&gt;</p>
 
-            <ol id="p2"> <p id="p3">목록 요소</p>
-                <li>&lt;ul&gt; : unorderd list - &lt;li&gt;</li>
-                <li>&lt;ol&gt; : orderd list - &lt;li&gt;</li>
-                <li>&lt;dl&gt; : 설명목록을 정의 - &lt;dt&gt; &lt;dd&gt;</li>
-            </ol>
+          
             
-            <ol id="p2"> <p id="p3">서식 요소 : 특수한 유형의 텍스트를 표시</p>
-                <li>&lt;hr&gt; : 수평선(구분선)</li> <br>
-                <li>&lt;b&gt; <b>굵은 텍스트<b> vs &lt;strong&gt; <strong>중요한 텍스트</strong></li> <br>
-                <li>&lt;i&gt; <i>이탤릭체<i> vs &lt;em&gt; <em>강조된 텍스트</em></li> <br>
-                <li>&lt;mark&gt; <mark>표시된 텍스트</mark></li> <br>
-                <li>&lt;small&gt; <small>작은 텍스트</small></li> <br>
-                <li>&lt;del&gt; <Del>삭제된 텍스트</Del> &lt;ins&gt; <ins>삽입된 텍스트</ins></li> <br>
-                <li>&lt;sub&gt; <sub>아래 첨자</sub> &lt;sup&gt; <sup>위 첨자</sup></li>
-            </ol>
+            
 
-            <ol id="p2"> <p id="p3">그룹핑 요소</p>
-                <li>&lt;div&gt; : block 레벨</li>
-                <li>&lt;span&gt; : inline 레벨</li>
-            </ol>
+            
             
         </ul>
 
 
         <!--inline, block-->
-        <ul> <p id="p1">블록 레벨 및 인라인 레벨</p>
+        <ul> <p class="p1">블록 레벨 및 인라인 레벨</p>
 
             <li>블록 레벨 요소 : 항상 새줄에서 시작하여 사용 가능한 전체 너비를 차지 <br>
                 &bull; 밑으로 / 떨어짐 / 꽉참 </li> <br>
@@ -194,7 +201,7 @@
                 &bull; 옆으로 / 붙음 / 필요한만큼</li>
 
                 <!--블록-->
-            <ul id="p2" style="display: inline-block;"> <p id="p3">블록 레벨 요소</p>
+            <ul class="p2" style="display: inline-block;"> <p class="p3">블록 레벨 요소</p>
                 <p>
                     adress <br>
                     article <br>
@@ -229,7 +236,7 @@
             </ul>
 
             <!--인라인-->
-            <ul id="p2" style="display: inline-block;"> <p id="p3">인라인 레벨 요소</p>
+            <ul class="p2" style="display: inline-block;"> <p class="p3">인라인 레벨 요소</p>
                 <p>
                     a <br>
                     abb <br>
