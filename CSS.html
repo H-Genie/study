@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+
+    <head>
+        <title>CSS</title>
+
+        <meta charset="UTF-8">
+        <meta name="author" content="H-Genie">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+        <style>
+            ul, ol, li {padding-left: 0;}
+            ul {background-color: #E7EAED;} 
+            ol {width: fit-content}
+            li {list-style: none;}
+            
+            .p1 {background-color : #00ff00; font-weight: 900;}
+            .p2 {background-color: #00ffff;}
+            .p3 {font-weight: 700; text-decoration: underline;}
+            .ib {display: inline-block;}
+
+            
+            #black {color: green;}
+            .my-box .text {color: black;}
+            .black {color: red;}
+            .my-box .black {color: yellow;}
+            .black {color: blue;}
+            .good-black {color: red !important;}
+            .good-black {color: green;}
+        </style>
+
+    </head>
+
+
+
+    <body>
+
+        <!--스타일 표현 방법-->
+        <ul> <p class="p1">HTML 스타일 표현 방법</p>
+
+            <li>1. 속성없이 태그만으로 표현</li> <br>
+            <li>2. Inline Style Sheet : 태그안에 CSS 코딩</li> <br>
+            <li>3. Internal Style Sheet : head 부분에  stlye을 따로 코딩</li> <br>
+            <li>4. class & ID (해당 문서에만 적용됨) <br>
+                &bull;class : 특수한 유형의 요소에 대한 스타일 정의<br>
+                &bull;ID : 하나의 특수 요소에 특정 스타일을 정의 <br>
+                </li> <br>
+            <li>5. Linking Style Sheet : style 파일을 따로 저장하고 불러오기 (여러개의 문서에 적용 가능)</li>
+        
+        </ul>
+
+
+        <!--CSS 적용 우선순위-->
+        <ul> <p class="p1">CSS 적용 우선순위</p>
+
+            <li>1. !important (문법 체계를 어지럽히는 명령이므로 긴급상황 아니면 쓰지 말 것)</li> <br>
+            <li>2. inline 선언 스타일 속성</li> <br>
+            <li>3. selector 선언 속성</li> <br>
+            <li>4. 중복시 하위 우선 속성</li> <br>
+            <li>5. 상속된 속성</li> <br>
+            <li>6. 브라우저 기본 스타일</li>
+
+            <ol class="p2"> <p class="p3">우선순위 연습</p>
+    
+                &lt;stlye&gt; <br>
+                &nbsp; #black {color: green;} <br>
+                &nbsp; .my-box .text {color: black;} <br>
+                &nbsp; .black {color: red;} <br>
+                &nbsp; .my-box .black {color: yellow;} <br>
+                &nbsp; .black {color: blue;} <br>
+                &nbsp; .good-black {color: red !important} <br>
+                &nbsp; .good-black {color: green} <br>
+                &lt;/style&gt; <br><br>
+                
+                &lt;body&gt; <br>
+                &nbsp; &lt;div class="my-box"&gt; <br>
+                &nbsp; &nbsp; &lt;div class="text"&gt; My Text 1 &lt;/div&gt; <br>
+                &nbsp; &nbsp; &lt;div class="black"&gt; My Text 2 &lt;/div&gt; <br>
+                &nbsp; &nbsp; &lt;div id="black"&gt; My Text3 &lt;/div&gt; <br>
+                &nbsp; &nbsp; &lt;div class="good-black" style="color: orange;"&gt; My Text 4 &lt;/div&gt; <br>
+                &nbsp; &lt;/div&gt; <br>
+                &lt;/body&gt; <br><br>
+
+                <div class="my-box">
+                    <div class="text">My Text 1</div>
+                    <div class="black">My Text 2</div>
+                    <div id="black">My text 3</div>
+                    <div class="good-black" style="color: orange;">My Text 4</div>
+                </div>
+                  
+            </ol>
+        </ul>
+
+
+        <!--상속/비상속-->
+        <ul> <p class="p1">상속/비상속</p>
+            <ol class="p2 ib"> <p class="p3">상속</p>
+                <p>
+                    color <br>
+                    cursor <br>
+                    font-family <br>
+                    font-size <br>
+                    font-weight <br>
+                    letter-spacing <br>
+                    line-height <br>
+                    text-align <br>
+                    text-indent (들여쓰기) <br>
+                    line-style <br>
+                    word-spacing <br>
+                    text-transform (대소문자) <br>
+                    visibility (보이는 상태 조건) <br>
+                    border-collapse (테이블 보더 병합) <br>
+                    border-spacing <br>
+                    caption-side (테이블 제목 위치) <br>
+                </p>
+            </ol>
+
+            <ol class="p2 ib"> <p class="p3">비상속</p>
+                <p>
+                    background <br>
+                    width <br>
+                    height <br>
+                    padding <br>
+                    margin <br>
+                    border <br>
+                    위치값 (top,bottom,left,right) <br>
+                    float <br>
+                    position <br>
+                    display (박스타입 지정) <br>
+                    overflow (내용넘침 설정) <br>
+                    vertical-align <br>
+                    z-index (보이는 순서) <br><br><br><br>
+                </p>
+            </ol>
+
+        </ul>
+
+
+        <ul> <p class="p1">CSS 상자 모델 (Box Model)</p>
+            
+            <p>
+            모든 HTML 요소는 상자로 간주될 수 있음 <br>
+            디자인과 레이아웃의 용어로, 모든 HTML 요소를 둘러싸는 상자 <br><br>
+
+            마진, 보딩, 패딩 및 실제 내용으로 구성 <br>
+            요소 주위에 테두리를 추가하고 요소 사이의 공간을 정의 <br><br>
+
+            &bull;내용 : 텍스트와 이미지가 나타내는 상자의 내용 <br>
+            &bull;패딩 : 컨텐츠 주변의 영역을 지움 (투명함) <br>
+            &bull;보딩 : 패딩 및 내용을 둘러싼 테두리 <br>
+            &bull;마진 : 테루디 외부의 영역을 지움 (투명함) <br>
+            </p>
+
+            <img src="http://espezua.github.io/blog/imgs/boxmodel.png"> <br>
+
+            <p>
+                * width, height는 padding 값 포함 안됨 <br><br>
+                * margin : 서로 중복될 때 큰 값으로 수렴 <br><br>
+                * line-height : 내용과 패딩의 값이 모두 포함된 높이 <br><br>
+                * 선 정보 : style="border: width style color;"  &nbsp;
+                <a href="http://webberstudy.com/html-css/css-1/border/" target="_blank">참고</a> <br>
+                &bull;border-style 속성 종류 : solid               
+            </p>
+        </ul>
+
+    </body>
+
+</html>
