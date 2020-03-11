@@ -47,7 +47,7 @@
                 &bull;ID : 하나의 특수 요소에 특정 스타일을 정의 <br>
                 </li> <br>
             <li>5. Linking Style Sheet : style 파일을 따로 저장하고 불러오기 (여러개의 문서에 적용 가능)</li>
-        
+
         </ul>
 
 
@@ -95,6 +95,7 @@
 
         <!--상속/비상속-->
         <ul> <p class="p1">상속/비상속</p>
+           
             <ol class="p2 ib"> <p class="p3">상속</p>
                 <p>
                     color <br>
@@ -133,10 +134,10 @@
                     z-index (보이는 순서) <br><br><br><br>
                 </p>
             </ol>
-
         </ul>
 
 
+        <!--상자 모델-->
         <ul> <p class="p1">CSS 상자 모델 (Box Model)</p>
             
             <p>
@@ -149,20 +150,77 @@
             &bull;내용 : 텍스트와 이미지가 나타내는 상자의 내용 <br>
             &bull;패딩 : 컨텐츠 주변의 영역을 지움 (투명함) <br>
             &bull;보딩 : 패딩 및 내용을 둘러싼 테두리 <br>
-            &bull;마진 : 테루디 외부의 영역을 지움 (투명함) <br>
+            &bull;마진 : 테두리 외부의 영역을 지움 (투명함) / 음수값이 가능함<br>
             </p>
 
-            <img src="http://espezua.github.io/blog/imgs/boxmodel.png"> <br>
-
-            <p>
-                * width, height는 padding 값 포함 안됨 <br><br>
-                * margin : 서로 중복될 때 큰 값으로 수렴 <br><br>
-                * line-height : 내용과 패딩의 값이 모두 포함된 높이 <br><br>
-                * 선 정보 : style="border: width style color;"  &nbsp;
-                <a href="http://webberstudy.com/html-css/css-1/border/" target="_blank">참고</a> <br>
-                &bull;border-style 속성 종류 : solid               
+            <img src="http://espezua.github.io/blog/imgs/boxmodel.png" style="max-width: 100%; border: 1px  solid black;"> <br>
+            
+            <p>             
+                * 테두리(<a href="http://webberstudy.com/html-css/css-1/border/" target="_blank">참고</a>) 
+                : style="border: 두께 종류 색상;" &nbsp; {border: width style color} <br> 
+                &bull;border-style 속성 종류 : solid <br>
+                
             </p>
         </ul>
+
+
+        <!--패딩 및 마진>-->
+        <ul> <p class="p1">CSS 패딩 및 마진</p>
+            <p>
+                내용 + padding + border까지가 하나의 속성 <br><br>
+                width, height는 padding 값 포함 안됨 <br><br>
+                margin : 서로 중복될 때 큰 값으로 수렴 <br><br>
+                line-height : 내용과 패딩의 값이 모두 포함된 높이 <br><br>   
+
+                inline-box에는 padding, margin 적용안됨 <br>
+                → line-height로 조절해야 함 (단, 왼쪽의 padding, margin은 가능함) <br><br>
+
+                img는 상하좌우 padding, margin 가능 <br><br>
+                
+                
+                시계방향으로 : top → right → bottom → left &nbsp; {padding: top right bottom left;} <br>
+
+                &bull;{margin: 10px;} : 네방향 모두 <br>
+                &bull;{margin: 10px 20px;} : 위,아래 - 오른쪽,왼쪽 <br>
+                &bull;{border: 10px 15px 20px;} : 위 - 오른쪽,왼쪽 - 아래
+
+                <div style="border: 1px solid black; width: fit-content;">
+                    <p class="ib" style="text-align: center; width: fit-content; background-color: orange;">원본</p>
+                    <p class="ib" style="text-align: center; width: fit-content; background-color: orange; padding: 10px;">10</p>
+                    <p class="ib" style="text-align: center; width: fit-content; background-color: orange; padding: 10px 20px;">10 20</p>
+                    <p class="ib" style="text-align: center; width: fit-content; background-color: orange; padding: 10px 15px 20px;">10 15 20</p> <br>
+                </div> <br>
+
+                * 응용 <br>
+                - 가운데 정렬 : {margin: 0 auto;} <br>
+                - 오른쪽 정렬 : {margin-left: auto}
+            </p>
+        </ul>
+
+
+        <ul> <p class="p1">CSS Position</p>
+            <p>
+                <a href="http://kukie.net/what-is-div-how-to-use/" target="_blank">참고</a> <br><br>
+
+                &bull;static <br>
+                CSS로 특별한 값을 지정해 주지 않아도 적용되는 기본값이다. <br>
+                HTML 파일에서 중첩되지 않은 여러개의 div를 작성하면, 위에서 부터 차곡 차곡 쌓이는 기본적인 형태이다. <br><br>
+                &bull;relative <br>
+                한개의 div가 있고 relative로 설정할 경우엔 static과 큰 차이는 없다. 하위에 div가 있을 경우엔 하위의 div를 absolute 배열 할 수 있다. <br><br>
+                &bull;absolute <br>
+                흔히 레이어라는 개념으로 알고 있는 값이다. div에 top, right, bottom, left 값을 지정해서 원하는 위치에 고정되게 띄울 수 있다. <br><br>
+                &bull;fixed <br>
+                기본적으로 absolute와 같다. absolute는 canvas의 스크롤에 따라 올라가고 내려가지만 fixed의 경우는 스크롤에 상관없이 지정한 위치에 고정된다. <br>
+            </p>
+
+            <div style="border: 1px solid black; width: fit-content;">
+                <img src="https://www.oreilly.com/library/view/xsl-companion-the/0201674874/0201674874_ch17lev1sec11_image01.gif" style="max-width: 100%;"> <br>
+                <img src="https://s3.amazonaws.com/viking_education/web_development/web_app_eng/css_positioning_absolute_relative_fixed.png" style="max-width: 100%;">
+            </div>
+        </ul>
+        
+            
+
 
     </body>
 
