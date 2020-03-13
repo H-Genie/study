@@ -137,7 +137,7 @@
         </ul>
 
 
-        <!--상자 모델-->
+        <!--박스 모델-->
         <ul> <p class="p1">CSS 상자 모델 (Box Model)</p>
             
             <p>
@@ -158,9 +158,15 @@
             <p>             
                 * 테두리(<a href="http://webberstudy.com/html-css/css-1/border/" target="_blank">참고</a>) 
                 : style="border: 두께 종류 색상;" &nbsp; {border: width style color} <br> 
-                &bull;border-style 속성 종류 : solid <br>
-                
+                &bull;border-style 속성 종류 : solid <br>       
             </p>
+
+            <ol class="p2"> <p class="p3">레이아웃 설계시 고려해야 할 것</p>
+                ⓵ contents의 크기 <br>
+                ⓶ display 속성 <br>
+                ⓷ position
+            </ol>
+
         </ul>
 
 
@@ -191,13 +197,14 @@
                     <p class="ib" style="text-align: center; width: fit-content; background-color: orange; padding: 10px 15px 20px;">10 15 20</p> <br>
                 </div> <br>
 
-                * 응용 <br>
+                * 응용 : width값 줘야함<br>
                 - 가운데 정렬 : {margin: 0 auto;} <br>
                 - 오른쪽 정렬 : {margin-left: auto}
             </p>
         </ul>
 
 
+        <!--CSS 포지션-->
         <ul> <p class="p1">CSS Position</p>
             <p>
                 <a href="http://kukie.net/what-is-div-how-to-use/" target="_blank">참고</a> <br><br>
@@ -210,15 +217,52 @@
                 &bull;absolute <br>
                 흔히 레이어라는 개념으로 알고 있는 값이다. div에 top, right, bottom, left 값을 지정해서 원하는 위치에 고정되게 띄울 수 있다. <br><br>
                 &bull;fixed <br>
-                기본적으로 absolute와 같다. absolute는 canvas의 스크롤에 따라 올라가고 내려가지만 fixed의 경우는 스크롤에 상관없이 지정한 위치에 고정된다. <br>
+                기본적으로 absolute와 같다. absolute는 canvas의 스크롤에 따라 올라가고 내려가지만 fixed의 경우는 스크롤에 상관없이 지정한 위치에 고정된다. <br><br>
+
+                cf) <br>
+                fixed : viewport를 기준으로 배치 <br>
+                absolute : 부모(=relative position 개체)가 기준 <br>
+                &bull; 아무것도 없으면 body, 2개 이상이면 가까운 것이 부모가 됨
             </p>
 
-            <div style="border: 1px solid black; width: fit-content;">
-                <img src="https://www.oreilly.com/library/view/xsl-companion-the/0201674874/0201674874_ch17lev1sec11_image01.gif" style="max-width: 100%;"> <br>
-                <img src="https://s3.amazonaws.com/viking_education/web_development/web_app_eng/css_positioning_absolute_relative_fixed.png" style="max-width: 100%;">
-            </div>
+            <img src="https://s3.amazonaws.com/viking_education/web_development/web_app_eng/css_positioning_absolute_relative_fixed.png" 
+                style="max-width: 100%;border: 1px solid black; width: fit-content;"> <br><br>
+
+            margin, padding은 static에 값을 주는 것 <br><br>
+
+            음수 값도 됨 ☞ Javascript 애니메이션 응용 <br><br>
+
+            &bull; 100%의 차이 <br>
+            % : 스크롤을 제외한 안쪽 부분만을 100%로 인식 <br>
+            100vh, vw : 스크롤까지 포함해 100%로 인식 <br><br>
+
+            <ol class="p2"> <p class="p3">응용 : 중앙정렬 고정 (fixed: left;)</p>              
+                ⓵ 절반 값 직접입력 (display 절반 - (width÷2)) <br>
+                ⓶ 50% : 정확하지 않음 <br>
+                ⓷ calc(50% - 이미지 px의 절반) <br>
+                &nbsp;&bull;()앞에는 붙여써야 하고, - 기호 앞뒤로는 띄어써야 함
+            </ol>
+            
+            <ol class="p2"> <p class="p3">응용</p>
+                가로 가운데 정렬 : display: flex; justify-content: center; <br><br>
+                세로 가운제 덩렬 : display: flex; align-items: center; <br><Br>
+                방향 전환 : display: flex-direction; column(가로) row(세로)
+            </ol>
         </ul>
         
+
+        <!--포지션 상대높이-->
+        <ul> <p class="p1">Position 상대 높이</p>
+
+            <strong>normal flow → float → posotion → z-index</strong> <br><br>
+
+            position 값을 주면 동급이 되므로, z-index로 조절해야 함 <br>
+            (z-index를 주지 않으면, 나중ㅈ에 만든게 위에 위치 함) <br><br>
+
+            <img src="https://codropspz-tympanus.netdna-ssl.com/codrops/wp-content/uploads/2014/10/new-stacking-order.png" 
+            style="max-width: 100%; border: 1px solid black;">
+
+        </ul>
             
 
 
