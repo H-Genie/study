@@ -22,6 +22,8 @@
             .p2 {background-color: #00ffff;}
             .p3 {font-weight: 700; text-decoration: underline;}
             .ib {display: inline-block;}
+            .flex {display: flex; align-items: flex-start;}
+            .border_black {border: 1px solid black;}
 
             
             #black {color: green;}
@@ -98,8 +100,9 @@
 
         <!--상속/비상속-->
         <ul> <p class="p1">상속/비상속</p>
-           
-            <ol class="p2 ib"> <p class="p3">상속</p>
+          
+            <div class="flex">
+            <ol class="p2 ib border_black"> <p class="p3">상속</p>
                 <p>
                     color <br>
                     cursor <br>
@@ -120,7 +123,7 @@
                 </p>
             </ol>
 
-            <ol class="p2 ib"> <p class="p3">비상속</p>
+            <ol class="p2 ib border_black"> <p class="p3">비상속</p>
                 <p>
                     background <br>
                     width <br>
@@ -134,9 +137,10 @@
                     display (박스타입 지정) <br>
                     overflow (내용넘침 설정) <br>
                     vertical-align <br>
-                    z-index (보이는 순서) <br><br><br><br>
+                    z-index (보이는 순서) 
                 </p>
             </ol>
+            </div>
         </ul>
 
 
@@ -161,7 +165,19 @@
             <p>             
                 * 테두리(<a href="http://webberstudy.com/html-css/css-1/border/" target="_blank">참고</a>) 
                 : style="border: 두께 종류 색상;" &nbsp; {border: width style color} <br> 
-                &bull;border-style 속성 종류 : solid <br>       
+                - dotted : 짧은 점섬 테두리 <br>
+                - dashed : 긴 점선 테두리 <br>
+                - solid : 실선 테두리 <br>
+                - double : 이중 테두리 <br>
+                - groove : 3D 그루브 테두리 (*3D 효과는 테두리 색상값에 따름)<br>
+                - ridge : 3D 능선 테두리 <br>
+                - inset : 3D 삽입 테두리 <br>
+                - outset : 3D 시작경계 테두리 <br>
+                - none : 경계 없음 <br>
+                - hidden : 숨겨진 테두리 <br><br>
+
+                * 둥근 테두리 : style="border-radius: 5px;"
+                <span style="border-radius: 10px; background-color: skyblue; width: fit-content;">둥근 테두리</span>
             </p>
 
             <ol class="p2"> <p class="p3">레이아웃 설계시 고려해야 할 것</p>
@@ -207,6 +223,83 @@
         </ul>
 
 
+        <!--CSS Background-->
+        <ul> <p class="p1">CSS Background</p>
+            <p>
+                background-color <br>
+                backgorund-image : url( ) <br>
+                background-repeat : no-repeat, repeat-x, repeat-y <br>
+                background-size : cover <br>
+                background-position : 수평위치 수직위치 <br><br>
+
+                <a href="http://cssgradient.io" target="_black">그라디언트 : cssgradient.io</a><br>
+                backround-image : liner-gradient(각도 / 시작rgba / 종료rgba) <br>
+                <div style="background: rgb(255,255,255);
+                background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(0,0,0,1) 100%); width: 50vw; height: 50px;"></div>
+            </p>
+        </ul>
+
+
+        <!--CSS Flex Box Layout-->
+        <ul> <p class="p1">CSS Flex Box Layout</p>
+
+            <a href="https://codepen.io/jaehee/full/zyZyWZ" target="_blank">Flexbox 인터랙티브 플레이그라운드</a> <br><br>
+
+            <img src="https://d2.naver.com/content/images/2018/12/helloworld-201811-flex_01.png" style="max-width: 100%; border: 1px solid black;">
+
+            <p>
+
+                플렉스 박스를 원하는 위치에 배치하는 것 <br>
+                여유 공간에 따라 너비, 높이, 위치를 자유롭게 변형할 수 있음 <br><br>
+                
+                &bull;flex container (플렉스 컨테이너) : 웹 문서에 요소를 플렉스하게 사용하려면 플렉스 컨테이너로 묶어줘야 함 <br>
+                &bull;flex item (플렉스 항목) : 플렉스 컨테이너에 담기는 웹 요소 <br>
+                &bull;main axis(주축) : 플렉스 컨테이너 안에서 플렉스 항목을 배치하는 기본 방향 / 기본적으로 왼쪽에서 오른쪽으로 수평방향 <br>
+                &bull;cross axis (교차축) : 주축과 교차되는 방향 / 기본적으로 위에서 아래로 배치
+
+                <ol class="p2"> <p class="p3">플렉스 방향 지정하기</p>
+                    flex-direction : 플렉스 항목을 배치할 방향을 지정 <br>
+                    &bull;row : 주축을 가로로 교차축을 세로로 지정.플렉스 항목을 주축 시작점에서 끝점으로(왼쪽에서 오른쪽으로) <br>
+                    &bull;column : 주축을 세로로 교차축을 가로로 지정. 플렉스 항목은 주축 시작점에서 끝점으로 (왼쪽에서 아래쪽으로) <br><br>
+                    
+                    <img src="http://blog.teamtreehouse.com/wp-content/uploads/2012/12/flexbox-flex-direction.png" style="max-width: 100%; border: 1px solid black;">
+                </ol> <Br><br>
+                
+                
+                [항목 배치를 위한 속성들]
+                <ol class="p2"> <p class="p3">justify-content</p>
+                    플렉스 항목을 주축방향으로 배치할 때의 기준 <br><br>
+                    
+                    &bull;flex-start : 주축을 시작점을 기준으로 배치 <br>
+                    &bull;flex-end : 주축의 끝점을 기준으로 배치 <br>
+                    &bull;center : 주축의 중앙을 기준으로 배치 <br>
+                    &bull;space-between : 첫번째 플렉스 항목과 마지막 플렉스 항목을 시작점과 끝점으로 배치한 후 중앙 항목들을 같은 간격으로 배치 <br>
+                    &bull;space-around : 모든 플렉스 항목들을 같은 간격으로 배치 <br><br>
+                    
+                    <img src="http://blog.teamtreehouse.com/wp-content/uploads/2012/12/flexbox-justify.png" style="max-width: 100%; border: 1px solid black;">
+                </ol>
+
+                <ol class="p2"> <p class="p3">align-items</p>
+                    플렉스 항목을 교차축 기준으로 배치할 때의 기준 <br>
+                    (여러 줄로 배치될 때의 배치 방법) <br><br>
+
+                    &bull;strech : 플렉스 항목을 확장해 교차축을 꽉 채움 <br>
+                    &bull;flex-start : 교차축의 시작점을 기준으로 배치 <br>
+                    &bull;flex-end : 교차축의 끝점을 기준으로 배치 <br>
+                    &bull;center : 교차축의 중앙을 기준으로 배치 <br>
+                    &bull;baseline : 시작점과 글자 기준선이 가장 먼 플렉스 항목을 시자점에 배치하고, 그 글자의 기준선과 다른 항목의 기준선을 맞추어 배치 <br><br>
+
+                    <img src="http://w3.unpocodetodo.info/css3/images/flex-align-items.gif" style="border: 1px solid black;">
+                </ol>
+
+
+
+            </p>
+
+
+        </ul>
+
+
         <!--CSS 포지션-->
         <ul> <p class="p1">CSS Position</p>
             <p>
@@ -246,11 +339,6 @@
                 &nbsp;&bull;()앞에는 붙여써야 하고, - 기호 앞뒤로는 띄어써야 함
             </ol>
             
-            <ol class="p2"> <p class="p3">응용</p>
-                가로 가운데 정렬 : display: flex; justify-content: center; <br><br>
-                세로 가운제 덩렬 : display: flex; align-items: center; <br><Br>
-                방향 전환 : display: flex-direction; column(가로) row(세로)
-            </ol>
         </ul>
         
 
@@ -267,6 +355,63 @@
 
         </ul>
             
+
+        <!--CSS overflow-->
+        <ul> <p class="p1">CSS Overflow</p>
+            <p>
+
+                요소의 내용이 너무 커서 지정된 영역게 맞지 않을 때 내용을 자를 것인지 스크롤 막대를 추가할 것인지 지정 <br>
+                &bull;visible : 기본값 / 오버플로우가 잘리지 않음 <br>
+                &bull;hidden : 오버플로우가 잘리고 나머지 내용은 보이지 않음 <br>
+                &bull;scroll : 오버플로우가 잘리고 필요할 때만 스크롤막대 추가 <br>
+                &bull;auto : scroll과 비슷하지만 필요할 때만 스크롤막대 추가 <br><br>
+
+                overflow-x : 수평방향으로만 컨텐츠 플로우를 변경할 것인지 속성을 지정 <br>
+                overflow-y : 수직방향으로만 컨텐츠 플로우를 변경할 것인지 속성을 지정
+            </p>
+
+            <div style="width: 250px; display: flex; justify-content: space-between; align-items: center; border: 1px solid black;">
+
+                <div style="overflow: visible; background-color: slateblue; width: 50px; height:70px;">
+                    visible <br>
+                    1 <br>
+                    2 <br>
+                    3 <br>
+                    4 <br>
+                    5
+                </div>
+
+                <div style="overflow: hidden; background-color: slateblue; width: 50px; height:70px;">
+                    hidden <br>
+                    1 <br>
+                    2 <br>
+                    3 <br>
+                    4 <br>
+                    5
+                </div>
+
+                <div style="overflow: scroll; background-color: slateblue; width: 50px; height:70px;">
+                    scroll <br>
+                    1 <br>
+                    2 <br>
+                    3 <br>
+                    4 <br>
+                    5
+                </div>
+
+                <div style="overflow: auto; background-color: slateblue; width: 50px; height:70px;">
+                    auto <br>
+                    1 <br>
+                    2 <br>
+                    3 <br>
+                    4 <br>
+                    5
+                </div>
+
+            </div>
+
+        </ul>
+
 
 
     </body>

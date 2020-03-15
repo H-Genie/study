@@ -21,6 +21,8 @@
             .p1 {background-color : #00ff00; font-weight: 900;}
             .p2 {background-color: #00ffff;}
             .p3 {font-weight: 700; text-decoration: underline;}
+            .flex {display: flex; align-items: flex-start;}
+            .border_black {border: 1px solid black;}
         </style>
     </head>
 
@@ -211,8 +213,9 @@
             <li>인라인 레벨 요소 : 새 줄에서 시작되지 안으며 필요한 만큼 폭 차지 <br>
                 &bull; 옆으로 / 붙음 / 필요한만큼</li> <br>
 
-                <!--블록-->
-            <ul class="p2" style="display: inline-block;"> <p class="p3">블록 레벨 요소</p>
+            <!--블록-->
+            <div class="flex">
+            <ul class="p2 border_black" style="display: inline-block;"> <p class="p3">블록 레벨 요소</p>
                 <p>
                     adress <br>
                     article <br>
@@ -242,12 +245,12 @@
                     table <br>
                     tfoot <br>
                     ul <br>
-                    video <br><br><br><br><br>
+                    video 
                 </p>
             </ul>
 
             <!--인라인-->
-            <ul class="p2" style="display: inline-block;"> <p class="p3">인라인 레벨 요소</p>
+            <ul class="p2 border_black" style="display: inline-block;"> <p class="p3">인라인 레벨 요소</p>
                 <p>
                     a <br>
                     abb <br>
@@ -284,6 +287,7 @@
                     var
                 </p>
             </ul>
+            </div>
 
         </ul>
 
