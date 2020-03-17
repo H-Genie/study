@@ -206,19 +206,44 @@
                 시계방향으로 : top → right → bottom → left &nbsp; {padding: top right bottom left;} <br>
 
                 &bull;{margin: 10px;} : 네방향 모두 <br>
+                &bull;{margin: 10px; 0} : 위, 아래 <br>
+                &bull;{margin: 0 10px : 양쪽 <br>
                 &bull;{margin: 10px 20px;} : 위,아래 - 오른쪽,왼쪽 <br>
                 &bull;{border: 10px 15px 20px;} : 위 - 오른쪽,왼쪽 - 아래
 
                 <div style="border: 1px solid black; width: fit-content;">
                     <p class="ib" style="text-align: center; width: fit-content; background-color: orange;">원본</p>
                     <p class="ib" style="text-align: center; width: fit-content; background-color: orange; padding: 10px;">10</p>
+                    <p class="ib" style="text-align: center; width: fit-content; background-color: orange; padding: 10px 0;">10</p>
+                    <p class="ib" style="text-align: center; width: fit-content; background-color: orange; padding: 0 10px;">10</p>
                     <p class="ib" style="text-align: center; width: fit-content; background-color: orange; padding: 10px 20px;">10 20</p>
                     <p class="ib" style="text-align: center; width: fit-content; background-color: orange; padding: 10px 15px 20px;">10 15 20</p> <br>
                 </div> <br>
 
                 * 응용 : width값 줘야함<br>
                 - 가운데 정렬 : {margin: 0 auto;} <br>
-                - 오른쪽 정렬 : {margin-left: auto}
+                - 오른쪽 정렬 : {margin-left: auto} <br><br>
+
+                box-sizing : 컨텐츠에 추가로 padding 값을 주면 원래 크기보다 늘어남 <Br>
+                &bull;content-box : 기본값 <Br>
+                &bull;border-box : 추가로 padding을 주더라도 전체 박스 크기는 늘어나지 않음
+
+                <div style="width: 50vw; height: 50vh; background-color: green;
+                display: flex; 
+                ">
+            
+                    <div style="width: 15vw; height: 20vh; background-color: red; 
+                    color: white;
+                    padding-top: 60px; box-sizing: border-box;
+                    border: 20px solid black">border-box</div>
+            
+                    <div style="width: 15vw; height: 20vh; background-color: blue; 
+                    color: white;
+                    padding-left: 60px;
+                    border: 20px solid black;">content-box</div>
+            
+                </div>
+
             </p>
         </ul>
 
