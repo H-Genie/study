@@ -38,10 +38,13 @@
 
             <li>1. !important (문법 체계를 어지럽히는 명령이므로 긴급상황 아니면 쓰지 말 것)</li> <br>
             <li>2. inline 선언 스타일 속성</li> <br>
-            <li>3. selector 선언 속성</li> <br>
-            <li>4. 중복시 하위 우선 속성</li> <br>
-            <li>5. 상속된 속성</li> <br>
-            <li>6. 브라우저 기본 스타일</li>
+            <li>3. 직접 선택해서 선언한 속성 (class name) => 구체적 선언이 우선 <br>
+            ex) 자손 선택 > 자신</li> <br>
+            <li>4. 하향 우선 속성 (중복된 경우)</li> <br>
+            <li>5. 부모에게 상속된 속성</li> <br>
+            <li>6. 브라우저 기본 스타일</li> <br>
+
+            * 주기적으로 교체되는 부분은 따로 빼는 것이 나음 (우선선택자로 쓰지 말 것)
 
             <ol class="p2"> <p class="p3">우선순위 연습</p>
     
@@ -411,6 +414,28 @@
                 </div>
 
             </div>
+
+        </ul>
+
+
+        <!--CSS 선택자-->
+        <ul> <p class="p1" style="margin-top: 70px;">CSS 선택자</p>
+            요소 선택자 : p<br>
+            ID 선택자 : #<br>
+            CLASS 선택자 : .<br>
+            그룹 선택자 : h1, h2, h3, p<br><br>
+            
+            자손 선택자 : <span><b>한칸 띄어서</b></span> 옆에 자손 요소의 이름을 사용하여 <span><b>하위에 있는 전체</b></span> 자손 요소를 선택 <br>
+            ex) home_wrap div <br><br>
+
+            자손의 선택 : 자신의 이름 옆에 .과 자손 요소의 이름을 사용해 요소 선택 <br>
+            ex) home_wrap .div <br><br>
+
+            직계자손들만 선택 : 자신의 이름 옆에<span><b>&gt;</b></span>를 써서 <span><b>직계자손 요소만</b></span> 선택 <br>
+            ex) home_wrap > div <br><br>
+
+            특정 자손만 선택 : 요소 옆에 <span><b>nth-child(숫자)</b></span>를 적어 <span><b>특정 자손만</b></span> 선택<br>
+            ex) home_wrap p:nth-child(숫자)
 
         </ul>
 
