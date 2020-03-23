@@ -3,104 +3,125 @@
 <html lang="ko">
 
     <head>
-        <meta charset="UTF-8">
-        <meta name="author" content="H-Genie">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalabe=no">
 
         <title>HTML5</title>
 
-        <link rel="stylesheet" type="text/css" href="css/style.css">
-        <link rel="icon" href="img/HTML5.png" sizes="64x64">
-   
+        <meta charset="UTF-8">
+        <meta name="author" content="H-Genie">
+        <meta name="description" content=" ">
+        <meta name="keywords" content=" ">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+       <link rel="stylesheet" type="text/css" href="css/style.css">
+       <link rel="icon" href="img/HTML5.png" sizes="16x16">
+      
     </head>
+
 
 
     <body>
 
         <!--태그와 속성-->
-        <ul> <p class="p1">태그와 속성</p>
+        <div class="chapter_box" id="ch1" style="margin-top: 0;">
+
+            <p class="subject">태그와 속성</p> <br>
+
             <p>
                 &lt;열기태그 속성="속성: 값;"&gt; 내용 &lt;/닫기태그&gt; <br><br>
                 속성의 값은 ;(세미콜론)으로 단위 구분 <br><br>
                 속성 안에(따옴표 안에) 따옴표를 쓰고 싶으면 : " '내용' " 또는 ' "내용"'
-            </p>
+            </p> <br>
 
-            <ol class="p2">
-                <li>&lt;a href=""&gt;</li> <br>
-                <li>&lt;img src=""&gt; &lt;img width=""&gt; &lt;img height=""&gt; &lt;img alt=""&gt;:대체 텍스트 지정</li> <br>
-                <li>&lt;html lang=""&gt;</li> <br>
-                <li>&lt;p title&gt;:단락이름 지정(툴팁박스)</li> <br>
-                <li>style=""</li>
-            </ol>
-        </ul>
+            <div class="content_box">
+                <p>
+                    &lt;html lang=""&gt; <br><br>
+                    &lt;img src=""&gt; &lt;img width=""&gt; &lt;img height=""&gt; &lt;img alt=""&gt;:대체 텍스트 지정 <br><br>
+                    &lt;a href=""&gt; <br><br>
+                    &lt;p title&gt;:단락이름 지정(툴팁박스) <br><br>
+                    style=""
+                </p>
+            </div>
 
-
-        <!--문서 유형 선언-->
-        <ul> <p class="p1">문서 유형 선언 : HTML5</p>
-            <li>&lt;!doctype html&gt;</li> <br>
-            <li>문법 검사 : <a href="http://validator.w3.org" target="_blank">http://validator.w3.org</a></li>
-        </ul>
+        </div>
 
 
-        <!--head-->
-        <ul> <p class="p1">&lt;HEAD&gt;</p>
-            
-            <!--meta>-->
-            <ol class="p2"> <p class="p3">META 요소</p>
-                <li>문자 세트 정의 : &lt;meta charset="UTF-8"&gt;</li> <br>
-                <li>웹페이지에 대한 설명 : &lt;meta name="description" content=" "&gt;</li> <br>
-                <li>검색엔진에 대한 키워드 : &lt;meta name="keyword" content=" "&gt;</li> <br>
-                <li>페이지 작성자 정보 : &lt;meta name="author" content=" "&gt;</li> <br>
-                <li>뷰포트 설정 : &lt;meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"&gt;</li>
-            </ol>
+        <!--HEAD-->
+        <div class="chapter_box" id="ch2">
 
-            <!--link-->
-            <ol class="p2"> <p class="p3">LINK 요소</p>
-                <li>외부 스타일 시트에 연결하는 데 사용 : &lt;link rel="stylesheet" type="" href=""&gt;</li> <br>
-                <li>미리 파일을 로드하는 경우 : &lt;link rel="preload" as="image" href=""&gt;</li>
-            </ol>
+            <p class="subject">HEAD</p> <br>
 
-            <!--style-->
-            <ol class="p2"> <p class="p3">STYLE 속성</p>
-                <li>style="color: #헥사코드 or rgb(r,g,b)"</li>
-                <li>style="background-color: ;"</li>
-                <li>style="line-height: ;"</li> <br>
+            <!--META-->
+            <div class="content_box" id="ch2-1">             
+                <p class="title">META 요소</p> <br>  
+                <p>
+                    문자 세트 정의 : &lt;meta charset="UTF-8"&gt; <br><br>
+                    웹페이지에 대한 설명 : &lt;meta name="description" content=" "&gt; <br><br>
+                    검색엔진에 대한 키워드 : &lt;meta name="keyword" content=" "&gt; <br><br>
+                    페이지 작성자 정보 : &lt;meta name="author" content=" "&gt; <br><br>
+                    뷰포트 설정 : &lt;meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"&gt;
+                </p>
+            </div>
 
-                <li>stlye="width</li>
-                <li>style=height"<br>
-                &bull;브라우저 크기 단위로 페이지 잡기 : 100vh, 100vw</li> <br>
-                
-                <li>style="font-family: ;"</li>
-                <li>style="font-size: ;"</li>
-                <li>style="font-weight: 100~900;" (폰트에서 지원해야 함)
-                    <p style="font-size: 80%;">100 : Thin = Hairline <br>
-                    200 : Extra Light = Ultra Light <br>
-                    300 : Light <br>
-                    <span style="color: blue;">400 : Normal = Regular</span> <br>
-                    500 : Medium <br>
-                    600 : Semi Bold = Demi Bold <br>
-                    <span style="color: blue;">700 : Bold <br>
-                    800 : Extra Bold = Ultra Bold</span> <br>
-                    900 : Black = heavy</p>
-                    </li> <br>            
-               
-                <li>style="display"</li>
-                    &bull;inline-block : block 속성을 inline 속성으로 바꿔줌 (자동으로 사이에 4px의 공백이 생김 : margin-left:-4px) <br><br>
-               
-                <li>style="text-decoration: none;"</li>
-                <li>style="letter-spacing"</li>
-                <li>style="list-style: ;"</li> <br>
-               
-                <li>style="backround-image: url()"</li>
-                <li>style="background-position: <수평위치><수직위치>;"</li>
-                <li>style="background-size" <br>
+            <!--LINK-->
+            <div class="content_box" id="ch2-2">             
+                <p class="title">LINK 요소</p> <br>  
+                <p>
+                    외부 스타일 시트에 연결하는 데 사용 : &lt;link rel="stylesheet" type="" href=""&gt; <br><br>
+                    미리 파일을 로드하는 경우 : &lt;link rel="preload" as="image" href=""&gt;
+                </p>
+            </div>
+
+             <!--STYLE-->
+             <div class="content_box" id="ch2-3">             
+                <p class="title">STYLE 요소</p> <br>  
+
+                <p>
+                    style="color: #헥사코드 or rgb(r,g,b) or rgba(r,g,b,α);" <br>
+                    style="background-color: ;" <br><br>
+
+                    stlye="width: ;" <br>
+                    style="height: ;" <br>
+                    style="line-height: ;" <br><br>
+                </p>
+
+                <p>
+                    @font-face {font-family: OOO; scr: url(  );} <br>
+                    style="font-family: ;" <br>
+                    style="font-size: ;" <br>
+                    style="font-weight: 100~900;" (폰트에서 지원해야 함) <br>
+                        <div style="line-height: 150%; font-size: 12px; padding-left: 10px; box-sizing: border-box;">
+                        100 : Thin = Hairline <br>
+                        200 : Extra Light = Ultra Light <br>
+                        300 : Light <br>
+                        <span style="color: blue;">400 : Normal = Regular</span> <br>
+                        500 : Medium <br>
+                        600 : Semi Bold = Demi Bold <br>
+                        <span style="color: blue;">700 : Bold <br>
+                        800 : Extra Bold = Ultra Bold</span> <br>
+                        900 : Black = heavy</div>
+                </p> <br>
+
+                <p>
+                    style="display: ;" <br>
+                    &bull;inline-block : block 속성을 inline 속성으로 바꿔줌 <br>
+                    (자동으로 사이에 4px의 공백이 생김 : margin-left:-4px) <br><br>
+
+                    style="text-decoration: none;" <br>
+                    style="letter-spacing: ;" <br>
+                    style="list-style: ;" <br><br>
+
+                    style="backround-image: url()" <br>
+                    style="background-position: <수평위치><수직위치>;" <br>
+                    style="background-size" <br>
                     &bull;auto : 이미지 크기 <br>
                     &bull;contain : 요소 안에 들어오도록 확대or축소 <br>
-                    &bull;cover : 요소를 이미지로 모두 덮도록 확대or축소</li> <br>
+                    &bull;cover : 요소를 이미지로 모두 덮도록 확대or축소 <br><br>
+                </p>
                
-                <li>style="margin: ;" : 바깥쪽 여백</li>
-                <li>style="padding: ;" : 안쪽 여백</li>
-                <li>style="border: ;" : 경계선</li>
+               <p>
+                    style="margin: ;" : 바깥쪽 여백 <br>
+                    style="padding: ;" : 안쪽 여백 <br>
+                    style="border: ;" : 경계선
                     <div style="margin-bottom: 20px;">
                         <div style="display: inline-block;background-color:black">
                             <div style="background-color: lightgreen;padding: 5px;">
@@ -137,151 +158,156 @@
                                 원본
                             </div>
                         </div>
-                    </div>
-            </ol>
+                    </div>            
+                </p>
+            </div>
 
-            <ol class="p2"> <p class="p3">웹 폰트</p>
-                웹사이트에 접속할 때 자동으로 사용자에게 다운로드 <br><br>
 
-                &lt;stlye&gt; <br>
-                @font-face {font-family: OOO; scr: url(  );} <br>
-                &lt;/stlye&gt;
-            </ol>
-        </ul>
+            
+
+
+        </div> <!--HEAD 끝-->
 
 
         <!--BODY-->
-        <ul> <p class="p1">&lt;BODY&gt;</p>
+        <div class="chapter_box" id="ch3">
 
-            <ol class="p2"> <p class="p3">서식 요소 : 특수한 유형의 텍스트를 표시</p>
-                <li>&lt;hr&gt; : 수평선(구분선)</li> <br>
-                <li>&lt;b&gt; <b>굵은 텍스트</b> vs &lt;strong&gt; <strong>중요한 텍스트</strong></li> <br>
-                <li>&lt;i&gt; <i>이탤릭체</i> vs &lt;em&gt; <em>강조된 텍스트</em></li> <br>
-                <li>&lt;mark&gt; <mark>표시된 텍스트</mark></li> <br>
-                <li>&lt;small&gt; <small>작은 텍스트</small></li> <br>
-                <li>&lt;del&gt; <Del>삭제된 텍스트</Del> &lt;ins&gt; <ins>삽입된 텍스트</ins></li> <br>
-                <li>&lt;sub&gt; <sub>아래 첨자</sub> &lt;sup&gt; <sup>위 첨자</sup></li>
-            </ol>
+            <p class="subject">BODY (Seamantic Markup)</p> <br>
 
-            <ol class="p2"> <p class="p3">목록 요소</p>
-                <li>&lt;ul&gt; : unorderd list - &lt;li&gt;</li>
-                <li>&lt;ol&gt; : orderd list - &lt;li&gt;</li>
-                <li>&lt;dl&gt; : 설명목록을 정의 - &lt;dt&gt; &lt;dd&gt;</li>
-            </ol>
-
-            <ol class="p2"> <p class="p3">그룹핑 요소</p>
-                <li>&lt;div&gt; : block 레벨</li>
-                <li>&lt;span&gt; : inline 레벨</li>
-            </ol>
-
-            <p>&lt;pre&gt; : 사전 형식화 된 텍스트를 정의</p>
-
-            <p>인용 요소 : &lt;q&gt; &lt;blockquote&gt;</p>
-
-            <p>약어 요소 : &lt;abbr title=""&gt; <abbr title="Hyper Text Markup Language">HTML</abbr>은 무엇의 약자일까요?</p>
-
-            <p>주소 요소 : &lt;address&gt;</p>
-
-            <p>작품 제목 요소 : &lt;cite&gt;-이탤릭체로 표시 &lt;del&gt; &lt;ins&gt;</p>
-
-          
-            
-            
-
-            
-            
-        </ul>
-
-
-        <!--inline, block-->
-        <ul> <p class="p1">블록 레벨 및 인라인 레벨</p>
-
-            <li>블록 레벨 요소 : 항상 새줄에서 시작하여 사용 가능한 전체 너비를 차지 <br>
-                &bull; 밑으로 / 떨어짐 / 꽉참 </li> <br>
-            <li>인라인 레벨 요소 : 새 줄에서 시작되지 안으며 필요한 만큼 폭 차지 <br>
-                &bull; 옆으로 / 붙음 / 필요한만큼</li> <br>
-
-            <!--블록-->
-            <div class="flex">
-            <ul class="p2 border_black" style="display: inline-block;"> <p class="p3">블록 레벨 요소</p>
+            <div class="content_box">             
+                <p class="title">서식 요소 : 특수한 유형의 텍스트를 표시</p> <br>  
                 <p>
-                    adress <br>
-                    article <br>
-                    aside <br>
-                    blockquote <br>
-                    canvas <br>
-                    dd <br>
-                    div <br>
-                    dl <br>
-                    dt <br>
-                    fieldset <br>
-                    figcaption <br>
-                    figure <br>
-                    footer <br>
-                    form <br>
-                    hl ~ h6 <br>
-                    header <br>
-                    hr <br>
-                    li <br>
-                    main <br>
-                    nav <br>
-                    noscript <br>
-                    ol <br>
-                    p <br>
-                    pre <br>
-                    section <br>
-                    table <br>
-                    tfoot <br>
-                    ul <br>
-                    video 
+                    &lt;hr&gt; : 수평선(구분선) <br><br>
+                    &lt;b&gt; <b>굵은 텍스트</b> vs &lt;strong&gt; <strong>중요한 텍스트</strong> <br><br>
+                    &lt;i&gt; <i>이탤릭체</i> vs &lt;em&gt; <em>강조된 텍스트</em> <br><br>
+                    &lt;mark&gt; <mark>표시된 텍스트</mark> <br><br>
+                    &lt;small&gt; <small>작은 텍스트</small> <br><br>
+                    &lt;del&gt; <Del>삭제된 텍스트</Del> &lt;ins&gt; <ins>삽입된 텍스트</ins> <br><br>
+                    &lt;sub&gt; <sub>아래 첨자</sub> &lt;sup&gt; <sup>위 첨자</sup>
                 </p>
-            </ul>
-
-            <!--인라인-->
-            <ul class="p2 border_black" style="display: inline-block;"> <p class="p3">인라인 레벨 요소</p>
-                <p>
-                    a <br>
-                    abb <br>
-                    acronym <br>
-                    b <br>
-                    bdo <br>
-                    big <br>
-                    br <br>
-                    button <br>
-                    cite <br>
-                    code <br>
-                    dfn <br>
-                    em <br>
-                    i <br>
-                    img <br>
-                    input <br>
-                    kbd <br>
-                    label <br>
-                    map <br>
-                    object <br>
-                    output <br>
-                    q <br>
-                    samp <br>
-                    script <br>
-                    select <br>
-                    small <br>
-                    span <br>
-                    strong <br>
-                    sub <br>
-                    sup <br>
-                    textarea <br>
-                    time <br>
-                    tt <br>
-                    var
-                </p>
-            </ul>
             </div>
 
-        </ul>
+            <div class="content_box">             
+                <p class="title">목록 요소</p> <br>  
+                <p>
+                    &lt;ul&gt; : unorderd list - &lt;li&gt; <br><br>
+                    &lt;ol&gt; : orderd list - &lt;li&gt; <br><br>
+                    &lt;dl&gt; : 설명목록을 정의 - &lt;dt&gt; &lt;dd&gt;
+                </p>
+            </div>
+       
+            <div class="content_box">             
+                <p class="title">그룹핑 요소</p> <br>  
+                <p>
+                    &lt;div&gt; : block 레벨 <br><br>
+                    &lt;span&gt; : inline 레벨 
+                </p>
+            </div>
+
+            <p style="padding-left: 10px; box-sizing: border-box;">
+                &lt;pre&gt; : 사전 형식화 된 텍스트를 정의 <br><br>
+                인용 요소 : &lt;q&gt; &lt;blockquote&gt; <br><br>
+                약어 요소 : &lt;abbr title=""&gt; <abbr title="Hyper Text Markup Language">HTML</abbr>은 무엇의 약자일까요? <br><br>
+                주소 요소 : &lt;address&gt; <br><br>
+                작품 제목 요소 : &lt;cite&gt;-이탤릭체로 표시 &lt;del&gt; &lt;ins&gt;
+            </p>
+
+        </div>
 
 
+        <!--inline vs block-->
+        <div class="chapter_box" id="ch4">
 
-    </body>
+            <p class="subject">블록 레벨 및 인라인 레벨</p> <br>
+
+            <p>
+                블록 레벨 요소 : 항상 새줄에서 시작하여 사용 가능한 전체 너비를 차지 <br>
+                &bull; 밑으로 / 떨어짐 / 꽉참 <br><br>
+
+                인라인 레벨 요소 : 새 줄에서 시작되지 안으며 필요한 만큼 폭 차지 <br>
+                &bull; 옆으로 / 붙음 / 필요한만큼
+            </p> <br>
+
+            <div class="content_box">             
+                
+                <div style="display: flex;">
+                    <p style="border-right: 1px solid black; padding-right: 10px; box-sizing: border-box;">
+                        블록 레벨 요소 <br><br>
+                        adress <br>
+                        article <br>
+                        aside <br>
+                        blockquote <br>
+                        canvas <br>
+                        dd <br>
+                        div <br>
+                        dl <br>
+                        dt <br>
+                        fieldset <br>
+                        figcaption <br>
+                        figure <br>
+                        footer <br>
+                        form <br>
+                        hl ~ h6 <br>
+                        header <br>
+                        hr <br>
+                        li <br>
+                        main <br>
+                        nav <br>
+                        noscript <br>
+                        ol <br>
+                        p <br>
+                        pre <br>
+                        section <br>
+                        table <br>
+                        tfoot <br>
+                        ul <br>
+                        video 
+                    </p>
+            
+                    <p style="padding-left: 10px; box-sizing: border-box;">
+                        인라인 레벨 요소 <br><br>
+                        a <br>
+                        abb <br>
+                        acronym <br>
+                        b <br>
+                        bdo <br>
+                        big <br>
+                        br <br>
+                        button <br>
+                        cite <br>
+                        code <br>
+                        dfn <br>
+                        em <br>
+                        i <br>
+                        img <br>
+                        input <br>
+                        kbd <br>
+                        label <br>
+                        map <br>
+                        object <br>
+                        output <br>
+                        q <br>
+                        samp <br>
+                        script <br>
+                        select <br>
+                        small <br>
+                        span <br>
+                        strong <br>
+                        sub <br>
+                        sup <br>
+                        textarea <br>
+                        time <br>
+                        tt <br>
+                        var
+                    </p>                                            
+                </div>
+
+            </div>
+
+        </div>
+
+
+    <!--body 끝--> </body>
 
 
 </html>

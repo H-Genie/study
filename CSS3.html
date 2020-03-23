@@ -3,15 +3,18 @@
 <html lang="ko">
 
     <head>
+
         <title>CSS3</title>
 
         <meta charset="UTF-8">
         <meta name="author" content="H-Genie">
+        <meta name="description" content=" ">
+        <meta name="keywords" content=" ">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 
-        <link rel="stylesheet" type="text/css" href="css/style.css">
-        <link rel="icon" href="img/CSS3.png" sizes="64x64">
-
+       <link rel="stylesheet" type="text/css" href="css/style.css">
+       <link rel="icon" href="img/CSS3.png" sizes="16x16">
+      
     </head>
 
 
@@ -19,71 +22,84 @@
     <body>
 
         <!--스타일 표현 방법-->
-        <ul> <p class="p1">HTML 스타일 표현 방법</p>
+        <div class="chapter_box" id="ch1-1" style="margin-top: 0;">
 
-            <li>1. 속성없이 태그만으로 표현</li> <br>
-            <li>2. Inline Style Sheet : 태그안에 CSS 코딩</li> <br>
-            <li>3. Internal Style Sheet : head 부분에  stlye을 따로 코딩</li> <br>
-            <li>4. class & ID (해당 문서에만 적용됨) <br>
-                &bull;class : 특수한 유형의 요소에 대한 스타일 정의<br>
-                &bull;ID : 하나의 특수 요소에 특정 스타일을 정의 <br>
-                </li> <br>
-            <li>5. Linking Style Sheet : style 파일을 따로 저장하고 불러오기 (여러개의 문서에 적용 가능)</li>
+            <p class="subject">HTML 표현 방법</p> <br>
 
-        </ul>
+            <p>
+                1. 속성없이 태그만으로 표현 <br><br>
+                2. Inline Style Sheet : 태그안에 CSS 코딩 <br><br>
+                3. Internal Style Sheet : head 부분에  stlye을 따로 코딩 <br><br>
+                4. class & ID (해당 문서에만 적용됨) <br>
+                    &bull;class : 특수한 유형의 요소에 대한 스타일 정의<br>
+                    &bull;ID : 하나의 특수 요소에 특정 스타일을 정의 <br><br>                     
+                5. Linking Style Sheet : style 파일을 따로 저장하고 불러오기 (여러개의 문서에 적용 가능)
+            </p>
+
+        </div>
 
 
         <!--CSS 적용 우선순위-->
-        <ul> <p class="p1">CSS 적용 우선순위</p>
+        <div class="chapter_box" id="ch1-2">
 
-            <li>1. !important (문법 체계를 어지럽히는 명령이므로 긴급상황 아니면 쓰지 말 것)</li> <br>
-            <li>2. inline 선언 스타일 속성</li> <br>
-            <li>3. 직접 선택해서 선언한 속성 (class name) => 구체적 선언이 우선 <br>
-            ex) 자손 선택 > 자신</li> <br>
-            <li>4. 하향 우선 속성 (중복된 경우)</li> <br>
-            <li>5. 부모에게 상속된 속성</li> <br>
-            <li>6. 브라우저 기본 스타일</li> <br>
+            <p class="subject">CSS 적용 우선순위</p> <br>
 
-            * 주기적으로 교체되는 부분은 따로 빼는 것이 나음 (우선선택자로 쓰지 말 것)
+            <p>
+                1. !important (문법 체계를 어지럽히는 명령이므로 긴급상황 아니면 쓰지 말 것) <br><br>
+                2. inline 선언 스타일 속성 <br><br>
+                3. 직접 선택해서 선언한 속성 (class name) => 구체적 선언이 우선 <br><br>
+                ex) 자손 선택 > 자신 <br><br>
+                4. 하향 우선 속성 (중복된 경우) <br><br>
+                5. 부모에게 상속된 속성 <br><br>
+                6. 브라우저 기본 스타일 <br><br>
+                * 주기적으로 교체되는 부분은 따로 빼는 것이 나음 (우선선택자로 쓰지 말 것)
+            </p> <br>
 
-            <ol class="p2"> <p class="p3">우선순위 연습</p>
+            <div class="content_box">             
+                <p class="title">우선순위 연습</p> <br>  
+                <p style="font-family: SCDream2;">
+                    &lt;stlye&gt; <br>
+                    #black {color: green;} <br>
+                    .my-box .text {color: black;} <br>
+                    .black {color: red;} <br>
+                    .my-box .black {color: yellow;} <br>
+                    .black {color: blue;} <br>
+                    .good-black {color: red !important} <br>
+                    .good-black {color: green} <br>
+                    &lt;/style&gt; <br><br>
+                    
+                    &lt;body&gt; <br>
+                    &lt;div class="my-box"&gt; <br>
+                    &lt;div class="text"&gt; My Text 1 &lt;/div&gt; <br>
+                    &lt;div class="black"&gt; My Text 2 &lt;/div&gt; <br>
+                    &lt;div id="black"&gt; My Text3 &lt;/div&gt; <br>
+                    &lt;div class="good-black" style="color: orange;"&gt; My Text 4 &lt;/div&gt; <br>
+                    &lt;/div&gt; <br>
+                    &lt;/body&gt; <br><br>
+
+                    <div class="my-box">
+                        <div class="text">My Text 1</div>
+                        <div class="black">My Text 2</div>
+                        <div id="black">My text 3</div>
+                        <div class="good-black" style="color: orange;">My Text 4</div>
+                    </div>
+                </p>
+            </div>
+
+        </div>
     
-                &lt;stlye&gt; <br>
-                 #black {color: green;} <br>
-                 .my-box .text {color: black;} <br>
-                 .black {color: red;} <br>
-                 .my-box .black {color: yellow;} <br>
-                 .black {color: blue;} <br>
-                 .good-black {color: red !important} <br>
-                 .good-black {color: green} <br>
-                &lt;/style&gt; <br><br>
-                
-                &lt;body&gt; <br>
-                 &lt;div class="my-box"&gt; <br>
-                  &lt;div class="text"&gt; My Text 1 &lt;/div&gt; <br>
-                  &lt;div class="black"&gt; My Text 2 &lt;/div&gt; <br>
-                  &lt;div id="black"&gt; My Text3 &lt;/div&gt; <br>
-                  &lt;div class="good-black" style="color: orange;"&gt; My Text 4 &lt;/div&gt; <br>
-                 &lt;/div&gt; <br>
-                &lt;/body&gt; <br><br>
-
-                <div class="my-box">
-                    <div class="text">My Text 1</div>
-                    <div class="black">My Text 2</div>
-                    <div id="black">My text 3</div>
-                    <div class="good-black" style="color: orange;">My Text 4</div>
-                </div>
-                  
-            </ol>
-        </ul>
 
 
         <!--상속/비상속-->
-        <ul> <p class="p1">상속/비상속</p>
-          
-            <div class="flex">
-            <ol class="p2 ib border_black"> <p class="p3">상속</p>
-                <p>
+        <div class="chapter_box" id="ch1-3">
+
+            <p class="subject">상속/비상속</p> <br>
+
+            <div class="content_box">
+
+                <div style="display: flex;">
+                    <p style="border-right: 1px solid black; padding-right: 10px; box-sizing: border-box;">
+                    상속 <br><br>
                     color <br>
                     cursor <br>
                     font-family <br>
@@ -100,11 +116,10 @@
                     border-collapse (테이블 보더 병합) <br>
                     border-spacing <br>
                     caption-side (테이블 제목 위치) <br>
-                </p>
-            </ol>
-
-            <ol class="p2 ib border_black"> <p class="p3">비상속</p>
-                <p>
+                    </p>
+            
+                    <p style="padding-left: 10px; box-sizing: border-box;">
+                    인라인 레벨 요소 <br><br>
                     background <br>
                     width <br>
                     height <br>
@@ -118,119 +133,136 @@
                     overflow (내용넘침 설정) <br>
                     vertical-align <br>
                     z-index (보이는 순서) 
-                </p>
-            </ol>
+                    </p>                                            
+                </div>
+
             </div>
-        </ul>
+
+        </div>
 
 
         <!--박스 모델-->
-        <ul> <p class="p1">CSS 상자 모델 (Box Model)</p>
-            
+        <div class="chapter_box" id="ch2-1">
+
+            <p class="subject">CSS Box Model</p> <br>
+
             <p>
-            모든 HTML 요소는 상자로 간주될 수 있음 <br>
-            디자인과 레이아웃의 용어로, 모든 HTML 요소를 둘러싸는 상자 <br><br>
+                모든 HTML 요소는 상자로 간주될 수 있음 <br>
+                디자인과 레이아웃의 용어로, 모든 HTML 요소를 둘러싸는 상자 <br><br>
 
-            마진, 보딩, 패딩 및 실제 내용으로 구성 <br>
-            요소 주위에 테두리를 추가하고 요소 사이의 공간을 정의 <br><br>
+                마진, 보딩, 패딩 및 실제 내용으로 구성 <br>
+                요소 주위에 테두리를 추가하고 요소 사이의 공간을 정의 <br><br>
 
-            &bull;내용 : 텍스트와 이미지가 나타내는 상자의 내용 <br>
-            &bull;패딩 : 컨텐츠 주변의 영역을 지움 (투명함) <br>
-            &bull;보딩 : 패딩 및 내용을 둘러싼 테두리 <br>
-            &bull;마진 : 테두리 외부의 영역을 지움 (투명함) / 음수값이 가능함<br>
+                &bull;내용 : 텍스트와 이미지가 나타내는 상자의 내용 <br>
+                &bull;패딩 : 컨텐츠 주변의 영역을 지움 (투명함) <br>
+                &bull;보딩 : 패딩 및 내용을 둘러싼 테두리 <br>
+                &bull;마진 : 테두리 외부의 영역을 지움 (투명함) / 음수값이 가능함<br>                              
             </p>
 
-            <img src="http://espezua.github.io/blog/imgs/boxmodel.png" style="max-width: 100%; border: 1px  solid black;"> <br>
-            
-            <p>             
-                * 테두리(<a href="http://webberstudy.com/html-css/css-1/border/" target="_blank">참고</a>) 
-                : style="border: 두께 종류 색상;"  {border: width style color} <br> 
-                - dotted : 짧은 점섬 테두리 <br>
-                - dashed : 긴 점선 테두리 <br>
-                - solid : 실선 테두리 <br>
-                - double : 이중 테두리 <br>
-                - groove : 3D 그루브 테두리 (*3D 효과는 테두리 색상값에 따름)<br>
-                - ridge : 3D 능선 테두리 <br>
-                - inset : 3D 삽입 테두리 <br>
-                - outset : 3D 시작경계 테두리 <br>
-                - none : 경계 없음 <br>
-                - hidden : 숨겨진 테두리 <br><br>
+            <img src="http://espezua.github.io/blog/imgs/boxmodel.png" class="content_img"> <br>
 
-                * 둥근 테두리 : style="border-radius: 5px;"
-                <span style="border-radius: 10px; background-color: skyblue; width: fit-content;">둥근 테두리</span>
-            </p>
+            <div class="content_box">
+                <p class="title">레이아웃 설계시 고려해야 할 것</p> <br>
+                <p>
+                    ⓵ contents의 크기 <br>
+                    ⓶ display 속성 <br>
+                    ⓷ position          
+               </p>
+            </div>
 
-            <ol class="p2"> <p class="p3">레이아웃 설계시 고려해야 할 것</p>
-                ⓵ contents의 크기 <br>
-                ⓶ display 속성 <br>
-                ⓷ position
-            </ol>
-
-        </ul>
+        </div>
 
 
-        <!--패딩 및 마진>-->
-        <ul> <p class="p1">CSS 패딩 및 마진</p>
-            <p>
-                내용 + padding + border까지가 하나의 속성 <br><br>
-                width, height는 padding 값 포함 안됨 <br><br>
-                margin : 서로 중복될 때 큰 값으로 수렴 <br><br>
-                line-height : 내용과 패딩의 값이 모두 포함된 높이 <br><br>   
+        <!--테두리 및 여백-->
+        <div class="chapter_box" id="ch2-2">
 
-                inline-box에는 padding, margin 적용안됨 <br>
-                → line-height로 조절해야 함 (단, 왼쪽의 padding, margin은 가능함) <br><br>
+            <p class="subject">테두리 및 여백</p> <br>
 
-                img는 상하좌우 padding, margin 가능 <br><br>
-                
-                
-                시계방향으로 : top → right → bottom → left  {padding: top right bottom left;} <br>
+            <div class="content_box">
+                <p class="title">테두리</p> <br>
+                <p>          
+                    * 테두리(<a href="http://webberstudy.com/html-css/css-1/border/" target="_blank">참고</a>) 
+                    : style="border: 두께 종류 색상;"  {border: width style color} <br> 
+                    - dotted : 짧은 점섬 테두리 <br>
+                    - dashed : 긴 점선 테두리 <br>
+                    - solid : 실선 테두리 <br>
+                    - double : 이중 테두리 <br>
+                    - groove : 3D 그루브 테두리 (*3D 효과는 테두리 색상값에 따름)<br>
+                    - ridge : 3D 능선 테두리 <br>
+                    - inset : 3D 삽입 테두리 <br>
+                    - outset : 3D 시작경계 테두리 <br>
+                    - none : 경계 없음 <br>
+                    - hidden : 숨겨진 테두리 <br><br>
 
-                &bull;{margin: 10px;} : 네방향 모두 <br>
-                &bull;{margin: 10px; 0} : 위, 아래 <br>
-                &bull;{margin: 0 10px : 양쪽 <br>
-                &bull;{margin: 10px 20px;} : 위,아래 - 오른쪽,왼쪽 <br>
-                &bull;{border: 10px 15px 20px;} : 위 - 오른쪽,왼쪽 - 아래
-
+                    * 둥근 테두리 : style="border-radius: 7px;"
+                    <span style="border-radius: 7px; background-color: skyblue; width: fit-content;">둥근 테두리</span> <br><br>
+                    
+                    * 속기 방법 <br>
+                    시계방향으로 : top → right → bottom → left  {padding: top right bottom left;} <br>
+    
+                    &bull;{padding: 10px;} : 네방향 모두 <br>
+                    &bull;{padding: 10px; 0} : 위, 아래 <br>
+                    &bull;{padding: 0 10px : 양쪽 <br>
+                    &bull;{padding: 10px 20px;} : 위,아래 - 오른쪽,왼쪽 <br>
+                    &bull;{padding: 10px 15px 20px;} : 위 - 오른쪽,왼쪽 - 아래 
+                </p> <br>
                 <div style="border: 1px solid black; width: fit-content;">
-                    <p class="ib" style="text-align: center; width: fit-content; background-color: orange;">원본</p>
-                    <p class="ib" style="text-align: center; width: fit-content; background-color: orange; padding: 10px;">10</p>
-                    <p class="ib" style="text-align: center; width: fit-content; background-color: orange; padding: 10px 0;">10</p>
-                    <p class="ib" style="text-align: center; width: fit-content; background-color: orange; padding: 0 10px;">10</p>
-                    <p class="ib" style="text-align: center; width: fit-content; background-color: orange; padding: 10px 20px;">10 20</p>
-                    <p class="ib" style="text-align: center; width: fit-content; background-color: orange; padding: 10px 15px 20px;">10 15 20</p> <br>
+                    <p style="text-align: center; width: fit-content; background-color: skyblue; display: inline-block;">원본</p>
+                    <p style="text-align: center; width: fit-content; background-color: orange; padding: 10px; display: inline-block;">10</p>
+                    <p style="text-align: center; width: fit-content; background-color: orange; padding: 10px 0; display: inline-block;">10</p>
+                    <p style="text-align: center; width: fit-content; background-color: orange; padding: 0 10px; display: inline-block;">10</p>
+                    <p style="text-align: center; width: fit-content; background-color: orange; padding: 10px 20px; display: inline-block;">10 20</p>
+                    <p style="text-align: center; width: fit-content; background-color: orange; padding: 10px 15px 20px; display: inline-block;">10 15 20</p> <br>
                 </div> <br>
+            </div>
 
-                * 응용 : width값 줘야함<br>
-                - 가운데 정렬 : {margin: 0 auto;} <br>
-                - 오른쪽 정렬 : {margin-left: auto} <br><br>
-
-                box-sizing : 컨텐츠에 추가로 padding 값을 주면 원래 크기보다 늘어남 <Br>
-                &bull;content-box : 기본값 <Br>
-                &bull;border-box : 추가로 padding을 주더라도 전체 박스 크기는 늘어나지 않음
-
-                <div style="width: 50vw; height: 50vh; background-color: green;
+            <div class="content_box">
+                <p class="title">여백 (패딩 및 마진)</p> <br>
+                <p>               
+                    내용 + padding + border까지가 하나의 속성 <br><br>
+                    width, height는 padding 값 포함 안됨 <br><br>
+                    margin : 서로 중복될 때 큰 값으로 수렴 <br><br>
+                    line-height : 내용과 패딩의 값이 모두 포함된 높이 <br><br>   
+    
+                    inline-box에는 padding, margin 적용안됨 <br>
+                    → line-height로 조절해야 함 (단, 왼쪽의 padding, margin은 가능함) <br><br>
+    
+                    img는 상하좌우 padding, margin 가능 <br><br>     
+                    
+                    * 응용 : width값 줘야함<br>
+                    - 가운데 정렬 : {margin: 0 auto;} <br>
+                    - 오른쪽 정렬 : {margin-left: auto} <br><br>
+                </p>
+                <p>
+                    box-sizing : 컨텐츠에 추가로 padding 값을 주면 원래 크기보다 늘어남 <Br>
+                    &bull;content-box : 기본값 <Br>
+                    &bull;border-box : 추가로 padding을 주더라도 전체 박스 크기는 늘어나지 않음                    
+                </p>
+                <div style="width: 50%; height: 50%; background-color: green;
                 display: flex; 
                 ">
             
-                    <div style="width: 15vw; height: 20vh; background-color: red; 
+                    <div style="width: 50px; height: 50px; background-color: red; 
                     color: white;
-                    padding-top: 60px; box-sizing: border-box;
-                    border: 20px solid black">border-box</div>
+                    padding: 20px; box-sizing: border-box;
+                    border: 2px solid black">border-box</div>
             
-                    <div style="width: 15vw; height: 20vh; background-color: blue; 
+                    <div style="width: 50px; height: 50px; background-color: blue; 
                     color: white;
-                    padding-left: 60px;
-                    border: 20px solid black;">content-box</div>
+                    padding: 10px; box-sizing: content-box;
+                    border: 2px solid black;">content-box</div>
             
                 </div>
+            </div>
+            
+        </div>
 
-            </p>
-        </ul>
 
+        <!--배경-->
+        <div class="chapter_box" id="ch2-3">
 
-        <!--CSS Background-->
-        <ul> <p class="p1">CSS Background</p>
-            <p>
+            <p class="subject">CSS Background</p> <br>
+            <p>      
                 background-color <br>
                 backgorund-image : url( ) <br>
                 background-repeat : no-repeat, repeat-x, repeat-y <br>
@@ -238,22 +270,24 @@
                 background-position : 수평위치 수직위치 <br><br>
 
                 <a href="http://cssgradient.io" target="_black">그라디언트 : cssgradient.io</a><br>
-                backround-image : liner-gradient(각도 / 시작rgba / 종료rgba) <br>
+                backround-image : liner-gradient(각도, 시작rgba 위치값, 종료rgba 위치값) <br>
                 <div style="background: rgb(255,255,255);
-                background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(0,0,0,1) 100%); width: 50vw; height: 50px;"></div>
+                background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(0,0,0,1) 100%); width: 50%; height: 50px;"></div>
             </p>
-        </ul>
+
+        </div>
 
 
-        <!--CSS Flex Box Layout-->
-        <ul> <p class="p1">CSS Flex Box Layout</p>
+        <!--Flex Box-->
+        <div class="chapter_box" id="ch3-1">
+
+            <p class="subject">CSS Flex Box</p> <br>
 
             <a href="https://codepen.io/jaehee/full/zyZyWZ" target="_blank">Flexbox 인터랙티브 플레이그라운드</a> <br><br>
 
-            <img src="https://d2.naver.com/content/images/2018/12/helloworld-201811-flex_01.png" style="max-width: 100%; border: 1px solid black;">
+            <img src="https://d2.naver.com/content/images/2018/12/helloworld-201811-flex_01.png" class="content_img">
 
             <p>
-
                 플렉스 박스를 원하는 위치에 배치하는 것 <br>
                 여유 공간에 따라 너비, 높이, 위치를 자유롭게 변형할 수 있음 <br><br>
                 
@@ -261,18 +295,23 @@
                 &bull;flex item (플렉스 항목) : 플렉스 컨테이너에 담기는 웹 요소 <br>
                 &bull;main axis(주축) : 플렉스 컨테이너 안에서 플렉스 항목을 배치하는 기본 방향 / 기본적으로 왼쪽에서 오른쪽으로 수평방향 <br>
                 &bull;cross axis (교차축) : 주축과 교차되는 방향 / 기본적으로 위에서 아래로 배치
+            </p> <br>
 
-                <ol class="p2"> <p class="p3">플렉스 방향 지정하기</p>
+            <div class="content_box">
+                <p class="title">플렉스 방향 지정하기</p> <br>
+                <p>
                     flex-direction : 플렉스 항목을 배치할 방향을 지정 <br>
                     &bull;row : 주축을 가로로 교차축을 세로로 지정.플렉스 항목을 주축 시작점에서 끝점으로(왼쪽에서 오른쪽으로) <br>
-                    &bull;column : 주축을 세로로 교차축을 가로로 지정. 플렉스 항목은 주축 시작점에서 끝점으로 (왼쪽에서 아래쪽으로) <br><br>
-                    
-                    <img src="http://blog.teamtreehouse.com/wp-content/uploads/2012/12/flexbox-flex-direction.png" style="max-width: 100%; border: 1px solid black;">
-                </ol> <Br><br>
-                
-                
-                [항목 배치를 위한 속성들]
-                <ol class="p2"> <p class="p3">justify-content</p>
+                    &bull;column : 주축을 세로로 교차축을 가로로 지정. 플렉스 항목은 주축 시작점에서 끝점으로 (왼쪽에서 아래쪽으로) <br><br>                   
+                 </p>
+                <img src="http://blog.teamtreehouse.com/wp-content/uploads/2012/12/flexbox-flex-direction.png" class="content_img">
+            </div> <br>
+
+            <p style="font-family: SCDream9;">[항목 배치를 위한 속성들]</p> <br>
+
+            <div class="content_box">
+                <p class="title">justify-content</p> <br>
+                <p>
                     플렉스 항목을 주축방향으로 배치할 때의 기준 <br><br>
                     
                     &bull;flex-start : 주축을 시작점을 기준으로 배치 <br>
@@ -281,10 +320,13 @@
                     &bull;space-between : 첫번째 플렉스 항목과 마지막 플렉스 항목을 시작점과 끝점으로 배치한 후 중앙 항목들을 같은 간격으로 배치 <br>
                     &bull;space-around : 모든 플렉스 항목들을 같은 간격으로 배치 <br><br>
                     
-                    <img src="http://blog.teamtreehouse.com/wp-content/uploads/2012/12/flexbox-justify.png" style="max-width: 100%; border: 1px solid black;">
-                </ol>
+                    <img src="http://blog.teamtreehouse.com/wp-content/uploads/2012/12/flexbox-justify.png" class="content_img"">
+                </p>
+            </div>
 
-                <ol class="p2"> <p class="p3">align-items</p>
+            <div class="content_box">
+                <p class="title">align-items</p> <br>
+                <p>
                     플렉스 항목을 교차축 기준으로 배치할 때의 기준 <br>
                     (여러 줄로 배치될 때의 배치 방법) <br><br>
 
@@ -293,23 +335,22 @@
                     &bull;flex-end : 교차축의 끝점을 기준으로 배치 <br>
                     &bull;center : 교차축의 중앙을 기준으로 배치 <br>
                     &bull;baseline : 시작점과 글자 기준선이 가장 먼 플렉스 항목을 시자점에 배치하고, 그 글자의 기준선과 다른 항목의 기준선을 맞추어 배치 <br><br>
+                </p>
 
-                    <img src="http://w3.unpocodetodo.info/css3/images/flex-align-items.gif" style="max-width: 100%; border: 1px solid black;">
-                </ol>
-
-
-
-            </p>
-
-
-        </ul>
+                <img src="http://w3.unpocodetodo.info/css3/images/flex-align-items.gif" class="content_img">
+            </div>
+            
+        </div>
 
 
-        <!--CSS 포지션-->
-        <ul> <p class="p1">CSS Position</p>
+        <!--포지션-->
+        <div class="chapter_box" id="ch3-2">
+
+            <p class="subject">CSS Position</p> <br>
+
+            <a href="http://kukie.net/what-is-div-how-to-use/" target="_blank">참고</a> <br><br>
+
             <p>
-                <a href="http://kukie.net/what-is-div-how-to-use/" target="_blank">참고</a> <br><br>
-
                 &bull;static <br>
                 CSS로 특별한 값을 지정해 주지 않아도 적용되는 기본값이다. <br>
                 HTML 파일에서 중첩되지 않은 여러개의 div를 작성하면, 위에서 부터 차곡 차곡 쌓이는 기본적인 형태이다. <br><br>
@@ -326,45 +367,51 @@
                 &bull; 아무것도 없으면 body, 2개 이상이면 가까운 것이 부모가 됨
             </p>
 
-            <img src="https://s3.amazonaws.com/viking_education/web_development/web_app_eng/css_positioning_absolute_relative_fixed.png" 
-                style="max-width: 100%;border: 1px solid black; width: fit-content;"> <br><br>
-
-            margin, padding은 static에 값을 주는 것 <br><br>
-
-            음수 값도 됨 ☞ Javascript 애니메이션 응용 <br><br>
-
-            &bull; 100%의 차이 <br>
-            % : 스크롤을 제외한 안쪽 부분만을 100%로 인식 <br>
-            100vh, vw : 스크롤까지 포함해 100%로 인식 <br><br>
-
-            <ol class="p2"> <p class="p3">응용 : 중앙정렬 고정 (fixed: left;)</p>              
-                ⓵ 절반 값 직접입력 (display 절반 - (width÷2)) <br>
-                ⓶ 50% : 정확하지 않음 <br>
-                ⓷ calc(50% - 이미지 px의 절반) <br>
-                &bull;()앞에는 붙여써야 하고, - 기호 앞뒤로는 띄어써야 함
-            </ol>
+            <img src="https://s3.amazonaws.com/viking_education/web_development/web_app_eng/css_positioning_absolute_relative_fixed.png" class="content_img" style="width: 300px; height: 300px;"> <br><br>
             
-        </ul>
-        
-
-        <!--포지션 상대높이-->
-        <ul> <p class="p1">Position 상대 높이</p>
-
-            <strong>normal flow → float → posotion → z-index</strong> <br><br>
-
-            position 값을 주면 동급이 되므로, z-index로 조절해야 함 <br>
-            (z-index를 주지 않으면, 나중ㅈ에 만든게 위에 위치 함) <br><br>
-
-            <img src="https://codropspz-tympanus.netdna-ssl.com/codrops/wp-content/uploads/2014/10/new-stacking-order.png" 
-            style="max-width: 100%; border: 1px solid black;">
-
-        </ul>
-            
-
-        <!--CSS overflow-->
-        <ul> <p class="p1">CSS Overflow</p>
             <p>
+                margin, padding은 static에 값을 주는 것 <br><br>
 
+                음수 값도 됨 ☞ Javascript 애니메이션 응용 <br><br>
+
+                &bull; viewport와 %의 차이 <br>
+                % : 스크롤을 제외한 안쪽 부분만을 100%로 인식 <br>
+                100vh, vw : 스크롤까지 포함해 100%로 인식 <br><br>
+            </p>
+
+            <div class="content_box">
+                <p class="title">응용 : 중앙정렬 고정 (fixed: left;)</p> <br>
+                <p>
+                    ⓵ 절반 값 직접입력 (display 절반 - (width÷2)) <br>
+                    ⓶ 50% : 정확하지 않음 <br>
+                    ⓷ calc(50% - 이미지 px의 절반) <br>
+                    &bull;()앞에는 붙여써야 하고, - 기호 앞뒤로는 띄어써야 함
+                </p>
+            </div>
+            
+        </div>
+
+
+        <!--상대 높이-->
+        <div class="chapter_box" id="ch3-3">
+
+            <p class="subject">상대 높이</p> <br>
+            <p>
+                <b>normal flow → float → posotion → z-index</b> <br><br>
+                position 값을 주면 동급이 되므로, z-index로 조절해야 함 <br>
+                (z-index를 주지 않으면, 나중에 만든게 위에 위치 함) <br><br>
+            </p>
+
+            <img src="https://codropspz-tympanus.netdna-ssl.com/codrops/wp-content/uploads/2014/10/new-stacking-order.png" class="content_img">
+            
+        </div>
+
+
+        <!--Overflow-->
+        <div class="chapter_box" id="ch4-1">
+
+            <p class="subject">CSS Overflow</p> <br>
+            <p>
                 요소의 내용이 너무 커서 지정된 영역게 맞지 않을 때 내용을 자를 것인지 스크롤 막대를 추가할 것인지 지정 <br>
                 &bull;visible : 기본값 / 오버플로우가 잘리지 않음 <br>
                 &bull;hidden : 오버플로우가 잘리고 나머지 내용은 보이지 않음 <br>
@@ -414,33 +461,53 @@
                 </div>
 
             </div>
+          
+        </div>
 
-        </ul>
 
+        <!--Selector-->
+        <div class="chapter_box" id="ch4-2" style="margin-top: 50px;">
 
-        <!--CSS 선택자-->
-        <ul> <p class="p1" style="margin-top: 70px;">CSS 선택자</p>
-            요소 선택자 : p<br>
-            ID 선택자 : #<br>
-            CLASS 선택자 : .<br>
-            그룹 선택자 : h1, h2, h3, p<br><br>
+            <p class="subject">CSS Selector</p> <br>
+            <p>
+                요소 선택자 : p<br>
+                ID 선택자 : # (특정 요소에만 해당)<br>
+                CLASS 선택자 : . <br>
+                그룹 선택자 : h1, h2, h3, p (동일한 스타일 정의를 가진 모든 요소)<br><br>
+                
+                자손의 선택 : <span><b>한칸 띄어서</b></span> 옆에 자손 요소의 이름을 사용하여 <span><b>하위에 있는 전체</b></span> 자손 요소를 선택 <br>
+                ex) home_wrap div <br><br>
+
+                자손의 선택 : 자신의 이름 옆에 .과 자손 요소의 이름을 사용해 요소 선택 <br>
+                ex) home_wrap .div <br><br>
+
+                직계자식들만 선택 : 자신의 이름 옆에<span><b>&gt;</b></span>를 써서 <span><b>직계자손 요소만</b></span> 선택 <br>
+                ex) home_wrap > div <br><br>
+
+                직계 자손들 중에서 일부만 선택 : 요소 옆에 <span><b>nth-child(숫자)</b></span>를 적어 <span><b>특정 자손만</b></span> 선택<br>
+                ex) home_wrap p:nth-child(숫자) <br>
+                nth-last-child(숫자) : 뒤에서 몇번째 요소 <br>
+                nth-child(odd) : 홀수번째만 선택 <br>
+                nth-child(even) : 짝수번째만 선택 <br><br>
+
+                순서 요소만 선택하는 것이 아니라, 상태와 반응에 따라 선택할 수도 있음 <br>
+                a:link : 링크 기본 상태 <br>
+                a:visited : 방문한 링크 <br>
+                a:hover : 마우스 오버할 때 <br>
+                a:active : 클릭하는 순간
+            </p> <br>
+
+            <div class="selector_test">                
+                <div>hover</div>
+                <div>active</div>
+            </div> <br>
+
+        </div>
             
-            자손 선택자 : <span><b>한칸 띄어서</b></span> 옆에 자손 요소의 이름을 사용하여 <span><b>하위에 있는 전체</b></span> 자손 요소를 선택 <br>
-            ex) home_wrap div <br><br>
+        
+    <!--body 끝--> </body>
 
-            자손의 선택 : 자신의 이름 옆에 .과 자손 요소의 이름을 사용해 요소 선택 <br>
-            ex) home_wrap .div <br><br>
-
-            직계자손들만 선택 : 자신의 이름 옆에<span><b>&gt;</b></span>를 써서 <span><b>직계자손 요소만</b></span> 선택 <br>
-            ex) home_wrap > div <br><br>
-
-            특정 자손만 선택 : 요소 옆에 <span><b>nth-child(숫자)</b></span>를 적어 <span><b>특정 자손만</b></span> 선택<br>
-            ex) home_wrap p:nth-child(숫자)
-
-        </ul>
-
-
-
-    </body>
 
 </html>
+
+

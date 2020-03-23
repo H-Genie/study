@@ -1,26 +1,59 @@
-/* @import url("destyle.css"); */
+@import url("reset.css");
 
-@import url('https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap');
+@font-face {font-family: SCDream1; src: url(../font/SCDream1.woff)}
+@font-face {font-family: SCDream2; src: url(../font/SCDream2.woff)}
+@font-face {font-family: SCDream3; src: url(../font/SCDream3.woff)}
+@font-face {font-family: SCDream4; src: url(../font/SCDream4.woff)}
+@font-face {font-family: SCDream5; src: url(../font/SCDream5.woff)}
+@font-face {font-family: SCDream6; src: url(../font/SCDream6.woff)}
+@font-face {font-family: SCDream7; src: url(../font/SCDream7.woff)}
+@font-face {font-family: SCDream8; src: url(../font/SCDream8.woff)}
+@font-face {font-family: SCDream9; src: url(../font/SCDream9.woff)}
 
-body {font-family:'Nanum Gothic';}
-ul, ol, li {padding-left: 0;}
-            ul {background-color: #E7EAED;} 
-            ol {width: fit-content}
-            li {list-style: none;}
-            a {text-decoration: none; color: black;}
-            
-            
-            .p1 {background-color : #00ff00; font-weight: 900;}
-            .p2 {background-color: #00ffff;}
-            .p3 {font-weight: 700; text-decoration: underline;}
-            .ib {display: inline-block;}
-            .flex {display: flex; align-items: flex-start;}
-            .border_black {border: 1px solid black;}
+body {font-family: SCDream4;}
+a {color: blue; text-decoration: underline;}
 
-            #black {color: green;}
-            .my-box .text {color: black;}
-            .black {color: red;}
-            .my-box .black {color: yellow;}
-            .black {color: blue;}
-            .good-black {color: red !important;}
-            .good-black {color: green;}
+
+/* index */
+.title >div {width: fit-content; display: flex; align-items: center; box-sizing: border-box; cursor: pointer;}
+
+    .title img {height: 50px; padding-right: 15px;}
+    .title img:last-child {width: 300px; cursor: pointer;}
+
+    .title p {font-family: SCDream9; font-size: 20px;}
+    .HTML {color: #F35825;}
+    .CSS {color: #007BC8;}
+    .Javascript {color: #F78223;}
+    .w3c {color: #005A9C;}
+
+.link {width: fit-content; display: flex;}
+    .link .outer {display: flex; flex-direction: column; text-align: center; margin: 1px;}
+    .link .outer .up {line-height: 25px; border: 1px solid black; cursor: pointer; font-size: smaller;}
+    .link .outer .up:hover {background: rgb(255,255,255); background: linear-gradient(45deg, rgba(255,255,255,1) 0%, rgba(255,255,0,1) 40%, rgba(123,182,227,1) 70%), rgba(255,255,255,1) 100%;}
+    .link .outer .down {display: flex;}        
+    .link_inner {width: 50px; height: 50px; display: flex; justify-content: center; align-items: center; text-align: center; border: 1px solid black; cursor: pointer; font-size: smaller; margin: 1px;}
+    .link_inner:hover {background: rgb(255,255,255);background: linear-gradient(45deg, rgba(255,255,255,1) 0%, rgba(255,255,0,1) 40%, rgba(123,182,227,1) 70%), rgba(255,255,255,1) 100%;}
+
+
+/* content */
+.chapter_box {max-width: 720px; border: 1px solid black; margin-top: 10px;}
+.subject {line-height: 30px; font-family: SCDream6; font-size: 18px; background-color: #DEE1E6; border-bottom: 1px solid black;}
+.content_box {width: fit-content; background-color: #F1F3F4; margin: 0 10px 10px 10px; padding: 10px; box-sizing: border-box; border: 1px solid #DEE1E6;}
+.content_box .title {font-family: SCDream5;}
+.content_img {max-width: 97%; border: 1px solid black; margin: 10px;}
+
+.selector_test {display: flex;}
+.selector_test div{width: 50px; height: 50px; border: 1px solid black;}
+.selector_test div:nth-child(1):hover {background-color: yellow;}
+.selector_test div:nth-child(2):active {background-color: skyblue;}
+
+
+
+/* CSS 적용 우선순위 코딩값 */
+#black {color: green;}
+.my-box .text {color: black;}
+.black {color: red;}
+.my-box .black {color: yellow;}
+.black {color: blue;}
+.good-black {color: red !important;}
+.good-black {color: green;}
