@@ -119,7 +119,7 @@
                     </p>
             
                     <p style="padding-left: 10px; box-sizing: border-box;">
-                    인라인 레벨 요소 <br><br>
+                    비상속 요소 <br><br>
                     background <br>
                     width <br>
                     height <br>
@@ -305,6 +305,18 @@
                     &bull;column : 주축을 세로로 교차축을 가로로 지정. 플렉스 항목은 주축 시작점에서 끝점으로 (왼쪽에서 아래쪽으로) <br><br>                   
                  </p>
                 <img src="http://blog.teamtreehouse.com/wp-content/uploads/2012/12/flexbox-flex-direction.png" class="content_img">
+            </div> <br>
+
+            <div class="content_box">
+                <p class="title">플렉스 항목 줄 배치</p> <br>
+                <p>
+                    기본적으로 플렉스 항목들은 주축방향을 따라 한줄로 배치 됨 <br>
+                    flex-wrap : 여러줄에 걸쳐 표시 가능 <br>
+                    &bull;no-wrap : (기본값) 플레스 항목들을 한 줄에 표시 <br>
+                    &bull;wrap : 플렉스 항목을 여러 줄에 표시 <br>
+                    &bull;wrap-reverse : 플렉스 항목을 여러 줄에 표시하되 기존 방향과 반대로 배치
+                 </p>
+                <img src="https://res.cloudinary.com/samanthaming/image/upload/f_auto,q_auto/v1579935785/flexbox30/10-flex-wrap.jpg" class="content_img">
             </div> <br>
 
             <p style="font-family: SCDream9;">[항목 배치를 위한 속성들]</p> <br>
@@ -499,10 +511,78 @@
 
             <div class="selector_test">                
                 <div>hover</div>
-                <div>active</div>
+                <div>active<br><span style="font-size: x-small;">클릭해봐</span></div>
             </div> <br>
 
         </div>
+
+
+
+        <!--Selector-->
+        <div class="chapter_box" id="ch4-3">
+
+            <p class="subject">Typography</p> <br>
+            
+            <div class="content_box">
+                <p class="title">폰트 구조</p> <br>                
+                <img src="https://t2.daumcdn.net/thumb/R720x0/?fname=http://t1.daumcdn.net/brunch/service/user/1SwI/image/MMpGMjpiJ6Ak07ivNAu40s46d9o.jpg" class="content_img">
+                <img src="https://t1.daumcdn.net/cfile/tistory/2352BE3B52CA6CFC0A" class="content_img">                
+            </div>
+
+            <div class="content_box">
+                <p class="title">폰트 크기</p> <br>                
+                <img src="https://tutorial.techaltum.com/images/font.jpg" class="content_img">                        
+            </div>
+
+            <div class="content_box">
+                <p class="title">자간과 커닝(Kerning)</p> <br>                
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Kerning_EN.svg/1200px-Kerning_EN.svg.png" class="content_img">
+            </div>
+
+            <div class="content_box">
+                <p class="title">가독성과 주목성</p> <br>                
+                <p>
+                    &bull;가독성 (readability) <br>
+                    인쇄물이 얼마나 쉽게 읽히는가 하는 능률의 정도. <br>
+                    활자체, 글자 간격, 행간, 띄어쓰기 등에 따라 달라진다. <br><br>
+
+                    &bull;주목성 (attractiveness of color) <br>
+                    색이나 빛에서, 자극이 강하여 눈에 잘 띄는 정도.
+                </p> <br>
+                <img src="http://ab-studio.co.kr/wp-content/uploads/2017/03/0616%EB%9E%98%EB%AF%B8%EC%95%88%ED%86%B5%ED%95%A9%EB%B6%84%EC%96%91%EA%B4%91%EA%B3%A0B-copy-1290x1778.jpg" style="width: 300px;">
+            </div>
+
+            <div class="content_box">
+                <p class="title">텍스트 위계</p> <br>                
+                <p>
+                    <p style="font-size: 29px;">29포인트 주제목</p>
+                    <p style="font-size: 18px;">18포인트 부제목</p>
+                    <p style="font-size: 10px;">10포인트 소제목</p>
+                    <p style="font-size: 10px;">10포인트 본문 텍스트</p>
+                    <p style="font-size: 8px;">8포인트 라벨</p>
+                    <p style="font-size: 7px;">8포인트 각주</p> <br><br>
+
+                    <p>
+                        피보나치 수열 (황금비율 : 1.618)<br><br>
+                        <span style="color: blue;">3</span> 3.25 3.5 3.75 <span style="color: blue;">4</span> 4.75 5.5 6.25 <br><br>
+                        <span style="color: blue;">7</span> 8 9 10 <span style="color: blue;">11</span> 12.75 14.5 16.25 <br><br>
+                        <span style="color: blue;">18</span> 20.75 23.5 26.25 <span style="color: blue;">29</span> 33.5 38 42.5 <br><br>
+                        <span style="color: blue;">47</span> 54.25 61.5 68.75 <br><br>
+                        <span style="color: blue;">76</span> 85.25 94.5 103.75 <br><br>
+                        <span style="color: blue;">113</span> 132 151 170 <span style="color: blue;">189</span> <br><br>
+                        ※ font-size에 주로 짝수를 쓰는 이유 <br>
+                        : line-height 줬을 때 가운데 위치시키면 미세하게 한쪽으로 치우치게 됨
+                    </p> <br>
+                    <img src="https://miro.medium.com/max/12000/1*BUaTXm29oF2xSY3mPh265A.jpeg" style="max-width: 400px; border: 1px solid black;">
+                </p>
+            </div>
+
+          
+
+            
+
+        </div>
+                    
             
         
     <!--body 끝--> </body>

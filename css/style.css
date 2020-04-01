@@ -36,7 +36,7 @@ a {color: blue; text-decoration: underline;}
 
 
 /* content */
-.chapter_box {max-width: 720px; border: 1px solid black; margin-top: 10px;}
+.chapter_box {max-width: 960px; border: 1px solid black; margin-top: 10px;}
 .subject {line-height: 30px; font-family: SCDream6; font-size: 18px; background-color: #DEE1E6; border-bottom: 1px solid black;}
 .content_box {width: fit-content; background-color: #F1F3F4; margin: 0 10px 10px 10px; padding: 10px; box-sizing: border-box; border: 1px solid #DEE1E6;}
 .content_box .title {font-family: SCDream5;}
