@@ -47,6 +47,8 @@ a {color: blue; text-decoration: underline;}
 .selector_test div:nth-child(1):hover {background-color: yellow;}
 .selector_test div:nth-child(2):active {background-color: skyblue;}
 
+.hover_box {width: fit-content; padding: 30px 45px; background-color: black; color: white; font-family: SCDream9; font-size: 30px;}
+.hover_box:hover {opacity: 0.5; padding: 10px 45px 50px;}
 
 
 /* CSS 적용 우선순위 코딩값 */

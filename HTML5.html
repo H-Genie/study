@@ -226,7 +226,9 @@
                 &bull; 밑으로 / 떨어짐 / 꽉참 <br><br>
 
                 인라인 레벨 요소 : 새 줄에서 시작되지 안으며 필요한 만큼 폭 차지 <br>
-                &bull; 옆으로 / 붙음 / 필요한만큼
+                &bull; 옆으로 / 붙음 / 필요한만큼 / 상하에 margin, padding 적용 안됨 (좌우는 가능) => line-height로 조정해야 <br><br>
+
+                inline-block : 인라인 레벨로써 필요한만큼 공간을 차지하나, 블록레벨 속성도 가지고 있어 상하좌우에 margin, padding 적용 가능
             </p> <br>
 
             <div class="content_box">             
@@ -323,6 +325,7 @@
                 &lt;<span style="color: orange;">/video</span>&gt;
             </p> <br>
             <p>
+                poster : 재생 전 미리보기 이미지 삽입 (src 속성) <br><br>
                 autoplay : 자동 재생 <br>
                 controls : 컨트롤 막대 표시 <br>
                 loop : 반복 재생 <br>
