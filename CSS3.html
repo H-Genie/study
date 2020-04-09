@@ -406,7 +406,7 @@
             
         </div>
 
-
+        
         <!--상대 높이-->
         <div class="chapter_box" id="ch3-3">
 
@@ -422,8 +422,184 @@
         </div>
 
 
-        <!--Overflow-->
+        <!--트랜지션-->
         <div class="chapter_box" id="ch4-1">
+
+            <p class="subject">CSS Animation : Transition</p> <br>
+
+            <div class="content_box">
+                <p class="title">트랜지션 vs 애니메이션</p> <br>                
+                <p>
+                    트랜지션 : 시작스타일과 끝스타일을 지정하여 일정하게 변함 <br>
+                    &bull;CSS 속성에 의해서만 작동함 / 한번만 작동함 / 키프레임 지정 불가 / 시작,정지 제어 불가 <br><br>
+
+                    애니메이션 : 원하는 곳에서 스타일을 바꿀 수 있음 <br>
+                    &bull;자동으로 시작 / 반복 가능 / 키프레임 지정 가능 / 시작,정지 제어 가능
+                </p> <br>                
+            </div>
+            
+            <p>
+                transition-property : 트랜지션을 적용할 속성 <br><br>
+                &nbsp;&bull;all(기본값) : all을 쓰거나 생략할 경우, 요소의 모든 속성이 트랜지션 대상이 됨 <br>
+                &nbsp;&bull;none : 트랜지션 동안 아무 속성도 바뀌지 않음 <br>
+                &nbsp;&bull;속성 이름 : 트랜지션 효과를 적용할 속성만 지정 / 여러개일 경우 , 로 구분
+            </p> <br><br>
+
+            <p>
+                transition-duration : 트랜지션 진행 시간 <br><br>            
+                &nbsp;&bull;시간 단위 : s, ms (1s = 1000ms) <br>
+                &nbsp;&bull;기본값이 0이기 때문에 반드시 지정해줘야 함 <br>
+                &nbsp;&bull;트랜지션 대상이 되는 속성이 여러개면 진행시간도 ,로 구분
+            </p> <br><br>
+
+            <p>
+                transition-timing-function : 트랜지션 속도 곡선 <br><br>
+                &nbsp;&bull;ease(기본값) : 처음에는 천천히 시작 - 점점 빨라짐 - 마지막에는 천천히 끝남<br>
+                &nbsp;&bull;linear : 같은 속도 <br>
+                &nbsp;&bull;ease-in : 느리게 시작 <br>
+                &nbsp;&bull;ease-out : 느리게 끝남 <br>
+                &nbsp;&bull;ease-in-out : 느리게 시작하고 느리게 끝냄 <br>
+                &nbsp;&bull;cubic-bezier(n,n,n,n) : 3차 베지어 함수를 직접 정의 / n에서 사용할 수 있는 값은 0~1
+            </p> 
+            <div class="transition">
+                <p style="margin-bottom: 10px; font-family: SCDream2; font-size: x-small;">애니메이션 속성임</p>
+                <div>ease</div>
+                <div>liner</div>
+                <div>ease-in</div>
+                <div>ease-out</div>
+                <div>ease-in-out</div>
+            </div> <br>
+
+            <p>
+                transition-delay : 지연 시간 <br>             
+                &nbsp;&bull;시간 단위 : s, ms (1s = 1000ms)
+                &nbsp;&bull;트랜지션 대상이 되는 속성이 여러개면 진행시간도 ,로 구분
+            </p> <br><br>
+
+            <p style="font-family: SCDream6;">
+                transition 속기 : property | duration | timing-function | delay <br>                             
+            </p> <br><br>
+            
+        </div>
+
+
+         <!--애니메이션-->
+         <div class="chapter_box" id="ch4-2">
+
+            <p class="subject">CSS Animation : Animation</p> <br>
+
+            <div class="content_box">
+                <p class="title">트랜지션 vs 애니메이션</p> <br>                
+                <p>
+                    트랜지션 : 시작스타일과 끝스타일을 지정하여 일정하게 변함 <br>
+                    &bull;CSS 속성에 의해서만 작동함 / 한번만 작동함 / 키프레임 지정 불가 / 시작,정지 제어 불가 <br><br>
+
+                    애니메이션 : 원하는 곳에서 스타일을 바꿀 수 있음 <br>
+                    &bull;자동으로 시작 / 반복 가능 / 키프레임 지정 가능 / 시작,정지 제어 가능
+                </p> <br>                
+            </div>
+            
+            <p>
+                @keyframes : 애니메이션 지점 설정 <br>
+                &nbsp;&bull;키프레임 규칙 내에 CSS스타일을 지정하면 특정 시간에 애니메이션이 현재 스타일에서 새 스타일로 점차 변경됨 <br>
+                &nbsp;&bull;키프레임을 head-style에 정의해야 함 <br><br>
+                
+    <pre>
+    @keyframes 이름정의 {
+        from {스타일}
+        to {스타일}
+    }
+    </pre>
+
+<pre>
+    @keyframes 이름정의 {
+        0% {스타일}
+        10% {스타일}
+        20% {스타일}
+        30% {스타일}
+        40% {스타일}
+        50% {스타일}
+        60% {스타일}
+        70% {스타일}
+        80% {스타일}
+        90% {스타일}
+        100% {스타일}
+    }
+    </pre>                   
+            </p> <br>
+
+            <p>
+                animation-name : 애니메이션 이름 지정 <br>
+                &nbsp;&bull;@keyframes에서 정의한 이름을 요소 안에 지정
+            </p> <br><br>
+
+            <p>
+                animation-duration : 애니메이션 실행 시간 <br>
+                &nbsp;&bull;시간 단위 : s, ms (1s = 1000ms) <br>
+                &nbsp;&bull;기본값이 0이기 때문에 반드시 지정해줘야 함
+            </p> <br><br>
+
+            <p>
+                animation-timing-function : 애니메이션 속도 곡선 <br><br>
+                &nbsp;&bull;ease(기본값) : 처음에는 천천히 시작 - 점점 빨라짐 - 마지막에는 천천히 끝남<br>
+                &nbsp;&bull;linear : 같은 속도 <br>
+                &nbsp;&bull;ease-in : 느리게 시작 <br>
+                &nbsp;&bull;ease-out : 느리게 끝남 <br>
+                &nbsp;&bull;ease-in-out : 느리게 시작하고 느리게 끝냄 <br>
+                &nbsp;&bull;cubic-bezier(n,n,n,n) : 3차 베지어 함수를 직접 정의 / n에서 사용할 수 있는 값은 0~1
+            </p> <br><br>
+
+            <p>
+                animation-delay : 지연 시간 <br>             
+                &nbsp;&bull;시간 단위 : s, ms (1s = 1000ms)
+                &nbsp;&bull;애니메이션 대상이 되는 속성이 여러개면 진행시간도 ,로 구분
+            </p> <br><br>
+
+            <p>
+                animation-iteration-count : 반복 횟수 지정 <br>
+                &nbsp;&bull;기본값은 1 <br>
+                &nbsp;&bull;숫자 입력 / 무한반복 : infinite
+            </p> <br><br>
+                        
+            <p>
+                animation-direction : 애니메이션 방향 <br><br>
+                &nbsp;&bull;normal(기본값) : 정해진 순서로 진행 <br>
+                &nbsp;&bull;reverse : 반대 순서로 진행 <br>
+                &nbsp;&bull;alternate : 정해진 순서로 진행했다가 반대 순서로 진행 <br>
+                &nbsp;&bull;alternate-reverse : 반대 순서로 진행했다가 정해진 순서로 진행
+            </p> <br><br>
+            <div class="animation">
+                <p style="margin-bottom: 10px; font-family: SCDream2; font-size: x-small;">새로고침 해주세요</p>
+                <div>normal</div>
+                <div>reverse</div>
+                <div>alternate</div>
+                <div>alternate-reverse</div>                
+            </div> <br>
+
+            <p style="font-family: SCDream6;">
+                animation 속기 : name | duration | timing-function | delay | iteration-count | direction<br>                             
+            </p> <br><br>
+
+            <p>
+                animation-fill-mode : 애니메이션이 끝난 후의 상태 <br><br>
+                &nbsp;&bull;none(기본값) : 요소가 실행되기 전이나 후에 요소에 스타일을 적용하지 않음 <br>
+                &nbsp;&bull;fowards : 마지막 키프레임에서 설정한 스타일 값을 유지 (애니메이션 방향 및 애니메이션 반복 횟수 고려) <br>
+                &nbsp;&bull;backwards : 첫번째 키프레임에 의해 설정된 스타일 값을 가져오고(애니메이션 방향에 따름) 애니메이션 지연 기간동안 이를 유지 <br>
+                &nbsp;&bull;both : 앞뒤로 규칙을 따라 애니메이션 속성을 양방향으로 확장 <br>                
+            </p> 
+            <div class="animation2">
+                <p style="margin-bottom: 10px; font-family: SCDream2; font-size: x-small;">새로고침 해주세요</p>
+                <div>none</div>
+                <div>forwards</div>
+                <div>backwards</div>
+                <div>both</div>                
+            </div> <br>
+        </div>
+
+
+
+        <!--Overflow-->
+        <div class="chapter_box" id="ch5-1">
 
             <p class="subject">CSS Overflow</p> <br>
             <p>
@@ -481,7 +657,7 @@
 
 
         <!--Selector-->
-        <div class="chapter_box" id="ch4-2" style="margin-top: 50px;">
+        <div class="chapter_box" id="ch5-2" style="margin-top: 50px;">
 
             <p class="subject">CSS Selector</p> <br>
 
@@ -521,12 +697,29 @@
                 <div>active<br><span style="font-size: x-small;">클릭해봐</span></div>
             </div> <br>
 
+            <p> ※애니메이션 효과 응용 <br>
+                &lt;div&gt; : 크기 지정 / overflow:hidden<br>
+                &nbsp;&lt;a&gt; : div와 같은 크기/display:block/padding-top<br>
+                &nbsp;&nbsp;&lt;h2&gt; <br>
+                &nbsp;&nbsp;&lt;h6&gt; : margin-top <br> 
+                &nbsp;&lt;a&gt; <br>
+                &lt;div&gt; <br>
+                a:hover : padding-top 줄이기
+            </p>
+
+            <div class="hover_box">
+                <a>
+                    <h2 style="text-align: center;">HOVER</h2>
+                    <h4 style="text-align: center; margin-top: 20px;">↑</h4>
+                </a>
+            </div>
+
         </div>
 
 
 
         <!--타이포그라피-->
-        <div class="chapter_box" id="ch4-3">
+        <div class="chapter_box" id="ch5-3">
 
             <p class="subject">Typography</p> <br>
             
@@ -585,22 +778,7 @@
             </div>
 
         </div>
-
-
-
-        <!--애니메이션-->
-        <div class="chapter_box">
-
-            <p class="subject">CSS 애니메이션</p> <br>
-            <p>
-                hover에 padding top/bottom을 나눠서 주면 애니메이션 효과가 남 <br>
-                ex) 박스 안에 {padding :30px 45px;}가 있으면 hover {padding: 10px 45px 50px;} 줌 <br><br>
-                <div class="hover_box">CSS Animation</div>
-            </p>
-
-        </div>
-                    
-            
+        
         
     <!--body 끝--> </body>
 
