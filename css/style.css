@@ -93,6 +93,7 @@ a {color: blue; text-decoration: underline;}
 .animation2 div:nth-of-type(3) {animation-name: normal2; animation-duration: 5s; animation-timing-function: linear; animation-fill-mode: backwards; animation-iteration-count: 2;}
 .animation2 div:nth-of-type(4) {animation-name: normal2; animation-duration: 5s; animation-timing-function: linear; animation-fill-mode: both; animation-iteration-count: 2;}
 
+table, tr td {border: 1px solid black;}
 
 
 /* CSS 적용 우선순위 코딩값 */

@@ -341,6 +341,76 @@
         </div>
 
     </div>
+
+    <!--FORM-->
+    <div class="chapter_box" id="ch6">
+
+        <p class="subject">FORM</p> <br>
+
+        <p>
+            <table>
+                <tr><td>form</td><td>폼</td><td>type</td></tr>
+                <tr><td>textarea</td><td>여러 줄 입력할 수 있는 필드</td><td></td></tr>
+                <tr><td>select</td><td>풀다운 메뉴</td><td>option</td></tr>
+                <tr><td>optgroup</td><td>메뉴의 선택항목을 그룹화</td><td>option</td></tr>
+                <tr><td>datalist</td><td>입력 후보 목록</td><td>option</td></tr>
+                <tr><td>fieldset</td><td>폼 부품을 그룹화</td><td>legend</td></tr>
+                <tr><td>label</td><td>부품에 캡션을 붙임</td><td></td></tr>
+                <tr><td>output</td><td>폼의 계산결과를 나타냄</td><td></td></tr>
+            </table>
+        </p> <br>
+
+        <p>
+            &lt;form action="데이터를 보낼 곳 URL"&gt; <br>
+            &nbsp;&nbsp;&lt;input type=" "&gt; ~ &lt;/input&gt; <br>
+            &lt;/form&gt; <br><br>
+        </p>
+
+        <div class="content_box">             
+            <p>
+                폼을 사용하면 사용자가 데이터를 입력하여 송신하는 시스템을 마련할 수 있음 <br>
+                form 요소는 해당 범위가 입력폼이라는 것을 나타냄 <br>
+                (폼에 입력된 데이터를 실제로 보낼 때는 송신된 데이터를 처리하기 위한 프로그램(ex PHP)이 필요함) <br><br>
+    
+                &lt;form action="데이터를 보낼 곳 URL"&gt; ~ &lt;/form&gt; <br><br>
+
+                &bull;action 속성 : 폼에 입력한 데이터를 처리하는 프로그램의 URL을 지정 <br>
+                &bull;name 속성 : 폼의 이름을 지정
+            </p>
+        </div>
+
+        <div class="content_box">             
+            <p>
+                input 요소의 type 속성을 지정하여 입력폼의 부품을 만듦 <br><br>
+    
+                &lt;input type=" "&gt; ~ &lt;/input&gt; <br><br>
+
+                &bull;palceholder 속성 : 텍스트 필드에 해당 값을 표시 <br>
+                &bull;name 속성 : 컨트롤의 이름을 지정 / 폼의 데이터가 전송될 때 이 이름과 데이터가 세트로 전송 됨 <br>
+                (서버측에서 컨트롤을 특정하기 위해 사용) <br>
+                &bull;type 속성
+                <table>
+                    <tr><td>submit</td><td>보내기 버튼</td></tr>
+                    <tr><td>reset</td><td>리셋 버튼</td></tr>
+                    <tr><td>button</td><td>버튼</td></tr>
+                    <tr><td>image</td><td>이미지를 사용하여 보내기 버튼</td></tr>
+                    <tr><td>button</td><td>버튼</td></tr>
+                    <tr><td>text</td><td>(기본값)한 줄 입력 필드</td></tr>
+                    <tr><td>search</td><td>검색용 입력 필드</td></tr>
+                    <tr><td>tel</td><td>전화번호용 입력 필드</td></tr>
+                    <tr><td>url</td><td>url용 입력 필드</td></tr>
+                    <tr><td>email</td><td>메일 주소용 입력 필드</td></tr>
+                    <tr><td>password</td><td>비밀번호용 입력 필드</td></tr>
+                    <tr><td>date</td><td>날짜를 입력하는 컨트롤</td></tr>
+                    <tr><td>number</td><td>수치를 입력하는 컨트롤</td></tr>
+                    <tr><td>color</td><td>색을 입력하는 컨트롤</td></tr>
+                    <tr><td>checkbox</td><td>체크 상자</td></tr>
+                    <tr><td>radio</td><td>라디오 버튼</td></tr>
+                </table>
+            </p>
+        </div>
+
+    </div>    
     <!--body 끝--> </body>
 
 
