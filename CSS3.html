@@ -422,8 +422,61 @@
         </div>
 
 
-        <!--트랜지션-->
+        <!--트랜스폼-->
         <div class="chapter_box" id="ch4-1">
+
+            <p class="subject">CSS Animation : Transform</p> <br>
+
+            <a href="https://webclub.tistory.com/619" target="_blank">참고 자료</a> <br><br>
+
+            <table>
+                <tr><td style="background-color: #DEE1E6;">변형효과</td><td style="background-color: #DEE1E6;">변형함수</td></tr>
+                <tr><td>이동</td><td>translate( )<br>trnaslateX( )<br>translateY( )</td></tr>
+                <tr><td>확대/축소</td><td>scale( )<br>scaleX( )<br>scaleY( )</td></tr>
+                <tr><td>회전</td><td>rotate( )</td></tr>
+                <tr><td>경사</td><td>skewX( )<br>skewY( )</td></tr>
+            </table> <br>
+
+            <p>
+                transform-origin(X축 Y축) : 변형의 기점을 지정 <br><br>
+                
+                &bull;초기값은 50% 50% <br>
+                &bull;cf) CSS에서의 기준점은 좌측상단 (X축 0 / Y축 0) <br>
+            </p> <br><br>
+
+            <p>
+                translate(X축 거리, Y축 거리) : 요소를 이동 <br><br>
+                
+                &bull;값을 하나만 지정한 경우에는 Y축 방향의 이동거리가 0으로 간주 <br>
+                &bull;translateX( ), translateY( ) <br>
+            </p>
+
+            <p>
+                scale(X축 배율, Y축 배율) : 요소를 확대/축소 <br><br>
+                
+                &bull;표준 크기는 1, 단위가 없는 실수값으로 지정 <br>
+                &bull;값을 하나만 지정한 경우는 동일한 배율이 지정된 것으로 간주 <br>
+                &bull;scaleX( ), scaleY( ) <br>
+            </p>
+
+            <p>
+                rotate : 요소를 횢ㄴ <br><br>
+                
+                &bull;기울일 각도를 deg(도수), rad(라디안),grad(그레이드)로 지정 <br>
+                &bull;플러스값을 지정하면 시계방향으로 회전 <br>
+            </p>
+
+            <p>
+                skewX( ), skewY( ) : 요소를 기울임 <br><br>
+                
+                &bull;기울일 각도를 deg(도수), rad(라디안),grad(그레이드)로 지정 <br>
+            </p>
+            
+        </div>
+
+
+        <!--트랜지션-->
+        <div class="chapter_box" id="ch4-2">
 
             <p class="subject">CSS Animation : Transition</p> <br>
 
@@ -472,8 +525,9 @@
 
             <p>
                 transition-delay : 지연 시간 <br>             
-                &nbsp;&bull;시간 단위 : s, ms (1s = 1000ms)
-                &nbsp;&bull;트랜지션 대상이 되는 속성이 여러개면 진행시간도 ,로 구분
+                &nbsp;&bull;시간 단위 : s, ms (1s = 1000ms) <br>
+                &nbsp;&bull;트랜지션 대상이 되는 속성이 여러개면 진행시간도 ,로 구분 <br>
+                
             </p> <br><br>
 
             <p style="font-family: SCDream6;">
@@ -484,7 +538,7 @@
 
 
          <!--애니메이션-->
-         <div class="chapter_box" id="ch4-2">
+         <div class="chapter_box" id="ch4-3">
 
             <p class="subject">CSS Animation : Animation</p> <br>
 
@@ -551,8 +605,9 @@
 
             <p>
                 animation-delay : 지연 시간 <br>             
-                &nbsp;&bull;시간 단위 : s, ms (1s = 1000ms)
-                &nbsp;&bull;애니메이션 대상이 되는 속성이 여러개면 진행시간도 ,로 구분
+                &nbsp;&bull;시간 단위 : s, ms (1s = 1000ms) <br>
+                &nbsp;&bull;애니메이션 대상이 되는 속성이 여러개면 진행시간도 ,로 구분 <br>
+                &nbsp;&bull;마이너스 값을 지정하면 이미 실행된것 같은 효과가 남
             </p> <br><br>
 
             <p>
@@ -776,6 +831,27 @@
                     <img src="https://miro.medium.com/max/12000/1*BUaTXm29oF2xSY3mPh265A.jpeg" style="max-width: 400px; border: 1px solid black;">
                 </p>
             </div>
+
+        </div>
+
+
+
+        <!--가상 요소-->
+        <div class="chapter_box" id="ch5-4">
+
+            <p class="subject">Pseudo-element (가상 요소)</p> <br>
+            
+            <a href="https://green-webdesigner.tistory.com/20" target="_blank">참고자료</a> <br><br>
+
+            <p>
+                선택자(selector)에 추가되지만 특별한 상태를 기술하는 대신, 문서의 특정 부분을 스타일 <br>
+                꾸밈을 위해서 의미없는 태그를 더 추가해야 될 때, 태그 대신에 가상으로 처리 <br><br>
+                &bull;목록형 꾸밈, 버튼 꾸밈, 간단한 아이콘 등 <br>
+                &bull;CSS Style의 요소뒤에 ::가상요소 {content:' '} 로 표시 <br>
+                &nbsp;&nbsp; <span style="color: blue;">ex) .container::before {content:'Hello.'}</span> <br>
+                &bull;가상요소는 부피가 없으므로, 아이콘을 표현할때는 꼭 너비와 높이를 정해야 함 <br>
+                &bull;trnasform을 쓸때는 블럭요소가 되어야 적용 가능 <br>
+            </p>
 
         </div>
         
