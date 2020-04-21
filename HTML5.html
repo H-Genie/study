@@ -29,7 +29,8 @@
             <p>
                 &lt;열기태그 속성="속성: 값;"&gt; 내용 &lt;/닫기태그&gt; <br><br>
                 속성의 값은 ;(세미콜론)으로 단위 구분 <br><br>
-                속성 안에(따옴표 안에) 따옴표를 쓰고 싶으면 : " '내용' " 또는 ' "내용"'
+                속성 안에(따옴표 안에) 따옴표를 쓰고 싶으면 : " '내용' " 또는 ' "내용"' <br><br>
+                HTML Attribute / CSS Property
             </p> <br>
 
             <div class="content_box">
@@ -353,9 +354,9 @@
                 <tr><td>textarea</td><td>여러 줄 입력할 수 있는 필드</td><td></td></tr>
                 <tr><td>select</td><td>풀다운 메뉴</td><td>option</td></tr>
                 <tr><td>optgroup</td><td>메뉴의 선택항목을 그룹화</td><td>option</td></tr>
-                <tr><td>datalist</td><td>입력 후보 목록</td><td>option</td></tr>
+                <tr><td>datalist</td><td>입력 후보 목록 (ex 연관검색어)</td><td>option</td></tr>
                 <tr><td>fieldset</td><td>폼 부품을 그룹화</td><td>legend</td></tr>
-                <tr><td>label</td><td>부품에 캡션을 붙임</td><td></td></tr>
+                <tr><td>label</td><td>부품에 캡션을 붙임</td><td>for="id"</td></tr>
                 <tr><td>output</td><td>폼의 계산결과를 나타냄</td><td></td></tr>
             </table>
         </p> <br>
@@ -374,8 +375,11 @@
     
                 &lt;form action="데이터를 보낼 곳 URL"&gt; ~ &lt;/form&gt; <br><br>
 
-                &bull;action 속성 : 폼에 입력한 데이터를 처리하는 프로그램의 URL을 지정 <br>
-                &bull;name 속성 : 폼의 이름을 지정
+                &bull;동작 속성 : action - 폼에 입력한 데이터를 처리하는 프로그램의 URL을 지정 <br>
+                &bull;대상 속성 : target <br>
+                &bull;메소드 속성 : method - 데이터의 송신 형식 <br>
+                &nbsp;&nbsp;(get:기본값, URL 다음에 ?와 폼에이터 추가하여 송신 / post : 폼데이터만 본문으로 송신) <br>
+                &bull;name 속성 : 서버에 전송되는 field name (cf fomr 자체의 이름은 id)
             </p>
         </div>
 
@@ -406,7 +410,8 @@
                     <tr><td>color</td><td>색을 입력하는 컨트롤</td></tr>
                     <tr><td>checkbox</td><td>체크 상자</td></tr>
                     <tr><td>radio</td><td>라디오 버튼</td></tr>
-                </table>
+                </table> <br>
+                &bull;radio의 name을 통일하면 택일이 가능한 버튼이 됨 (cf checkbox는 애초에 다중선택을 위해 쓰이는 기능)
             </p>
         </div>
 

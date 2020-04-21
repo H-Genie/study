@@ -18,7 +18,7 @@ a {color: blue; text-decoration: underline;}
 .title >div {width: fit-content; display: flex; align-items: center; box-sizing: border-box; cursor: pointer;}
 
     .title img {height: 50px; padding-right: 15px;}
-    .title img:last-child {width: 300px; cursor: pointer;}
+    
 
     .title p {font-family: SCDream9; font-size: 20px;}
     .HTML {color: #F35825;}
