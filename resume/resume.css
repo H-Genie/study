@@ -1,0 +1,14 @@
+@import url("../source/basic.css");
+
+/* main grid */
+section {width: 100vw; height: 200vh;} /* 임시 */
+
+/* 1920 x 75% = 1440px / 1440 * 3.3% = 48px / 1440 * 30% = 432px / 1440 * 66.7% = 960px */
+.container {width: 75%; margin: 50px auto; display: flex; justify-content: space-between;  background-color: yellow;}
+    .container .normal_left {width: 33.3%; height: 100px; border: 1px solid black;}
+    .container .normal_right {width: 65.625%; height: 100px; border: 1px solid black;}
+
+    .container .col2 {width: 49.4792%; height: 100px; border: 1px solid black;}
+    .container .col3 {width: 32.6389%; height: 100px; border: 1px solid black;}
+    .container .col4 {width: 24.2188%; height: 100px; border: 1px solid black;}
+    

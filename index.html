@@ -1,205 +1,51 @@
 <!DOCTYPE html>
 
 <html lang="ko">
+<head>
+    <title>H-Genie</title>
 
-    <head>
+    <meta charset="UTF-8">
+    <meta name="author" content="H-Genie">
+    <meta name="description" content=" ">
+    <meta name="keywords" content=" ">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 
-        <title>Front-End 학습일지</title>
-
-        <meta charset="UTF-8">
-        <meta name="author" content="H-Genie">
-        <meta name="description" content=" ">
-        <meta name="keywords" content=" ">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-
-       <link rel="stylesheet" type="text/css" href="css/style.css">
-       <link rel="icon" href="img/favicon.ico" sizes="16x16">
-      
-    </head>
+    <link rel="stylesheet" type="text/css" href="home/home.css">
+    <link rel="icon" href="source/favicon.ico" sizes="16x16">
+    <script type="text/javascript" src="source/javascript.js"></script>
+</head>
 
 
 
-    <body>
+<body>
 
-        <!--링크-->          
-        <div class="title">
+    <section>
 
-            <fieldset style="border: 1px solid black; width: fit-content; padding: 20px 0;">
-            <!--HTML5--> <div onclick="location.href='HTML5.html'"> <!--같은 창 링크-->
-                <img src="img/HTML5.png">
-                <p class="HTML">Hyper Text Markup Language</p>
-            </div> <br>
-
-            <span>
-            <div class="link">
-
-                <div class="outer">
-                    <div class="up" onclick="location.href='HTML5.html#ch1'">태그와 속성</div>
-                </div>   
-            
-                 <div class="outer">
-                    <div class="up" onclick="location.href='HTML5.html#ch2'">HEAD</div>
-                    <div class="down">
-                        <div class="link_inner" onclick="location.href='HTML5.html#ch2-1'">META</div>
-                        <div class="link_inner" onclick="location.href='HTML5.html#ch2-2'">LINK</div>
-                        <div class="link_inner" onclick="location.href='HTML5.html#ch2-3'">STYLE</div>
-                    </div>
-                 </div>   
-            
-                 <div class="outer">
-                    <div class="up" onclick="location.href='HTML5.html#ch3'">BODY</div> 
-                 </div>  
-            
-                 <div class="outer">
-                    <div class="up" onclick="location.href='HTML5.html#ch4'" style="font-size: 50%;">블록&인라인</div>
-                 </div>
-
-                 <div class="outer">
-                    <div class="up" onclick="location.href='HTML5.html#ch5'" style="font-size: 50%;">멀티미디어</div>
-                 </div>
-
-                 <div class="outer">
-                    <div class="up" onclick="location.href='HTML5.html#ch6'" style="font-size: 50%;">FORM</div>
-                 </div>
-            </div>  
-            </span> <br><br>
-            
-
-            <!--CSS3--> <div onclick="location.href='CSS3.html'">
-                <img src="img/CSS3.png">
-                <p class="CSS">Cascading Style Sheet</p>
-            </div> <br>
-
-            <span>
-            <div class="link">
-
-                <div class="outer">
-                    <div class="up" onclick="location.href='CSS3.html#ch1-1'">기본속성</div>
-            
-                    <div class="down">
-                        <div class="link_inner" onclick="location.href='CSS3.html#ch1-1'">스타일 표현방법</div>
-                        <div class="link_inner" onclick="location.href='CSS3.html#ch1-2'">적용 우선순위</div>
-                        <div class="link_inner" onclick="location.href='CSS3.html#ch1-3'"">상속/비상속</div>
-                    </div>
-                 </div>   
-            
-                 <div class="outer">
-                    <div class="up" onclick="location.href='CSS3.html#ch2-1'">박스모델</div>
-            
-                    <div class="down">
-                        <div class="link_inner"  onclick="location.href='CSS3.html#ch2-1'">박스모델</div>
-                        <div class="link_inner"  onclick="location.href='CSS3.html#ch2-2'">테두리 및 여백</div>                       
-                        <div class="link_inner"  onclick="location.href='CSS3.html#ch2-3'">배경</div>
-                    </div>
-                 </div>   
-            
-                 <div class="outer">
-                    <div class="up" onclick="location.href='CSS3.html#ch3-1'">Flex</div>
-            
-                    <div class="down">
-                        <div class="link_inner" onclick="location.href='CSS3.html#ch3-1'">Flex Box</div>
-                        <div class="link_inner" onclick="location.href='CSS3.html#ch3-2'">Position</div>
-                        <div class="link_inner" onclick="location.href='CSS3.html#ch3-3'">상대 높이</div>
-                    </div>
-                 </div>  
-
-                 <div class="outer">
-                    <div class="up" onclick="location.href='CSS3.html#ch4-1'">애니메이션</div>
-            
-                    <div class="down">
-                        <div class="link_inner" onclick="location.href='CSS3.html#ch4-1'">트랜스폼</div>
-                        <div class="link_inner" onclick="location.href='CSS3.html#ch4-2'">트랜지션</div>
-                        <div class="link_inner" onclick="location.href='CSS3.html#ch4-3'">애니메이션</div>                        
-                    </div>
-                </div>
-            
-                 <div class="outer">
-                    <div class="up" onclick="location.href='CSS3.html#ch5-1'">기타</div>
-            
-                    <div class="down">
-                        <div class="link_inner" onclick="location.href='CSS3.html#ch5-1'">Overflow</div>
-                        <div class="link_inner" onclick="location.href='CSS3.html#ch5-2'">Selector</div>
-                        <div class="link_inner" onclick="location.href='CSS3.html#ch5-3'">타이포그라피</div>
-                        <div class="link_inner" onclick="location.href='CSS3.html#ch5-4'">가상요소</div>
-                        <div class="link_inner" onclick="location.href='CSS3.html#ch5-5'">미디어쿼리</div>
-                    </div>
-                </div>
-
-                
+        <a href="resume.html" class="vertical_section s01">
+            <div class="effect_mouseover">
+                <h1 class="home_section_title">Resume</h1>
             </div>
-            </span> <br><br>
-           
-           
-            <!--Javascript--> <div onclick="location.href='Javascript.html'">
-                <img src="img/Javascript.png">
-                <p class="Javascript">Javascript</p>
-            </div> 
+        </a>
 
-            </fieldset> <br><br><br>
+        <a href="" class="vertical_section s02">
+            <div class="effect_mouseover">
+                <h1 class="home_section_title">Portfolio</h1>
+            </div>
+        </a>
 
+        <a href="" class="vertical_section s03">
+            <div class="effect_mouseover">
+                <h1 class="home_section_title">Interview</h1>
+            </div>
+        </a>
 
-            <!--SVG Icons--> <div onclick="window.open('https://material.io/resources/icons/?style=baseline')"> <!--새 창 링크-->
-                <img src="https://material.io/resources/icons/static/ic_icons_192px_light.svg">
-                <p style="line-height: 50px; color: #2979FF;">SVG Icons</p>
-            </div> <br><br><br>
+        <a href="" class="vertical_section s04">
+            <div class="effect_mouseover">
+                <h1 class="home_section_title">Travel</h1>
+            </div>
+        </a>
 
-            
-                       
-            <!--W3C--> <div onclick="window.open('https://validator.w3.org/')"> <!--새 창 링크-->
-                <img src="img/w3c.png">
-                <p class="w3c" style="font-family: SCDream6;">Markup Validation Service</p>
-            </div> <br>
+    </section>
 
-            <!--ROADMAP 2020--> <img src="img/roadmap2020.png" onclick="window.open('https://github.com/devJang/developer-roadmap?fbclid=IwAR3caSuOSA71kwoisWbsVLykQglLW03l9dHvSCkk4cIdTIUvMF0F4xB1onY')">
-        </div> <br><br>
-
-
-
-         <!--표-->
-         <div>
-            <p><table class="txc-table" width="400px" cellspacing="0" cellpadding="0" border="0" style="border:none;border-collapse:collapse;font-family:돋움;font-size:13.3333px"><tbody><tr><td style="width: 90px; border-width: 1px; border-style: solid; border-color: black; text-align: center; color: black; background-color: yellow;">내용</td>
-                <td style="width: 90px; border-bottom: 1px solid black; border-right: 1px solid black; border-top: 1px solid black; text-align: center; color: black; background-color: yellow;">표현</td>
-                <td style="width: 90px; border-bottom: 1px solid black; border-right: 1px solid black; border-top: 1px solid black; text-align: center; color: black; background-color: yellow;">세부</td>
-                </tr>
-                <tr><td style="width: 90px; border-bottom: 1px solid black; border-right: 1px solid black; border-left: 1px solid black; text-align: center; background-color: white; color: black;">컨텐츠</td>
-                <td style="width: 90px; border-bottom: 1px solid black; border-right: 1px solid black; text-align: center; background-color: white; color: black;">디자인</td>
-                <td style="width: 90px; border-bottom: 1px solid black; border-right: 1px solid black; text-align: center; background-color: white; color: black;"></td>
-                </tr>
-                <tr><td rowspan="7" colspan="1" style="border-right: 1px solid black; border-bottom: 1px solid black; border-left: 1px solid black; width: 90px; background-color: white; color: black; text-align: center;">텍스트, 이미지, 동영상<br></td>
-                <td style="width: 90px; border-bottom: 1px solid black; border-right: 1px solid black; text-align: center; background-color: white; color: black;">포맷</td>
-                <td style="width: 90px; border-bottom: 1px solid black; border-right: 1px solid black; text-align: center; background-color: white; color: black;">@media</td>
-                </tr>
-                <tr>
-                <td style="width: 90px; border-bottom: 1px solid black; border-right: 1px solid black; text-align: center; background-color: white; color: black;">레이아웃</td>
-                <td style="width: 90px; border-bottom: 1px solid black; border-right: 1px solid black; text-align: center; background-color: white; color: black;">Box Model</td>
-                </tr>
-                <tr>
-                <td style="width: 90px; border-bottom: 1px solid black; border-right: 1px solid black; text-align: center; background-color: white; color: black;">그리드</td>
-                <td style="width: 90px; border-bottom: 1px solid black; border-right: 1px solid black; text-align: center; background-color: white; color: black;">Display</td>
-                </tr>
-                <tr>
-                <td style="width: 90px; border-bottom: 1px solid black; border-right: 1px solid black; text-align: center; background-color: white; color: black;">타이포그래피</td>
-                <td style="width: 90px; border-bottom: 1px solid black; border-right: 1px solid black; text-align: center; background-color: white; color: black;">Font</td>
-                </tr>
-                <tr>
-                <td style="width: 90px; border-bottom: 1px solid black; border-right: 1px solid black; text-align: center; background-color: white; color: black;">컬러</td>
-                <td style="width: 90px; border-bottom: 1px solid black; border-right: 1px solid black; text-align: center; background-color: white; color: black;">Color</td>
-                </tr>
-                <tr>
-                <td style="width: 90px; border-bottom: 1px solid black; border-right: 1px solid black; text-align: center; background-color: white; color: black;">입력</td>
-                <td style="width: 90px; border-bottom: 1px solid black; border-right: 1px solid black; text-align: center; background-color: white; color: black;">Form</td>
-                </tr>
-                <tr>
-                <td style="width: 90px; border-bottom: 1px solid black; border-right: 1px solid black; text-align: center; background-color: white; color: black;">인터렉티브</td>
-                <td style="width: 90px; border-bottom: 1px solid black; border-right: 1px solid black; text-align: center; background-color: white; color: black;">Javascript</td>
-                </tr><tr><td style="border-right: 1px solid black; border-bottom: 1px solid black; border-left: 1px solid black; background-color: white; color: black; text-align: center; width: 90px;">시멘틱 마크업</td><td style="border-right: 1px solid black; border-bottom: 1px solid black; background-color: white; color: black; text-align: center; width: 90px;">CSS</td><td style="border-right: 1px solid black; border-bottom: 1px solid black; background-color: white; color: black; text-align: center; width: 90px;"></td></tr><tr><td style="border-right: 1px solid black; border-bottom: 1px solid black; border-left: 1px solid black; background-color: white; color: black; text-align: center; width: 90px;">&lt;h1&gt;Hello&lt;/h1&gt;</td><td style="border-right: 1px solid black; border-bottom: 1px solid black; background-color: white; color: black; text-align: center; width: 90px;">.home_h1 {color:green;}<br>&lt;h1 class="home_h1"&gt;hello&lt;/h1&gt;</td><td style="border-right: 1px solid black; border-bottom: 1px solid black; background-color: white; color: black; text-align: center; width: 90px;"></td></tr><tr><td style="border-right: 1px solid black; border-bottom: 1px solid black; border-left: 1px solid black; background-color: white; color: black; text-align: center; width: 90px;">Text 관련 태그</td><td style="border-right: 1px solid black; border-bottom: 1px solid black; background-color: white; color: black; text-align: center; width: 90px;"></td><td style="border-right: 1px solid black; border-bottom: 1px solid black; background-color: white; color: black; text-align: center; width: 90px;"></td></tr><tr><td style="border-right: 1px solid black; border-bottom: 1px solid black; border-left: 1px solid black; background-color: white; color: black; text-align: center; width: 90px;">Image 관련 태그</td><td style="border-right: 1px solid black; border-bottom: 1px solid black; background-color: white; color: black; text-align: center; width: 90px;"></td><td style="border-right: 1px solid black; border-bottom: 1px solid black; background-color: white; color: black; text-align: center; width: 90px;"></td></tr><tr><td style="border-right: 1px solid black; border-bottom: 1px solid black; border-left: 1px solid black; background-color: white; color: black; text-align: center; width: 90px;">Media 관련 태그</td><td style="border-right: 1px solid black; border-bottom: 1px solid black; background-color: white; color: black; text-align: center; width: 90px;"></td><td style="border-right: 1px solid black; border-bottom: 1px solid black; background-color: white; color: black; text-align: center; width: 90px;"></td></tr>
-                </tbody></table></p>
-                <p style="text-align: center;"><br></p>
-        </div>
-
-        
-
-    <!--body 끝--> </body>
-
-
+<!--body 끝--> </body>
 </html>
