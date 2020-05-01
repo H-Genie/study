@@ -2,26 +2,29 @@
 
 <html lang="ko">
 
-    <head>
+<head>
 
-        <title>Javascript</title>
+    <title>Javascript</title>
 
-        <meta charset="UTF-8">
-        <meta name="author" content="H-Genie">
-        <meta name="description" content=" ">
-        <meta name="keywords" content=" ">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta charset="UTF-8">
+    <meta name="author" content="H-Genie">
+    <meta name="description" content=" ">
+    <meta name="keywords" content=" ">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 
-       <link rel="stylesheet" type="text/css" href="css/style.css">
-       <link rel="icon" href="img/Javascript.png" sizes="16x16">
-      
-    </head>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="icon" href="img/Javascript.png" sizes="16x16">
+    
+</head>
 
 
 
-    <body>
+<body>
 
+    <div>
         <p>
+            변수의 공간에는 하나의 데이터만 들어갈 수 있는 것은 아님 <br>
+            ex) mySlide = document.getElementByClassname('mySlide') <br><br>
             변수에 저장할수 있는 자료 형 <br>
             문자형(string) <br>
             숫자형(number) <br>
@@ -43,15 +46,165 @@
         </p> <br><br>
 
         <p>
+            ★문제에 초점을 둬라 (ex 슬라이드 되야함) <br>
+            - 방법으로 해결하려고 하면 끝이 없음
+        </p> <br><br>
+
+        <p>
+            event : 개체에 이벤트가 발생하면 어떤 작업을 실행(CRUD)해라 <br>
+            함수 = 코드 블럭(집합체)
+        </p> <br><br>
+
+        <p>
+            else : if의 조건이 아니면 실행해라 <br>
+            else if : else에 조건이 또 걸림
+        </p> <br><br>
+
+        <p>
+            배열 : id를 지정하면 동작이 많아질수록 불편함 <br>
+            - 숫자로 표현(순서가 중요) : 1학년 1반의 - 1번은 누구~ 2번은 누구~ <br>
+            오브젝트 : something=somethinh / 다양하게 지정 가능(숫자, 문자 등)
+        </p> <br><br>
+
+        <p>
+            &lt;프로그래밍 언어 ≒ 인간의 행동&gt; <br><br>
+
+            1. 정보를 기억 (Memory) <br>
+            - 인간 : 주변에 있는 사람을 기억 <br>
+            - 언어 : 변수를 선언 <br><br>
+
+            2. 조건을 판단 (Condition) <br>
+            - 인간 : 이 사람이 엄마이고, 이 사람이 아빠인지 판단 <br>
+            - 언어 : 조건문 (조건에 맞는 명령을 실행) <br><br>
+
+            3. 정보를 계산 (Operator) <br>
+            - 인간 : 백원짜리와 만원짜리가 같은지 계산 <br>
+            - 언어 : 산술을 연산 <br><br>
+
+            4. 행동 (Act) <br>
+            - 인간 : 아빠와 돈을 바꿈 <br>
+            - 언어 : 명령문 ⇒ 블럭으로 모이게 되면 함수 <br><br>
+
+            ※ 가족은 Object : "아빠는 누구고, 엄마는 누구고~"가 모여서 데이터가 됨
+        </p>
+        
+    </div> <br><br>
+
+
+    <!--기초개념-->
+    <div class="chapter_box" id="ch1" style="margin-top: 0;">
+
+        <p class="subject">기초개념</p> <br>
+
+        <p>
+            자바스크립트 <br>
+            &bull; 왜 생겼나? HTML로는 상호작용이 부족 <br>
+            &bull; 특징 : 브라우저에 종속되어 있음 ⇒ 웹과 연동되어 작동 <br>
+            &bull; node.js로 다른 환경으로 확장 가능
+        </p> <br><br>
+
+        <p>
             CRUD (프로그래밍의 기본 원리) <br>
             &bull;Create - 만들고 <br>
             &bull;Read - 읽고 <br>
             &bull;Update - 바꾸고 <br>
             &bull;Delete - 지우고
         </p> <br><br>
-        
 
-    <!--body 끝--> </body>
+        <p>
+            ECMA-262 기술규격에 정의된 표준화된 스크립트 프로그래밍 언어 <br>
+            &bull; 스크립트 언어 : 응용 소프트웨어를 제어하는 프로그래밍 언어 / 응용 프로그램의 언어와 다른 언어로 사용되어, 응용 프로그램과 독립하여 사용되고 최종사용자가 응용 프로그램의 동작을 사용자의 요구에 맞게 수행할 수 있음 <br>
+            &bull; ECMAScript라고도 함 <br>
+            &bull; 2020년 4월 현재 ES2019가 최신버전이며, 가장 많이 사용하는 버전은 ES6
+        </p> <br><br>
+
+        <p>
+            &lt;script&gt;의  위치는 가급적이면 해당 HTML 아래에 오면 좋음 <br>
+            ⇒ 이벤트를 추가하는 경우에는 classname이 정의가 안된 경우에는 문제가 될 수 있음
+        </p> <br><br>
+
+        <p>
+            document : HTML Bridge <br>
+            &bull; HTML DOM Tree와 자바스크립트를 연결시켜 줌 <br>
+            &bull; HTML은 호출 / JS : 찾아서 실행
+        </p> <br><br>
+
+    </div>
+
+
+    <!--문법 : 변수-->
+    <div class="chapter_box" id="ch2-1">
+
+        <p class="subject">변수</p> <br>
+
+    </div>
+
+
+    <!--문법 : 연산자-->
+    <div class="chapter_box" id="ch2-2">
+
+        <p class="subject">연산자</p> <br>
+
+    </div>
+
+
+    <!--제어문 : 조건문-->
+    <div class="chapter_box" id="ch3-1">
+
+        <p class="subject">조건문</p> <br>
+
+    </div>
+
+
+    <!--제어문 : 선택문-->
+    <div class="chapter_box" id="ch3-2">
+
+        <p class="subject">선택문</p> <br>
+
+    </div>
+
+
+    <!--제어문 : 반복문-->
+    <div class="chapter_box" id="ch3-3">
+
+        <p class="subject">반복문</p> <br>
+
+        <p>
+            for (i:0; i&lt;4; i++) {코드 블럭} <br>
+            &bull; 시작시 입력 값 : 아무문자나 지정해도 상관없음 / 주로 Index의 I를 사용 <br>
+            &bull; 횟수 : 4번이 되기 전까지 실행 <br>
+            &bull; 한번 실행 한 후 i에 더함<br>
+            &bull; {} : 안에 있는 동작을 반복
+        </p> <br><br>
+
+    </div>
+
+
+    <!--객체-->
+    <div class="chapter_box" id="ch4">
+
+        <p class="subject">Object</p> <br>
+
+        <p>
+            style="display: ;" - 오브젝트라 짝이 맞아야 함 <br>
+            style.display=" "
+        </p> <br><br>
+
+        <p>
+            자바스크립트는 객체(Object)기반 언어 <br>
+            객체는 기능과 속성을 가지고 있음 <br><br>
+
+            document는 객체 - 객체에 해당하는 출력기능 = Method <br><br>
+
+            객체.메서드( ); <br>
+            객체.속성 <br>
+            객체.속성=값;
+        </p>
+
+    </div>
+    
+
+<!--body 끝--> </body>
 
 
 </html>

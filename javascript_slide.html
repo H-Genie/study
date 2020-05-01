@@ -1,0 +1,223 @@
+<html lang="ko">
+<head>
+    <title>[JS] Slide 실습</title>
+
+    <meta charset="UTF-8">
+    <meta name="author" content="H-Genie">
+    <meta name="description" content=" ">
+    <meta name="keywords" content=" ">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="icon" href="img/favicon.ico" sizes="16x16">
+
+    <style>
+        .slide_container {width: 300px; display: flex; justify-content: space-between; align-items: center; border: 1px solid black;}
+        .slide_container div {width: 50px; height: 50px; border: 1px solid black; text-align: center;}
+        .slide_container div:first-child {width: 30px; height: 20px; font-size: small;}
+        .slide_container div:last-child {width: 30px; height: 20px; font-size: small;}
+    </style>
+</head>
+
+<body>
+
+    <div>
+        <div class="slide_container">
+            <div>Prev</div>
+            <div>slide1<br>block</div>
+            <div>slide2<br>none</div>
+            <div>slide3<br>none</div>
+            <div>slide4<br>none</div>
+            <div>Next</div>
+        </div>
+    </div> <br><br><br><br><br>
+
+
+<!--v1 시작--><div>
+        &lt;v1&gt; <br>
+        slide 마다 id를 부여, document.getElementByID를 사용 <br><br>
+<pre>
+var slideIndex=1;
+
+function slidePrev() {
+    if (slideIndex==4) {
+        document.getElementByID('myslide_1').stlye.display="none"
+        document.getElementByID('myslide_2').stlye.display="none"
+        document.getElementByID('myslide_3').stlye.display="block"
+        document.getElementByID('myslide_4').stlye.display="none"
+        slideIndex=3;
+    }    
+
+    else if (slideIndex==3)
+    else if (slideIndex==2)
+    <span style="color: blue;">&lt;slideIndex가 1이 되면 아무동작도 되지 않음&gt;</span>
+}
+
+function slideNext() {
+    if (slideIndex==1) {
+        document.getElementByID('myslide_1').stlye.display="none"
+        document.getElementByID('myslide_2').stlye.display="block"
+        document.getElementByID('myslide_3').stlye.display="none"
+        document.getElementByID('myslide_4').stlye.display="none"
+        slideIndex=2;
+    }    
+
+    else if (slideIndex==2)
+    else if (slideIndex==3)
+    <span style="color: blue;">&lt;slideIndex가 4이 되면 아무동작도 되지 않음&gt;</span>
+    
+} <br>
+</pre>
+    <iframe width="600" height="300" src="http://jsfiddle.net/happyboyhj/yn97pths/23/embedded/result,html,css,js" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0" style="border: 1px solid black;"></iframe>
+<!--v1 끝--></div> <br><br><br>
+    
+
+
+<!--v1.5 시작--><div>
+        &lt;v1.5&gt; <br>
+        &bull;slide에 공통된 class를 부여, document.getElementsByClassname를 사용 <br>
+        &bull;classname 뒤에는 [i]를 붙여 몇번째 클래스인지 읽어옴 (0부터 시작) <br><br>
+<pre>
+var slideIndex=1;
+var mySlide=document.getElementsByClassname('myslide');
+
+function slidePrev() {
+    if (slideIndex==4) {
+        mySlide[0].style.display="none";
+        mySlide[1].style.display="none";
+        mySlide[2].style.display="block";   
+        mySlide[3].style.display="none";     
+        slideIndex=3;
+    }    
+
+    else if(slideIndex==3)
+    else if(slideIndex==2)
+    <span style="color: blue;">&lt;slideIndex가 1이 되면 아무동작도 되지 않음&gt;</span>
+}
+
+function slideNext() {
+    if (slideIndex==1) {
+        mySlide[0].style.display="none";
+        mySlide[1].style.display="block";
+        mySlide[2].style.display="none";   
+        mySlide[3].style.display="none";  
+        slideIndex=2;
+    }    
+
+    else if(slideIndex==2)
+    else if(slideIndex==3)
+    <span style="color: blue;">&lt;slideIndex가 4이 되면 아무동작도 되지 않음&gt;</span>
+} <br>
+</pre>
+    <iframe width="600" height="300" src="http://jsfiddle.net/happyboyhj/sobgmxv7/2/embedded/result,html,css,js" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0" style="border: 1px solid black;"></iframe>
+<!--v1.5 끝--></div> <br><br><br>
+
+
+
+<!--v2 시작--><div>
+    &lt;v2&gt; <br>
+    &bull;slide에 공통된 class를 부여, document.getElementsByClassname를 사용 <br>
+    &bull;조건문(if)마다 4가지 경우의 수를 반복하지 않고, 반복문(for)를 사용하여 모든 슬라이드를 닫고 선택된 슬라이드만 보이게 하도록 설정 <br><br>
+<pre>
+var slideIndex=1;
+var mySlide=document.getElementsByClassname('myslide');
+
+function slidePrev() {
+    for (i=0; i&lt;4; i++) {
+        mySlide[i].style.display="none";
+    }
+
+    if (slideIndex==4) { 
+        mySlide[2].style.display="none"; <span style="color: blue;">&lt;slideIndex와 [i]의 관계 : -2&gt;</span>
+        slideIndex=3; <span style="color: blue;">&lt;slideIndex와 다음 변수의 관계 : -1&gt;</span>  
+    }
+
+    else if (slideIndex==3)
+    else if (slideIndex==2)
+    
+    <span style="color: blue;">&lt;slideIndex가 1이 되면 다시 slideIndex 4로 환원&gt;</span>
+    else if(slideIndex==1) { 
+        mySlide[3].style.display="block";
+        slideIndex=4;
+    }
+}
+
+function slideNext() {
+    for (i=0; i&lt;4; i++) {
+        mySlide[i].style.display="none";
+    }
+
+    if (slideIndex==1) {
+        mySlide[1].style.display="block"; <span style="color: blue;">&lt;slideIndex와 [i]의 관계 : 같음;</span>
+        slideIndex=2; <span style="color: blue;">&lt;slideIndex와 [i]의 관계 : +1&gt;</span>
+    }
+
+    else if (slideIndex==2)
+    else if (slideIndex==3)
+
+    <span style="color: blue;">&lt;slideIndex가 4이 되면 다시 slideIndex 1로 환원&gt;</span>
+    else if(slideIndex==4) { 
+        mySlide[0].style.display="block";
+        slideIndex=1;
+    }
+} <br>
+</pre>
+<iframe width="600" height="300" src="http://jsfiddle.net/happyboyhj/61xn0bcj/1/embedded/result,html,css,js" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0" style="border: 1px solid black;"></iframe>
+<!--v2 끝--></div> <br><br><br>
+   
+
+
+<!--v2.5 시작--><div>
+    &lt;v2.5&gt; <br>
+    &bull;slide에 공통된 class를 부여, document.getElementsByClassname를 사용 <br>
+    &bull;조건문(if)마다 4가지 경우의 수를 반복하지 않고, 반복문(for)를 사용하여 모든 슬라이드를 닫고 선택된 슬라이드만 보이게 하도록 설정 <br>
+    &bull;else if를 반복하지 않게, 조건문 처리 후 변수의 관계를 계산해 자동적으로 변수 저장<br>
+    (prev : [slideIndex-2]/slideIndex-1) <br>
+    (next : [slideIndex]/slideIndex+1) <br>
+    &bull;단, 그렇게 되면 마지막 페이지에 갔을때 문제가 되므로 거꾸로 마지막 페이지 갔을때의 경우를 if문으로 놓고 나머지 경우는 else로 처리함<br><br>
+<pre>
+var slideIndex=1;
+var mySlide=document.getElementsByClassname('myslide');
+
+function slidePrev() {
+    for (i=0; i&lt;4; i++) {
+        mySlide[i].style.display="none";
+    }
+
+    <span style="color: blue;">&lt;slideIndex가 1이 되면 다시 slideIndex 4로 환원&gt;</span>    
+    if (slideIndex==1) {
+        mySlide[3].style.display="block"
+        slideIndex=4;
+    }
+
+    <span style="color: blue;">&lt;slideIndex가 1이 아니라면 이전 슬라이드 출력&gt;</span>    
+    else {
+        mySlide[slideIndex-2].style.display="block"
+        slideIndex=slideIndex-1;
+    }  
+}
+
+function slideNext() {
+    for (i=0; i&lt;4; i++) {
+        mySlide[i].style.display="none";
+    }
+
+    <span style="color: blue;">&lt;slideIndex가 4이 되면 다시 slideIndex 1로 환원&gt;</span>    
+    if (slideIndex==4) {
+        mySlide[0].style.display="block"
+        slideIndex=1;
+    }
+
+    <span style="color: blue;">&lt;slideIndex가 4가 아니라면 다음 슬라이드 출력&gt;</span>    
+    else {
+        mySlide[slideIndex].style.display="block"
+        slideIndex=slideIndex+1;
+    }
+} <br>
+</pre>
+<iframe width="600" height="300" src="http://jsfiddle.net/happyboyhj/fjwurh6n/1/embedded/result,html,css,js" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0" style="border: 1px solid black;"></iframe>
+<!--v2.5 끝--></div> <br><br><br>
+
+    
+</body>    
+</html>
