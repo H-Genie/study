@@ -15,7 +15,7 @@ a {color: blue; text-decoration: underline;}
 
 
 /* index */
-.title >div {width: fit-content; display: flex; align-items: center; box-sizing: border-box; cursor: pointer;}
+.title fieldset >div {width: fit-content; display: flex; align-items: center; box-sizing: border-box; cursor: pointer;}
 
     .title img {height: 50px; padding-right: 15px;}
     
