@@ -218,6 +218,52 @@ function slideNext() {
 <iframe width="600" height="300" src="//jsfiddle.net/happyboyhj/fjwurh6n/1/embedded/result,html,css,js" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0" style="border: 1px solid black;"></iframe>
 <!--v2.5 끝--></div> <br><br><br>
 
+
+
+<!--v3 시작--><div>
+    &lt;v3&gt; <br>
+    &bull;length 속성을 사용하여 4를 length로 치환 <br>
+    (mySlide.lenth=slide 갯수를 의미) : mySlide가 최대를 의미하면 치환
+    
+<pre>
+var slideIndex=1;
+var mySlide=document.getElementsByClassname('myslide');
+
+function slidePrev() {
+    for (i=0; i&lt;mySlide.lenth; i++) {
+        mySlide[i].style.display="none";
+    }
+    
+    if (slideIndex==1) {
+        mySlide[mySlide.lenth-1].style.display="block"
+        slideIndex=mySlide.lenth;
+    }
+
+    else {
+        mySlide[slideIndex-2].style.display="block"
+        slideIndex=slideIndex-1;
+    }  
+}
+
+function slideNext() {
+    for (i=0; i&lt;mySlide.lenth; i++) {
+        mySlide[i].style.display="none";
+    }
+    
+    if (slideIndex==mySlide.lenth) {
+        mySlide[0].style.display="block"
+        slideIndex=1;
+    }
+    
+    else {
+        mySlide[slideIndex].style.display="block"
+        slideIndex=slideIndex+1;
+    }
+} <br>
+</pre>
+<iframe width="600" height="300" src="//jsfiddle.net/happyboyhj/fsovc7rh/2/embedded/result,html,css,js" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0" style="border: 1px solid black;"></iframe>
+<!--v3 끝--></div> <br><br><br>
+
     
 </body>    
 </html>
