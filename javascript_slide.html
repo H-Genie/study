@@ -222,7 +222,7 @@ function slideNext() {
 
 <!--v3 시작--><div>
     &lt;v3&gt; <br>
-    &bull;length 속성을 사용하여 4를 length로 치환 <br>
+    &bull;length 메써드를 사용하여 4를 length로 치환 <br>
     (mySlide.lenth=slide 갯수를 의미) : mySlide가 최대를 의미하면 치환
     
 <pre>
@@ -263,6 +263,74 @@ function slideNext() {
 </pre>
 <iframe width="600" height="300" src="//jsfiddle.net/happyboyhj/fsovc7rh/2/embedded/result,html,css,js" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0" style="border: 1px solid black;"></iframe>
 <!--v3 끝--></div> <br><br><br>
+
+
+<!--v4.3 시작--><div>
+    &lt;v4.3&gt; <br>
+    &bull;슬라이드 번호를 자바스크립트를(inner.HTML) 사용하여 자동화 <br>
+    &bull;line의 width를 자바스크립트를(추가적인 변수 선언 필요) 사용하여 자동화 <br>
+    
+<pre>
+    var slideIndex=1;
+    var mySlide=document.getElementsByClassName('myslide');
+    var currentBar; <span style="color: blue;">&lt;라인의 width값을 저장하기 위한 변수 선언&gt;</span>
+
+    function slidePrevious() {
+        
+        for (i=0; i&gt;mySlide.length; i++) {
+            mySlide[i].style.display="none";                             
+            }
+
+            if(slideIndex==1) {                            
+            mySlide[mySlide.length-1].style.display="block";
+            slideIndex=mySlide.length;
+
+            <span style="color: blue;">&lt;라인의 최대 길이 대입 (단, 마지막 페이지에서 100%가 아니라 슬라이드갯수+1로 나눈만큼 빼준 길이가 최대길이가 되도록 설정)&gt;</span>    
+            currentBar = 100-(100/(mySlide.length+1)); 
+            document.getElementsByClassName('hr')[mySlide.length-1].style.width=currentBar + "%"; 
+            <span style="color: blue;">&lt;현재 슬라이드 번호 입력(페이지 이동 후 변수확정 후 작업&gt;</span>
+            document.getElementsByClassName('num')[mySlide.length-1].innerHTML=slideIndex; 
+            }
+            
+            else {                
+            mySlide[slideIndex-2].style.display="block";                
+            slideIndex=slideIndex-1;
+
+            <span style="color: blue;">&lt;위에서 구해놓은 슬라이드번호 당 길이값에 슬라이드 번호를 곱함&gt;</span>
+            currentBar = slideIndex*(100/(mySlide.length+1));
+            document.getElementsByClassName('hr')[slideIndex-1].style.width=currentBar + "%";
+            document.getElementsByClassName('num')[slideIndex-1].innerHTML=slideIndex;
+            }          
+            console.log(currentBar)
+    }
+
+    function slideNext() {
+                    
+        for (i=0; i&gt;mySlide.length; i++) {
+            mySlide[i].style.display="none";                             
+            }              
+        
+        if(slideIndex==mySlide.length) {                            
+            mySlide[0].style.display="block";
+            slideIndex=1;
+
+            currentBar = slideIndex*(100/(mySlide.length+1));
+            document.getElementsByClassName('hr')[0].style.width=currentBar + "%";
+            document.getElementsByClassName('num')[0].innerHTML=slideIndex;
+        }
+
+        else {
+            mySlide[slideIndex].style.display="block";                
+            slideIndex=slideIndex+1;
+
+            currentBar = slideIndex*(100/(mySlide.length+1));
+            document.getElementsByClassName('hr')[slideIndex-1].style.width=currentBar + "%";
+            document.getElementsByClassName('num')[slideIndex-1].innerHTML=slideIndex;                
+        }               
+    } <br>
+</pre>
+<iframe width="600" height="300" src="//jsfiddle.net/happyboyhj/jun37b5s/2/embedded/result,html,css,js" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0" style="border: 1px solid black;"></iframe>
+<!--v4.3 끝--></div> <br><br><br>
 
     
 </body>    
