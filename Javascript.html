@@ -17,51 +17,25 @@
     
 </head>
 
-
-
 <body>
 
-    <div>
-       
-        <p>
-            애니메이션 : style을 미리 정의해놓은 class를 추가했다가(add), 뺐다가(remove) 하는 방법으로 응용할 수 있음 (toggle : add or remove) <br>
-            classList.toggle("")
-        </p> <br><br>
+    <!--자바스크립트-->
+    <div class="chapter_box" id="ch1-1" style="margin-top: 0;">
 
-        <p>
-            ★문제에 초점을 둬라 (ex 슬라이드 되야함) <br>
-            - 방법으로 해결하려고 하면 끝이 없음
-        </p> <br><br>
-
-        <p>
-            event : 개체에 이벤트가 발생하면 어떤 작업을 실행(CRUD)해라 <br>
-            함수 = 코드 블럭(집합체)
-        </p> <br><br>
-
-        <p>
-            else : if의 조건이 아니면 실행해라 <br>
-            else if : else에 조건이 또 걸림
-        </p> <br><br>
-
-        <p>
-            배열 : id를 지정하면 동작이 많아질수록 불편함 <br>
-            - 숫자로 표현(순서가 중요) : 1학년 1반의 - 1번은 누구~ 2번은 누구~ <br>
-            오브젝트 : something=somethinh / 다양하게 지정 가능(숫자, 문자 등)
-        </p> <br><br>
-        
-    </div> <br><br>
-
-
-    <!--기초개념-->
-    <div class="chapter_box" id="ch1" style="margin-top: 0;">
-
-        <p class="subject">기초개념</p> <br>
+        <p class="subject">Javascript</p> <br>
 
         <p>
             자바스크립트 <br>
             &bull; 왜 생겼나? HTML로는 상호작용이 부족 <br>
             &bull; 특징 : 브라우저에 종속되어 있음 ⇒ 웹과 연동되어 작동 <br>
             &bull; node.js로 다른 환경으로 확장 가능
+        </p> <br><br>
+
+        <p>
+            ECMA-262 기술규격에 정의된 표준화된 스크립트 프로그래밍 언어 <br>
+            &bull; 스크립트 언어 : 응용 소프트웨어를 제어하는 프로그래밍 언어 / 응용 프로그램의 언어와 다른 언어로 사용되어, 응용 프로그램과 독립하여 사용되고 최종사용자가 응용 프로그램의 동작을 사용자의 요구에 맞게 수행할 수 있음 <br>
+            &bull; ECMAScript라고도 함 <br>
+            &bull; 2020년 4월 현재 ES2019가 최신버전이며, 가장 많이 사용하는 버전은 ES6
         </p> <br><br>
 
         <p>
@@ -96,36 +70,16 @@
             </div>
         </p> <br><br>
 
-        <p>
-            ECMA-262 기술규격에 정의된 표준화된 스크립트 프로그래밍 언어 <br>
-            &bull; 스크립트 언어 : 응용 소프트웨어를 제어하는 프로그래밍 언어 / 응용 프로그램의 언어와 다른 언어로 사용되어, 응용 프로그램과 독립하여 사용되고 최종사용자가 응용 프로그램의 동작을 사용자의 요구에 맞게 수행할 수 있음 <br>
-            &bull; ECMAScript라고도 함 <br>
-            &bull; 2020년 4월 현재 ES2019가 최신버전이며, 가장 많이 사용하는 버전은 ES6
-        </p> <br><br>
+    </div>
 
-        <p>
-            &lt;script&gt;의  위치는 가급적이면 해당 HTML 아래에 오면 좋음 <br>
-            ⇒ 이벤트를 추가하는 경우에는 classname이 정의가 안된 경우에는 문제가 될 수 있음
-        </p> <br><br>
+    <!--자바스크립트 : 어휘 구조-->
+    <div class="chapter_box" id="ch1-2">
 
-        <p>
-            document : HTML Bridge <br>
-            &bull; HTML DOM Tree와 자바스크립트를 연결시켜 줌 <br>
-            &bull; HTML은 호출 / JS : 찾아서 실행
-        </p> <br><br>
-
-        <p>
-            고정값 : literal <br>
-            → number, strings(문자열-따옴표 안에 써야함) <br>
-            변수 : variable <br><br>
-
-            산술연산자 : 계산에 쓰임 (+-x/) <br>
-            대입연산자 : = (할당)<br>
-        </p> <br><br>
+        <p class="subject">어휘 구조 (Lexical Structure)</p> <br>
 
         <p>
             표현식(Expressions) : 값, 변수, 연산자의 조합 <br>
-            키워드 : 예약된 명령문 (ex var은 변수라는 의미로 예약이 되어 있어서 식별자로 사용할 수 없음) <br>
+            키워드(예약어) : 예약된 명령문 (ex var은 변수라는 의미로 예약이 되어 있어서 식별자로 사용할 수 없음) <br>
             &bull;같은 의미에서, hyphen은 뺄셈을 위해 예약되어 있기때문에 식별자로 사용할 수 없음 <br><br>
 
             식별자 (Identifiers) : 변수(및 키워드, 함수 및 레이블)의 이름을 지정하는 데 사용 <br>
@@ -140,10 +94,10 @@
     </div>
 
 
-    <!--문법 : 변수-->
+    <!--데이터 : 타입-->
     <div class="chapter_box" id="ch2-1">
 
-        <p class="subject">변수</p> <br>
+        <p class="subject">Data Type</p> <br>
 
         <p>
             &lt;Data Type&gt; : 변수에 저장할수 있는 자료 형 <br>
@@ -160,7 +114,20 @@
             ⑧ 함수 : typeof function myFunc() {}
         </p> <br><br>
 
-        <p>유형 연산자 : typeof OOO</p>
+    </div>
+
+
+    <!--데이터 : 변수-->
+    <div class="chapter_box" id="ch2-2">
+
+        <p class="subject">변수와 상수</p> <br>
+
+        <p>
+            고정값 : literal <br>
+            → number, strings(문자열-따옴표 안에 써야함) <br>
+            변수 : variable          
+        </p> <br><br>
+         
         <p>변수의 공간에는 하나의 데이터만 들어갈 수 있는 것은 아님 <br>
             ex) mySlide = document.getElementByClassname('mySlide')</p> <br>
         <p>왼쪽에서 오른쪽으로 식을 평가 : 순서가 다르면 결과가 다름 <br>
@@ -173,10 +140,10 @@
     </div>
 
 
-    <!--문법 : 연산자-->
-    <div class="chapter_box" id="ch2-2">
+    <!--연산자-->
+    <div class="chapter_box" id="ch3">
 
-        <p class="subject">연산자</p> <br>
+        <p class="subject">연산자(Operator)</p> <br>
 
         <p>
             &lt;할당 연산자 (Assignment Operator) &gt; <br>
@@ -208,40 +175,84 @@
         </p> <br>
 
         <p>
-            &lt;논리 연산자&gt; <br>
-            || : or <br>
-            && : and <br>
-            ! : not (반대 결괏값 반환)
+            &lt;비교 연산자 (Comparison Operator) &gt; <br>
+            <table>
+                <tr style="background-color: #DEE1E6;"><td>Operator</td><td>Description</td><td></td></tr>
+                <tr><td>==</td><td>equal to</td><td>값이 같음</td></tr>
+                <tr><td>===</td><td>equal value and equal type</td><td>값과 형식이 같음</td></tr>
+                <tr><td>!=</td><td>not equal</td><td>같지 않음</td></tr>
+                <tr><td>!==</td><td>not equal value or not equal type</td><td>값이 같지 않거나 형식이 같지 않음</td></tr>
+                <tr><td>></td><td>greater than</td><td>크다</td></tr>
+                <tr><td>&lt;</td><td>less than</td><td>작다</td></tr>
+                <tr><td>>=</td><td>greater than equal to</td><td>크거나 같음</td></tr>
+                <tr><td>&lt;=</td><td>less than or equal to</td><td>작거나 같음</td></tr>
+                <tr><td>?</td><td>ternary operator</td><td>조건부 삼항 연산자 (조건에 따라 다른 값을 반환)</td></tr>
+            </table>
         </p> <br>
 
-        <p>유형 연산자 : typeof OOO (연산자 변수 또는 표현식의 타입을 반환)</p>
+        <p>
+            &lt;조건부 연산자 (Ternary Operator) &gt; <br>
+            일부 조건에 따라 변수에 값을 할당하는 조건부 연산자 <br><br>
+
+            variablename = (condition) ? value1:value2 <br><br>
+
+            var age = 29; <br>
+            var canDrinkAlcohol = (age > 19)? "True, over 19" : "False, under 19"; <br>
+            console.log(canDrinkAlcohol);
+        </p> <br><br>
+
+        <p>
+            &lt;논리 연산자 (Logical Operator) &gt; <br>
+            <table>
+                <tr style="background-color: #DEE1E6;"><td>Operator</td><td>Description</td><td>Example</td></tr>
+                <tr><td>&&</td><td>and</td><td>(x<10 && y>1</10>)</td></tr>
+                <tr><td>||</td><td>or</td><td>(x==5 || y==5)</td></tr>
+                <tr><td>!</td><td>not</td><td>!(x==y)</td></tr>               
+            </table>
+        </p> <br>
+
+        <p>
+            &lt;유형 연산자&gt; <br>
+            &bull;typeof OOO (연산자 변수 또는 표현식의 타입을 반환) <br>
+            &bull;instance OOO (클래스에 속하거나 상속여부에 따라 boolean으로 변환)
+        </p>
     </div>
 
 
-    <!--제어문 : 조건문-->
-    <div class="chapter_box" id="ch3-1">
+    <!--문징 : 조건문-->
+    <div class="chapter_box" id="ch4-1">
 
-        <p class="subject">조건문</p> <br>
+        <p class="subject">조건문 (Conditional Statement)</p> <br>
+
+        if, else if, else, swith (모든 글자를 소문자로 써야 함) <br><br>
+
+        <p>
+            &bull;Switch문 : 많은 대체 코드 블록 중에 원하는 조건에 맞는 코드 블럭을 실행 <br><br>
+
+            switch (expression) { <br>
+                case0: break; <br>
+                case1: break; <br>
+                caseX: break; <br>
+                default: <br>
+            } <br><br>
+
+            1. 여러 사례가 사례값과 일치하면 첫번째 사례가 선택됨 <br>
+            2. 일치하는 사례가 없으면 프로그램은 기본 레이블(default)로 계속 진행 <br>
+            3. 기본 레이블이 없으면 프로그램은 전환 후에 명령문으로 계속 진행 <br>
+            4. 스위치 케이스는 엄격한 비교(===, Strict Comparison)를 사용. 값이 일치하려면 동일한 유형이어야 함
+        </p>
 
     </div>
+    
 
+    <!--문장 : 루프-->
+    <div class="chapter_box" id="ch4-2">
 
-    <!--제어문 : 선택문-->
-    <div class="chapter_box" id="ch3-2">
-
-        <p class="subject">선택문</p> <br>
-
-    </div>
-
-
-    <!--제어문 : 반복문-->
-    <div class="chapter_box" id="ch3-3">
-
-        <p class="subject">반복문</p> <br>
+        <p class="subject">Loop</p> <br>
 
         <p>
             for (i:0; i&lt;4; i++) {코드 블럭} <br>
-            &bull; 시작시 입력 값 : 아무문자나 지정해도 상관없음 / 주로 Index의 I를 사용 <br>
+            &bull; 시작시 입력 값 : 아무문자나 지정해도 상관없음 / 주로 Index의 i를 사용 <br>
             &bull; 횟수 : 4번이 되기 전까지 실행 <br>
             &bull; 한번 실행 한 후 i에 더함<br>
             &bull; {} : 안에 있는 동작을 반복
@@ -251,9 +262,39 @@
 
 
     <!--객체-->
-    <div class="chapter_box" id="ch4">
+    <div class="chapter_box" id="ch5">
 
-        <p class="subject">Object</p> <br>
+        <p class="subject">객체 (Object)</p> <br>
+
+        <div class="content_box">
+            <p>
+                자동차를 하나의 객체로 예를 들어보면, <br>
+                자동차에는 무게와 색상과 같은 속성과 <br>
+                시작 및 중지와 같은 방법이 있음. <br><br>
+                <table>
+                    <tr style="text-align: center;"><td>객체<br>Object</td><td>속성<br>Properties</td><td>방법<br>Methods</td></tr>
+                    <tr><td>자동차</td><td>car.name=피아트<br>car.model=500<br>car.weight=850Kg<br>car.color=white</td><td>car.start( )<br>car.drive( )<br>car.break( )<br>car.stop( )</td></tr>
+                </table> <br>
+
+                모든 자동차의 속성은 동일하지만 속성값은 자동차마다 다름 <br>
+                모든 자동차는 동일한 방법을 사용하지만 방법은 다른 시간에 수행됨 <br>
+                (속성의 이름은 같고, 값을 저마다 다름)
+            </p>
+        </div> <br><br>
+
+        <p>
+            객체도 변수임. 그러나 객체에는 많은 값이 포함될 수 있음. <br>
+            var car={type:"Fiat", model:"500", color:"white"}; <br>
+            &bull;car.type="Fiat" <br>
+            &bull;car.model="500" <br><br>
+
+            값은 name:value 쌍 (이름과 값을 콜론으로 구분)으로 작성 <br>
+            자바스크립트 객체는 속성 또는 메서드로 명명된 값의 컨테이너 <br><br>
+
+            객체방법 : 속성과 메서드를 가질 수 있음 <br>
+            메서드는 오브젝트에서 수행할 수 있는 조치 <br>
+            메서드는 함수정의로 특성에 저장
+        </p> <br><br>
 
         <p>
             style="display: ;" - 오브젝트라 짝이 맞아야 함 <br>
@@ -261,16 +302,51 @@
         </p> <br><br>
 
         <p>
-            자바스크립트는 객체(Object)기반 언어 <br>
-            객체는 기능과 속성을 가지고 있음 <br><br>
+            cf) <br>
+            배열 : id를 지정하면 동작이 많아질수록 불편함 <br>
+            - 숫자로 표현 : 1학년 1반의 - 1번은 누구~ 2번은 누구~ / 이름표를 안붙이고 번호표만 붙여서 창고에 집어넣음(순서가 중요) <br>
+            오브젝트 : something=something / 다양하게 지정 가능(숫자, 문자 등) / 이름표를 붙여서 창고에 집어넣음
+        </p> <br><br>
 
-            document는 객체 - 객체에 해당하는 출력기능 = Method <br><br>
+    </div> <br><br>
 
-            객체.메서드( ); <br>
-            객체.속성 <br>
-            객체.속성=값;
+     <!--배열-->
+     <div class="chapter_box" id="ch6">
+
+        <p class="subject">배열 (Array)</p> <br>
+
+        <p>
+            단일 변수에 여러값을 저장하는데 사용(대괄호) : 0부터 시작 <br>
+            &bull;둘 이상의 값을 보유할 수 있는 특수 변수 <br>
+            &bull;색인번호를 참조(=CRUD)하여 값에 엑세스 할 수 있음 <br>
+            &bull;배열안에 변수를 넣을 수도 있음
         </p>
 
+    </div> <br><br>
+
+
+    <div> <!--내용 미분류-->     
+        <p> <!--13장-->
+            &lt;script&gt;의  위치는 가급적이면 해당 HTML 아래에 오면 좋음 <br>
+            ⇒ 이벤트를 추가하는 경우에는 classname이 정의가 안된 경우에는 문제가 될 수 있음
+        </p> <br><br>
+
+        <p> <!--15장-->
+            document : HTML Bridge <br>
+            &bull; HTML DOM Tree와 자바스크립트를 연결시켜 줌 <br>
+            &bull; HTML은 호출 / JS : 찾아서 실행
+        </p> <br><br>
+        
+        <p> <!--17. 이벤트-->
+            애니메이션 : style을 미리 정의해놓은 class를 추가했다가(add), 뺐다가(remove) 하는 방법으로 응용할 수 있음 (toggle : add or remove) <br>
+            classList.toggle("") <br>
+            event : 개체에 이벤트가 발생하면 어떤 작업을 실행(CRUD)해라
+        </p> <br><br>
+
+        <p> <!--17. 이벤트-->
+            ★문제에 초점을 둬라 (ex 슬라이드 되야함) <br>
+            - 방법으로 해결하려고 하면 끝이 없음
+        </p>                 
     </div>
     
 
