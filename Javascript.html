@@ -251,11 +251,176 @@
         <p class="subject">Loop</p> <br>
 
         <p>
-            for (i:0; i&lt;4; i++) {코드 블럭} <br>
-            &bull; 시작시 입력 값 : 아무문자나 지정해도 상관없음 / 주로 Index의 i를 사용 <br>
-            &bull; 횟수 : 4번이 되기 전까지 실행 <br>
-            &bull; 한번 실행 한 후 i에 더함<br>
-            &bull; {} : 안에 있는 동작을 반복
+            &lt;반복문> <br>
+            : 매번 다른 값으로 동일한 코드를 반복해서 실행 (특히, 배열로 작업시) <br><br>
+            
+            &bull;for : 코드 블럭을 여러 번 반복 <br>
+            &bull;for in : 객체의 속성을 반복 <br>
+            &bull;for of : 반복 가능한 객체의 값을 반복 <br>
+            &bull;while : 지정된 조건이 참인 동안 코드블럭을 반복 <br>
+            &bull;do while : 지정된 조건이 참인 동안 코드블럭을 반복
+        </p> <br><br>
+
+       
+        <div class="content_box">
+            <p>
+                &lt;For Loop> <br>
+                for (statement1; statement2; statement3) <br><br>
+
+                명령문1은 코드블럭을 실행하기 전에 한번 실행 <br>
+                명령문2는 코드블럭을 실행하기 위한 조건을 정의 <br>
+                코드블럭이 실행된 후 (매번) 명령문3이 실행됨
+            </p>
+        </div> <br><br>
+
+        <p>
+            &lt;명령문1> <br>
+            일반적으로 명령문1을 사용하여 루프에 사용된 변수를 초기화 함 (i=0;) <br>
+            명령문 1은 선택사항 <br>
+            명령문1에서 많은 값을 시작할 수 있음 (쉼표로 구분) <br><br>
+
+<pre>
+&lt;p id="demo">&lt;/p> <br>
+&lt;script>
+var cars=["BMW","Volvo","Saab","Ford"];
+var i, len, txt;
+for (i=0, len=cars.length, text=""; i&lt;len; i++) {
+    txt+=cars[i]+"&lt;br>";
+}
+document.getElementById("demo").innerHTML=txt;
+&lt;/script>
+</pre> <br>
+            
+            루프1이 시작되기 전에 값이 설정될 때와 같이 명령문1을 생략할 수 있음 <br><br>
+
+<pre>
+&lt;p id="demo">&lt;/p> <br>
+&lt;script>
+var cars=["BMW","Volvo","Saab","Ford"];
+var i=2;
+var len=cars.length;
+var txt="";
+for (; i<&lt;len; i++) {
+    txt+=cars[i]+"&lt;br>";
+}
+document.getElementById("demo").innerHTML=txt;
+&lt;/script>
+</pre> <br>
+        </p> <br><br>
+
+        <p>
+            &lt;명령문2> <br>
+            명령문2는 종종 초기 변수의 조건을 평가하는 데 사용 <br>
+            명령문 2도 선택사항 <br>
+            명령문2가 true를 리턴하면 루프가 다시 시작되고, false를 리턴하면 루프가 종료됨 <br>
+            명령문2를 생략하면 루프 내부에 중단을 제공해야 함 <br>
+            그렇지 않으면 루프가 끝내지 않고 브라우저가 다운됨 (무한루프) <br><br>
+        </p> <br><br>
+
+        <p>
+            &lt;명령문3> <br>
+            명령문3은 종종 초기 변수의 값을 증가시킴 <br>
+            명령문3은 음수 증분(i--), 양수 증분(i=i+15) 또는 기타 다른 작업을 수행 할 수 있음 <br>
+            루프 내에서 값을 증가시킬 떄와 같이 명령문3도 생략할 수 있음 <br><br>
+
+<pre>
+&lt;p id="demo">&lt;/p> <br>
+&lt;script>
+var cars=["BMW","Volvo","Saab","Ford"];
+var i=0;
+var len=cars.length;
+var txt="";
+for (; i<&lt;len;) {
+    txt+=cars[i]+"&lt;br>";
+}
+document.getElementById("demo").innerHTML=txt;
+&lt;/script>
+</pre>
+        </p> <br><br>
+
+        <div class="content_box">
+            <p>
+                &lt;For/In Loop> <br><br>
+                for/in문은 객체의 속성을 반복함 <br>
+                배열도 객체이기 때문에 배열에서도 사용 가능
+            </p>
+        </div> <br>
+        <P>
+<pre>
+&lt;p id="demo">&lt;/p> <br>
+&lt;script>
+var txt=""
+var person={fname:"John",lname:"Doe",age:25};
+var x;
+for (x in person) {
+    txt += person[x] + " ";
+}
+document.getElementById("demo").innerHTML=txt;
+&lt;/script>
+</pre>
+        </P> <br><br>
+
+        <div class="content_box">
+            <p>
+                &lt;For/Of Loop> <br><br>
+                for/of문은 반복가능한 객체의 값을 반복함 <br>
+                배열, 문자열, 맵, 노드, 목록 등고 같이 반복 가능한 데이터 구조를 반복할 수 있음 <br><br>
+
+                for (variable of iterable) { <br><br>
+                
+                <span style="font-size: smaller;">
+                * variable : 반복할 때마다 다음 특성의 값이 변수에 지정됨 <br>
+                * iterable : 반복 가능한 속성을 가진 객체
+                </span>
+            </p>
+        </div> <br>
+
+
+        <div class="content_box">
+            <p>
+                &lt;While Loop> <br><br>
+                지정된 조건이 true면 루프는 코드블럭을 실행할 수 있음 <br>
+                조건에 사용된 변수를 늘리는 것을 잊어 버리면 루프가 끝나지 않고 브라우저가 다운됨 <br><br>
+
+                while (condition) {                       
+            </p>
+        </div> <br>
+        <p>
+<pre>
+&lt;p id="demo">&lt;/p> <br>
+&lt;script>
+var txt=""
+var i=0;
+while (i&lt;10) {
+    txt += "&lt;br> The number is"+ i; i++;
+}
+document.getElementById("demo").innerHTML=txt;
+&lt;/script>
+</pre>
+        </p> <br><br>
+
+
+        <div class="content_box">
+            <p>
+                &lt;Do / While Loop> <br><br>
+                while 루프의 변종 <br>
+                이 루프는 조건이 참인지 확인하기 전에 코드블럭을 한번 실행 한 다음 조건이 참이면 루프를 반복 <br><br>
+
+                do { } <br>
+                while (condition);
+            </p>
+        </div> <br>
+        <p>
+<pre>
+&lt;p id="demo">&lt;/p> <br>
+&lt;script>
+var txt=""
+var i=0;
+do {txt += "&lt;br> The number is" + i; i++;}
+while (i&lt;10);
+document.getElementById("demo").innerHTML=txt;
+&lt;/script>
+</pre>
         </p> <br><br>
 
     </div>
@@ -308,7 +473,7 @@
             오브젝트 : something=something / 다양하게 지정 가능(숫자, 문자 등) / 이름표를 붙여서 창고에 집어넣음
         </p> <br><br>
 
-    </div> <br><br>
+    </div>
 
      <!--배열-->
      <div class="chapter_box" id="ch6">
