@@ -258,7 +258,7 @@
             &bull;for in : 객체의 속성을 반복 <br>
             &bull;for of : 반복 가능한 객체의 값을 반복 <br>
             &bull;while : 지정된 조건이 참인 동안 코드블럭을 반복 <br>
-            &bull;do while : 지정된 조건이 참인 동안 코드블럭을 반복
+            &bull;do while : 지정된 조건이 참인 동안 코드블럭을 반복 (do를 먼저 실행하고 반복문을 실행)
         </p> <br><br>
 
        
@@ -371,7 +371,8 @@ document.getElementById("demo").innerHTML=txt;
                 <span style="font-size: smaller;">
                 * variable : 반복할 때마다 다음 특성의 값이 변수에 지정됨 <br>
                 * iterable : 반복 가능한 속성을 가진 객체
-                </span>
+                </span> <br><br>
+                배열, 문자(한글자씩) 다 가능
             </p>
         </div> <br>
 
@@ -382,7 +383,9 @@ document.getElementById("demo").innerHTML=txt;
                 지정된 조건이 true면 루프는 코드블럭을 실행할 수 있음 <br>
                 조건에 사용된 변수를 늘리는 것을 잊어 버리면 루프가 끝나지 않고 브라우저가 다운됨 <br><br>
 
-                while (condition) {                       
+                while (condition) { <br><br>
+                    
+                증감이 조건 안에 있게 됨
             </p>
         </div> <br>
         <p>
@@ -426,8 +429,122 @@ document.getElementById("demo").innerHTML=txt;
     </div>
 
 
-    <!--객체-->
+    <!--배열-->
     <div class="chapter_box" id="ch5">
+
+        <p class="subject">배열 (Array)</p> <br>
+
+        <p>
+            단일 변수에 여러값을 저장하는데 사용(대괄호) : 0부터 시작 <br>
+            &bull;둘 이상의 값을 보유할 수 있는 특수 변수 <br>
+            &bull;색인번호를 참조(=CRUD)하여 값에 엑세스 할 수 있음 <br>
+            &bull;배열안에 변수를 넣을 수도 있음
+        </p>
+
+    </div>
+
+
+    <!--함수-->
+    <div class="chapter_box" id="ch6">
+
+        <p class="subject">함수 (Function)</p> <br>
+
+        <div class="content_box">
+            <p>
+                &lt;프로그래밍 언어의 발전> <br><br>
+
+                ① Anlaog (ex 주판) : Memory가 안됨 <br>
+                → <span style="color: blue;">variable(저장)</span> <br>
+                &nbsp;&nbsp;&nbsp;&nbsp; + <span style="color: blue;"> Operator(할당,연산)</span> <br>
+                → <span style="color: blue;">Condition (조건)</span> <br>
+                &nbsp;&nbsp;&nbsp;&nbsp; + <span style="color: blue;"> Loop (반복)</span> <br><br>
+
+                ② <strong>function</strong> (Processor) = 코드블럭 : 똑같은 계산을 반복하게 됨 <br>
+                * but, 함수가 너무 많아지게 됨 (ex 망치+톱+드라이버 : 편할것 같지만 무거워서 아무도 안씀) <br>
+                → 기능별로 나눠서 쓰면 편함 (ex 전동 드라이버) <br><br>
+
+                ③ <strong>Object</strong> : 함수의 기능을 쪼갬 (=공구함) <br>
+                (ex 가계부 : 수입만 계산 / 지출만 계산) ⇒ 합쳐서 쓰면 재사용하기 힘듦 <br><br>
+
+                &bull;object는 property와 method로 구성되어 있음 = property(=literal) / method(=function) <br>
+                &bull;A method is function stored as a property <br><br>
+
+                &bull;공구 혹은 공구함을 배포 : Library = API <br>
+                &bull;작업실을 배포 : Framework <br><br>
+
+                * OOP : Object Oriented Program 객체지향 프로그램 (C → C++ (object C))
+            </p>
+        </div> <br><br>
+
+        <p>
+            함수 : <br>
+            ① 특정 작업을 수행하도록 설계된 코드 블럭 <br>
+            ② 다른(or자기자신) 어떤 것이 호출될 때 실행 <br><br>
+
+            매개변수 = parameter
+        </p> <br><br>
+
+        <p>
+            Syntax(구문) <br>
+            &bull;function 키워드, 이름, 괄호, 중괄호로 정의됨 <br>
+            &bull;함수 이름에는 문자, 숫자, 밑줄, 달러 기호가 포함될 수 있음 (변수와 규칙이 같음) <br>
+            &bull;괄호에는 쉼표로 구분 된 parameter가 포함될 수 있음 <br>
+            &bull;함수가 실행할 코드는 중괄호{} 안에 있음 <br><br>
+
+            &bull;함수 매개변수는 함수 정의에서 괄호() 안에 표시 됨 <br>
+            &bull;함수 인수는 함수가 호출 될 때 함수가 받는 값 <br>
+            &bull;함수 내에서 인수(매개변수)는 로컬변수로 동작함 <br><br>
+
+            &bull;()연산자는 함수를 호출함 : ()없이 함수에 액세스하면 함수 결과 대신 함수 객체가 반환됨 <br>
+        </p> <br><br>
+
+        <p>
+            함수 호출 : <br><br>
+            함수 내부의 코드는 어떤 것이 함수를 호출할 때 실행 <br>
+            1) 이벤트 발생시(사용자가 버튼을 클릭할 때) <br>
+            2) JavaScript 코드에서 호출될 떄 <br>
+            3) 자동(자체호출)
+        </p> <br><br>
+
+        <p>
+            함수 변환 : <br><br>
+            JavaScript가 return 명령문에 도달하면 함수 실행이 중지됨 <br>
+            &nbsp;(cf switch, loop : break / 함수 : return (중단과 동시에 반환)) <br>
+            함수가 명령문에서 호출된 경우, JavaScript는 호출 명령문 이후에 코드를 실행하기 위해 "반환"함 <br>
+            함수는 종종 반환값을 계산함. 반환값은 "호출자"에게 반환됨 <br><br>
+
+<pre>
+&lt;p id="demo">&lt;/p> <br>
+&lt;script>
+var x=myFunction(4,3);
+document.getElementById("demo").innerHTML=x;
+Function myFunction(a,b) {
+    return a*b;
+}
+&lt;/script>
+</pre>
+        </p> <br><br>
+
+        <p>
+            왜 함수를 사용하는가? <br><br>
+            1) 코드를 재사용 할 수 있음 <br>
+            2) 코드를 한번 정의하고 여러번 사용 <br>
+            3) 다른 인수로 동일한 코드를 여러번 사용하여 다른 결과를 생성할 수 있음
+        </p> <br><br>
+
+        <p>
+            지역 변수 : <br><br>
+            함수 내에 선언된 변수는 함수의 LOCAL이 됨 <br>
+            지역 변수는 함수 내에서만 액세스 할 수 있음 <br>
+            지역 변수는 함수 안에서만 인식되므로 같은 이름의 변수를 다른 함수에서 사용할 수 있음 <br>
+            지역 변수는 함수가 시작될 때 생성되고 함수가 완료되면 삭제됨
+        </p> <br><br>
+
+    </div>
+
+
+    <!--객체-->
+    <div class="chapter_box" id="ch7">
 
         <p class="subject">객체 (Object)</p> <br>
 
@@ -475,19 +592,7 @@ document.getElementById("demo").innerHTML=txt;
 
     </div>
 
-     <!--배열-->
-     <div class="chapter_box" id="ch6">
-
-        <p class="subject">배열 (Array)</p> <br>
-
-        <p>
-            단일 변수에 여러값을 저장하는데 사용(대괄호) : 0부터 시작 <br>
-            &bull;둘 이상의 값을 보유할 수 있는 특수 변수 <br>
-            &bull;색인번호를 참조(=CRUD)하여 값에 엑세스 할 수 있음 <br>
-            &bull;배열안에 변수를 넣을 수도 있음
-        </p>
-
-    </div> <br><br>
+     
 
 
     <div> <!--내용 미분류-->     
