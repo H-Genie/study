@@ -41,8 +41,13 @@
                     &lt;p title&gt;:단락이름 지정(툴팁박스) <br><br>
                     style=""
                 </p>
-            </div>
+            </div> <br>
 
+            <p>
+                상대화일 경로 <br>
+                &bull;../html/index.html : 현재 파일이 있는 위치부터 찾아감 <br>
+                &bull;/html/index.html : root(최상위폴더)로부터 찾아감
+            </p>
         </div>
 
 
@@ -118,6 +123,8 @@
                     &bull;auto : 이미지 크기 <br>
                     &bull;contain : 요소 안에 들어오도록 확대or축소 <br>
                     &bull;cover : 요소를 이미지로 모두 덮도록 확대or축소 <br><br>
+
+                    * background 속기 : background-color | background-image | background-repeat | background-attachment | background-position <br><br>
                 </p>
                
                <p>
@@ -207,11 +214,24 @@
             </div>
 
             <p style="padding-left: 10px; box-sizing: border-box;">
-                &lt;pre&gt; : 사전 형식화 된 텍스트를 정의 <br><br>
+                &lt;pre&gt; : 사전 형식화 된 텍스트를 정의 <br>
+                cf) 사전 형식화된 = 템플릿 (react : 공통된 폼 안에 변하는 부분만 변수로 처리됨) <br><br>
+
                 인용 요소 : &lt;q&gt; &lt;blockquote&gt; <br><br>
                 약어 요소 : &lt;abbr title=""&gt; <abbr title="Hyper Text Markup Language">HTML</abbr>은 무엇의 약자일까요? <br><br>
                 주소 요소 : &lt;address&gt; <br><br>
-                작품 제목 요소 : &lt;cite&gt;-이탤릭체로 표시 &lt;del&gt; &lt;ins&gt;
+                작품 제목 요소 : &lt;cite&gt;-이탤릭체로 표시 &lt;del&gt; &lt;ins&gt; <br><br>
+
+                picture : "조건"에 따라 결과를 바꿀 수 있음 /  미디어쿼리와 중복되고, stlye 적용이 되지 않아 사용은 많이 되지 않음 (but, 점점 사용빈도가 높아 질 것 예를들어 GPS 라면 미디어쿼리와 상관없음) <br><br>
+
+                a tag
+                <table>                    
+                    <tr><td>_blank</td><td>링크 된 문서를 새탭에서 엶</td></tr>
+                    <tr><td>_self</td><td>(기본값) 클릭한 것과 동일한 탭에서 링크 된 문서를 엶</td></tr>
+                    <tr><td>_parent</td><td>부모 프레임에서 링크 된 문서를 엶</td></tr>
+                    <tr><td>_top</td><td>링크 된 문서를 창 전체에서 엶</td></tr>
+                    <tr><td>framename</td><td>링크 된 문서를 지정된 프레임으로 엶</td></tr>
+                </table> <br>
             </p>
 
         </div>
