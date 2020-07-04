@@ -1138,7 +1138,189 @@ parent.replaceChild(para,child);
 
         <p class="subject">정규표현식</p> <br>
 
-    
+        <p>
+            정규식은 검색 패턴을 형성하는 일련의 문자. <br>
+            구문 : /pattern/modifiers; <br><br>
+
+            정규식은 단일 문자이거나 더 복잡한 패턴 일 수 있음 <br><br>
+            
+            정규식을 사용하여 모든 유형의 텍스트 검색 및 텍스트 바꾸기 작업을 수행할 수 있음 <br><br>
+
+            자바스크립트에서 정규표현식은 보통 search()와 replace() 메소드와 함께 사용함 <br>
+            &bull; search() 메소드는 표현식을 사용하여 일치하는 항목을 검색하고 일치하는 위치를 반환 <br>
+            &bull; replace() 메소드는 패턴으로 교체 또는 수정 된 문자열을 리턴
+        </p> <br>
+
+        <div class="content_box">
+            <p>
+                수정자 (Modifiers)
+                <table>
+                    <tr><td>Modifiers</td><td>Description</td></tr>
+                    <tr><td>/ /i</td><td>대소문자를 구별하지 않는 매칭을 수행</td></tr>
+                    <tr><td>/ /g</td><td>전역 매칭을 수행. 처음 매치에서 끝내지 않고 모든 매치를 찾음</td></tr>
+                    <tr><td>/ /m</td><td>여러 줄 모드. ^은 줄의 시작이나 문자열의 시작과 일치하고, $는 줄의 끝이나 문자열의 끝과 일치</td></tr>
+                </table>
+            </p>
+        </div> <br>
+
+        <div class="content_box">
+            <p>
+                대괄호 (Bracket)
+                <table>
+                    <tr><td>Modifiers</td><td>Description</td></tr>
+                    <tr><td>[abc]</td><td>Find any of the character between the bracket</td></tr>
+                    <tr><td>[0-9]</td><td>Find any of the digits between the bracket</td></tr>
+                    <tr><td>(x|y)</td><td>Find any of the alternatives separated with |</td></tr>
+                </table>
+            </p>
+        </div> <br>
+
+        <div class="content_box">
+            <p>
+                Meta Character
+                <table>
+                    <tr><td>Modifiers</td><td>Description</td></tr>
+                    <tr><td>\d</td><td>Find a digit</td></tr>
+                    <tr><td>\s</td><td>Find a whitespace character</td></tr>
+                    <tr><td>\b</td><td>Find a match at the beginning of a word like this: \bWORD. or at the end of a word like this: WORD\b</td></tr>
+                    <tr><td>\uxxxx</td><td>Find the Unicode character specified by the hexadecmal</td></tr>
+                </table>
+            </p>
+        </div> <br>
+
+    </div>
+
+
+
+    <!--그래픽 : CANVAS-->
+    <div class="chapter_box" id="ch11-1">
+
+        <p class="subject">CANVAS</p> <br>
+
+        <div class="content_box">
+            <p>
+                <a href="https://www.w3schools.com/tags/ref_canvas.asp" target="_blank">W3School : HTML CANVAS</a> <br><br>
+        
+                <a href="https://www.w3schools.com/tags/canvas_stroke.asp" target="_blank">stroke()</a> <br>
+                <a href="https://www.w3schools.com/tags/canvas_strokestyle.asp" target="_blank">strokeStyle</a> <br><br>
+
+                <a href="https://www.w3schools.com/tags/canvas_font.asp" target="_blank">font</a>                
+            </p>
+        </div> <br>
+
+
+        <canvas id="canvas_stroke" width="300" height="300" style="border: 1px solid black;"></canvas>
+        <script>
+            document.getElementById('canvas_stroke').getContext("2d").beginPath();
+            document.getElementById('canvas_stroke').getContext("2d").moveTo(20,20);
+            document.getElementById('canvas_stroke').getContext("2d").lineTo(20,150);
+            document.getElementById('canvas_stroke').getContext("2d").lineTo(150,150);
+            document.getElementById('canvas_stroke').getContext("2d").lineWidth = 5;
+            document.getElementById('canvas_stroke').getContext("2d").strokeStyle = "blue";
+            document.getElementById('canvas_stroke').getContext("2d").stroke();
+        </script>
+<pre>
+document.getElementById('canvas_stroke').getContext("2d").beginPath(); //경로를 시작하거나, 초기화 하는 메써드
+document.getElementById('canvas_stroke').getContext("2d").moveTo(0,0); //시작점으로 좌표를 이동시키는 메써드 (x축,y축)
+document.getElementById('canvas_stroke').getContext("2d").lineTo(20,150); //시작점(혹은 이전의 경로가 끝나는점)에서부터 다음 좌표로 경로를 그림 (x축,y축)
+document.getElementById('canvas_stroke').getContext("2d").lineTo(150,150);
+document.getElementById('canvas_stroke').getContext("2d").lineWidth = 5; //라인의 굵기를 지정
+document.getElementById('canvas_stroke').getContext("2d").strokeStyle = "blue"; //stroke의 스타일을 지정 (색 or 그라디언트 or 패턴)
+document.getElementById('canvas_stroke').getContext("2d").stroke(); // moveTo, lineTo의 경로를 모두 그림
+</pre> <br><br>
+
+
+    <canvas id="canvas_circle" width="300" height="300" style="border: 1px solid black;"></canvas> <br>
+    <p>angle</p>
+    <img src="https://www.w3schools.com/tags/img_arc.gif">
+    <script>
+        document.getElementById('canvas_circle').getContext("2d").beginPath();
+        document.getElementById('canvas_circle').getContext("2d").arc(150,150,50,0,Math.PI);
+        document.getElementById('canvas_circle').getContext("2d").lineWidth = 10;
+        document.getElementById('canvas_circle').getContext("2d").strokeStyle = "red";
+        document.getElementById('canvas_circle').getContext("2d").lineCap = "round"
+        document.getElementById('canvas_circle').getContext("2d").stroke();
+
+        document.getElementById('canvas_circle').getContext("2d").beginPath();
+        document.getElementById('canvas_circle').getContext("2d").arc(75,75,25,Math.PI,0);
+        document.getElementById('canvas_circle').getContext("2d").lineWidth = 5;
+        document.getElementById('canvas_circle').getContext("2d").strokeStyle = "red";
+        document.getElementById('canvas_circle').getContext("2d").lineCap = "round"
+        document.getElementById('canvas_circle').getContext("2d").stroke();
+
+        document.getElementById('canvas_circle').getContext("2d").beginPath();
+        document.getElementById('canvas_circle').getContext("2d").arc(225,75,25,Math.PI,0);
+        document.getElementById('canvas_circle').getContext("2d").lineWidth = 5;
+        document.getElementById('canvas_circle').getContext("2d").strokeStyle = "red";
+        document.getElementById('canvas_circle').getContext("2d").lineCap = "round"
+        document.getElementById('canvas_circle').getContext("2d").stroke();
+    </script>
+<pre>
+document.getElementById('canvas_circle').getContext("2d").beginPath();
+document.getElementById('canvas_circle').getContext("2d").arc(150,150,50,0,Math.PI); // (원중심의 x좌표, 원중심의 y좌표, 반지름, 시작각도:0이면 3시방향, 종료각도)
+document.getElementById('canvas_circle').getContext("2d").lineWidth = 5;
+document.getElementById('canvas_circle').getContext("2d").strokeStyle = "red";
+document.getElementById('canvas_circle').getContext("2d").lineCap = "round" //모서리 끝의 모양을 지정 (butt or round or square)
+document.getElementById('canvas_circle').getContext("2d").stroke();
+</pre> <br><br>
+
+
+    <canvas id="canvas_rectangle" width="300" height="300" style="border: 1px solid black;"></canvas>
+    <script>        
+        document.getElementById('canvas_rectangle').getContext("2d").fillStyle = "yellow";
+        document.getElementById('canvas_rectangle').getContext("2d").fillRect(50,50,100,100);
+    </script>
+<pre>
+document.getElementById('canvas_rectangle').getContext("2d").fillStyle = "yellow"; //fill의 스타일을 지정 (색 or 그라디언트 or 패턴)
+document.getElementById('canvas_rectangle').getContext("2d").fillRect(50,50,100,100); // (좌측상단의 x좌표, 좌측상단의 y좌표, 넓이, 높이)
+</pre> <br><br>
+
+
+    <canvas id="canvas_text" width="300" height="300" style="border: 1px solid black;"></canvas>
+    <script>
+        document.getElementById('canvas_text').getContext("2d").font = "italic small-caps 100 50px fantasy"; // 크기, 폰트이름
+        document.getElementById('canvas_text').getContext("2d").fillText("fillText",25,100); // Fill Text : 문구, X좌표, Y좌표
+        document.getElementById('canvas_text').getContext("2d").font = "normal normal 900 50px fantasy";
+        document.getElementById('canvas_text').getContext("2d").strokeText("strokeText",25,200); // Outline Text : 문구, X좌표, Y좌표
+    </script>
+<pre>
+document.getElementById('canvas_text').getContext("2d").font = "italic small-caps 100 50px fantasy"; // font-style / font-variant / font-weight / font-size / font-family
+document.getElementById('canvas_text').getContext("2d").fillText("fillText",25,100); // Fill Text(문구, 좌측상단의 X좌표, 좌측상단의 Y좌표)
+document.getElementById('canvas_text').getContext("2d").font = "normal normal 900 50px fantasy";
+document.getElementById('canvas_text').getContext("2d").strokeText("strokeText",25,200); // Outline Text(문구, 좌측상단의 X좌표, 좌측상단의 Y좌표)
+</pre> <br><br>
+
+
+    <canvas id="canvas_gradient" width="300" height="300" style="border: 1px solid black;"></canvas>  
+    <script>        
+        var gradient = document.getElementById("canvas_gradient").getContext("2d").createLinearGradient(0, 0, 170, 0);        
+        gradient.addColorStop(0, "black");
+        gradient.addColorStop(1, "white");
+        document.getElementById("canvas_gradient").getContext("2d").fillStyle = gradient;
+        document.getElementById("canvas_gradient").getContext("2d").fillRect(20, 20, 150, 100);        
+    </script>
+<pre>
+var gradient = document.getElementById("canvas_gradient").getContext("2d").createLinearGradient(0, 0, 170, 0); // 그라디언트 메써드는 object 함수로 정의되므로, 반드시 변수로 지정해줘야 함
+gradient.addColorStop(0, "black"); // addColorStop(value(0~1), color)
+gradient.addColorStop(1, "white");
+document.getElementById("canvas_gradient").getContext("2d").fillStyle = gradient;
+document.getElementById("canvas_gradient").getContext("2d").fillRect(20, 20, 150, 100);
+</pre> <br><br>
+
+    <img src="https://www.w3schools.com/tags/img_the_scream.jpg" id="original_img"> <br><br>
+    <canvas id="canvas_image" width="300" height="300" style="border: 1px solid black;"></canvas>
+    <script>        
+        window.onload = function() {
+            document.getElementById("canvas_image").getContext("2d").drawImage(document.getElementById("original_img"), 10, 10);
+        }        
+    </script>
+<pre>
+window.onload = function() { //클라이언트에서는 함수로 실행해야 함
+    document.getElementById("canvas_image").getContext("2d").drawImage(document.getElementById("original_img"), 10, 10); 
+    //drawImage(미디어의 Element, 좌측상단의 x좌표, 좌측상단의 y좌표)
+}
+</pre>
+
     </div>
 
 
