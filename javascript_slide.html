@@ -401,6 +401,82 @@ function clickNext() {
 <iframe width="600" height="300" src="//jsfiddle.net/happyboyhj/hfg0Lx7r/13/embedded/result,html,css,js" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0" style="border: 1px solid black;"></iframe>
 <!--v5.21 끝--></div> <br><br><br>
 
+
+
+
+<!--v6.1 시작--><div>
+    &lt;v6.1&gt; <br>
+    &bull;버튼 클릭시 인터벌 중지 후 재실행 기능 추가 <br>
+    &bull;함수 반복실행 방지 위해 addEventListner, removeEventListner 추가 <br><br>
+    
+<pre>
+var pageNum=0;
+var slide=document.getElementsByClassName('slide');
+
+var interval=setInterval(clickNext,5000); <span style="color: blue;">//인터벌을 최초 실행시키는 "변수"</span>
+function offInterval() {interval=clearInterval(interval)}; <span style="color: blue;">//변수에다가 인터벌을 중지시키는 함수를 재선언함</span>
+function onInterval() {interval=setInterval(clickNext,5000)}; <span style="color: blue;">//변수에다가 인터벌을 다시 실행시키는 함수를 재선언함</span>
+
+window.onload=function() { <span style="color: blue;">//이벤트 무제한 반복을 방지하는 함수 : load시 자동 실행</span>
+    document.getElementsByClassName('clickPrev')[0].addEventListener("click",clickPrev);
+    document.getElementsByClassName('clickNext')[0].addEventListener("click",clickNext);
+}
+
+function clickPrev() {
+    offInterval();
+    document.getElementsByClassName('clickPrev')[0].removeEventListener("click",clickPrev);
+    document.getElementsByClassName('clickNext')[0].removeEventListener("click",clickNext);
+    <span style="color: blue;">//함수가 실행된 후, 일단 이벤트 제거함</span>
+
+    if(pageNum==0) {
+
+    }
+    
+    else if(pageNum!=slide.length-1) {
+       
+    }
+                
+    else {
+
+    }
+
+    setTimeout(function(){ <span style="color: blue;">//함수가 제거된 후, 1초 후에 다시 함수 실행함 (이벤트 무제한 반복 방지)</span>
+        document.getElementsByClassName('clickPrev')[0].addEventListener("click",clickPrev);
+        document.getElementsByClassName('clickNext')[0].addEventListener("click",clickNext);
+    },1000);
+
+    onInterval(); <span style="color: blue;">//인터벌 함수 재실행</span>
+}
+
+function clickNext() { 
+    offInterval();
+    document.getElementsByClassName('clickPrev')[0].removeEventListener("click",clickPrev);
+    document.getElementsByClassName('clickNext')[0].removeEventListener("click",clickNext);
+    <span style="color: blue;">//함수가 실행된 후, 일단 이벤트 제거함</span>
+    
+    if(pageNum==0) {
+
+    }            
+
+    else if(pageNum!=slide.length-1) {
+
+    }
+    
+    else {
+
+    }      
+            
+    setTimeout(function(){ <span style="color: blue;">//함수가 제거된 후, 1초 후에 다시 함수 실행함 (이벤트 무제한 반복 방지)</span>
+        document.getElementsByClassName('clickPrev')[0].addEventListener("click",clickPrev);
+        document.getElementsByClassName('clickNext')[0].addEventListener("click",clickNext);
+    },1000);
+
+    onInterval(); <span style="color: blue;">//인터벌 함수 재실행</span>
+}
+</pre> <br>
+<iframe width="600" height="300" src="//jsfiddle.net/happyboyhj/m4gnwrep/1/embedded/result,html,css,js" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0" style="border: 1px solid black;"></iframe>
+<!--v6.1 끝--></div> <br><br><br>
+
     
 </body>    
 </html>
