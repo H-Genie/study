@@ -1,0 +1,167 @@
+<html lang="ko">
+<head>
+    <title>[JS] Worldtime 실습</title>
+
+    <meta charset="UTF-8">
+    <meta name="author" content="H-Genie">
+    <meta name="description" content=" ">
+    <meta name="keywords" content=" ">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="icon" href="img/favicon.ico" sizes="16x16">
+
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <p id="utc_time"></p> <br>
+    <p id="your_time"></p> <br><br>
+
+    <p id="utc-10"></p> <br>
+    <p id="utc-8"></p> <br>
+    <p id="utc-7"></p> <br>
+    <p id="utc-6"></p> <br>
+    <p id="utc-5"></p> <br>
+    <p id="utc-3"></p> <br>
+    <p id="utc0"></p> <br>
+    <p id="utc+1"></p> <br>
+    <p id="utc+2"></p> <br>
+    <p id="utc+3"></p> <br>
+    <p id="utc+4"></p> <br>
+    <p id="utc+7"></p> <br>
+    <p id="utc+8"></p> <br>
+    <p id="utc+9"></p> <br>
+    <p id="utc+10"></p>
+
+    <script>        
+        var utcHour, utcMin, utcSec;
+
+        function worldTime() {
+            var utcHour = new Date().getUTCHours();
+            var utcMin = new Date().getUTCMinutes();
+            var utcSec = new Date().getUTCSeconds();
+
+            // 일 보정함수(24시간)
+            function date_adjustment(time_difference) {
+                time_difference = utcHour + time_difference;
+                if(time_difference > 24) {time_difference -= 24}
+                if(time_difference < 0) {time_difference += 24}
+                return time_difference;
+            }
+
+            // 오전오후 판단 함수
+            function meridiem(hour) {
+                if(12 <= hour && hour <=23) {m = "PM"}
+                if (hour == 24) {m = "AM"}
+                if (hour < 12) {m = "AM"}
+                return m;
+            }
+
+            // 분 보정함수
+            function minDigit_adjustment(min) {
+                if(min<10) {min = "0"+min}
+                return min;
+            }
+
+            // 12시간 보정함수
+            function hour12_adjustment(hour) {
+                if(hour > 12) {hour -= 12}
+                if(hour == 24 || hour == 0) {hour = 12}
+                if(hour<=12) {hour=hour}
+                return hour;
+            }
+
+            document.getElementById('utc_time').innerHTML = `Coordinated Universal Time ☞ ${hour12_adjustment(date_adjustment(0))} : ${minDigit_adjustment(utcMin)} : ${minDigit_adjustment(utcSec)} ${meridiem(date_adjustment(0))}`
+        
+            document.getElementById('utc-10').innerHTML = `UTC-10 (호놀룰루) ☞ ${hour12_adjustment(date_adjustment(-10))} : ${minDigit_adjustment(utcMin)} ${meridiem(date_adjustment(-10))}`
+            document.getElementById('utc-8').innerHTML = `UTC-8 (LA) ☞ ${hour12_adjustment(date_adjustment(-8))} : ${minDigit_adjustment(utcMin)} ${meridiem(date_adjustment(-8))}`
+            document.getElementById('utc-7').innerHTML = `UTC-7 (덴버) ☞ ${hour12_adjustment(date_adjustment(-7))} : ${minDigit_adjustment(utcMin)} ${meridiem(date_adjustment(-7))}`
+            document.getElementById('utc-6').innerHTML = `UTC-6 (시카고, 멕시코시티) ☞ ${hour12_adjustment(date_adjustment(-6))} : ${minDigit_adjustment(utcMin)} ${meridiem(date_adjustment(-6))}`
+            document.getElementById('utc-5').innerHTML = `UTC-5 (뉴욕) ☞ ${hour12_adjustment(date_adjustment(-5))} : ${minDigit_adjustment(utcMin)} ${meridiem(date_adjustment(-5))}`
+            document.getElementById('utc-3').innerHTML = `UTC-3 (상파울루) ☞ ${hour12_adjustment(date_adjustment(-3))} : ${minDigit_adjustment(utcMin)} ${meridiem(date_adjustment(-3))}`
+            document.getElementById('utc0').innerHTML = `UTC±0 (런던, 리스본) ☞ ${hour12_adjustment(date_adjustment(0))} : ${minDigit_adjustment(utcMin)} ${meridiem(date_adjustment(0))}`
+            document.getElementById('utc+1').innerHTML = `UTC+1 (베를린, 파리, 마드리드, 로마, 프라하) ☞ ${hour12_adjustment(date_adjustment(1))} : ${minDigit_adjustment(utcMin)} ${meridiem(date_adjustment(1))}`
+            document.getElementById('utc+2').innerHTML = `UTC+2 (아테네, 카이로) ☞ ${hour12_adjustment(date_adjustment(2))} : ${minDigit_adjustment(utcMin)} ${meridiem(date_adjustment(2))}`
+            document.getElementById('utc+3').innerHTML = `UTC+3 (모스크바, 이스탄불, 바그다드) ☞ ${hour12_adjustment(date_adjustment(3))} : ${minDigit_adjustment(utcMin)} ${meridiem(date_adjustment(3))}`
+            document.getElementById('utc+4').innerHTML = `UTC+4 (두바이) ☞ ${hour12_adjustment(date_adjustment(4))} : ${minDigit_adjustment(utcMin)} ${meridiem(date_adjustment(4))}`
+            document.getElementById('utc+7').innerHTML = `UTC+7 (방콕, 자카르타, 하노이) ☞ ${hour12_adjustment(date_adjustment(7))} : ${minDigit_adjustment(utcMin)} ${meridiem(date_adjustment(7))}`
+            document.getElementById('utc+8').innerHTML = `UTC+8 (중국 전역, 싱가포르, 쿠알라룸푸르, 마닐라) ☞ ${hour12_adjustment(date_adjustment(8))} : ${minDigit_adjustment(utcMin)} ${meridiem(date_adjustment(8))}`
+            document.getElementById('utc+9').innerHTML = `UTC+9 (서울, 도쿄) ☞ ${hour12_adjustment(date_adjustment(9))} : ${minDigit_adjustment(utcMin)} ${meridiem(date_adjustment(9))}`
+            document.getElementById('utc+10').innerHTML = `UTC+10 (시드니) ☞ ${hour12_adjustment(date_adjustment(10))} : ${minDigit_adjustment(utcMin)} ${meridiem(date_adjustment(10))}`
+
+            var your_hour = new Date().getHours();
+            var your_min = new Date().getMinutes();
+            var your_sec = new Date().getSeconds();
+            document.getElementById('your_time').innerHTML = `your local time ☞ ${hour12_adjustment(date_adjustment(your_hour))} : ${minDigit_adjustment(your_min)} : ${minDigit_adjustment(your_sec)} ${meridiem(date_adjustment(your_hour))}`
+        }
+
+        worldTime();
+        setInterval(worldTime,1000);
+    </script>
+
+    <br><br>
+
+<pre style="border: 1px solid black; width: fit-content; padding: 1rem;">
+var utcHour, utcMin, utcSec;
+
+function worldTime() {
+    var utcHour = new Date().getUTCHours();
+    var utcMin = new Date().getUTCMinutes();
+    var utcSec = new Date().getUTCSeconds();
+
+    // 일 보정함수(24시간)
+    function date_adjustment(time_difference) {
+        time_difference = utcHour + time_difference;
+        if(time_difference > 24) {time_difference -= 24}
+        if(time_difference&lt;0) {time_difference += 24}
+        return time_difference;
+    }
+
+    // 오전오후 판단 함수
+    function meridiem(hour) {
+        if(12 &lt;= hour && hour &lt;=23) {m = "PM"}
+        if (hour == 24) {m = "AM"}
+        if (hour &lt; 12) {m = "AM"}
+        return m;
+    }
+
+    // 분 보정함수
+    function minDigit_adjustment(min) {
+        if(min&lt;10) {min = "0"+min}
+        return min;
+    }
+
+    // 12시간 보정함수
+    function hour12_adjustment(hour) {
+        if(hour > 12) {hour -= 12}
+        if(hour == 24 || hour == 0) {hour = 12}
+        if(hour&lt;=12) {hour=hour}
+        return hour;
+    }
+
+    //hour12_adjustment(date_adjustment(0)) <span style="color: blue;">//시간 : 12시간보정(일보정(시차))</span>
+    //minDigit_adjustment(utcMin) <span style="color: blue;">//분 : 분보정(Minutes)</span>
+    //minDigit_adjustment(utcSec) <span style="color: blue;">//초 : 분보정(Seconds)</span>
+    //meridiem(date_adjustment(0)) <span style="color: blue;">//오전오후 : 오전오후(일보정(시차))</span>
+}
+
+function updateTime() {
+    var utcSec = new Date().getUTCSeconds();
+    var remainSeconds = 60000 - (utcSec * 1000);
+
+    worldTime();
+    setTimeout(worldTime, remainSeconds); <span style="color: blue;">//60-현재초 후에 업데이트 실행</span>
+    setTimeout(oneMinutes,remainSeconds); <span style="color: blue;">//60-현재초 후부터 1분간격으로 인터벌</span>
+
+        function oneMinutes() {
+        setInterval(worldTime,60000);
+        }
+}
+updateTime();
+</pre>
+
+</body>
+</html>
