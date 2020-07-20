@@ -411,10 +411,10 @@
         </div>
 
         
-        <!--상대 높이-->
+        <!--Float-->
         <div class="chapter_box" id="ch3-3">
 
-            <p class="subject">상대 높이</p> <br>
+            <p class="subject">Float</p> <br>
             <p>
                 <b>normal flow → float → posotion → z-index</b> <br><br>
                 position 값을 주면 동급이 되므로, z-index로 조절해야 함 <br>
@@ -422,6 +422,19 @@
             </p>
 
             <img src="https://codropspz-tympanus.netdna-ssl.com/codrops/wp-content/uploads/2014/10/new-stacking-order.png" class="content_img">
+
+            <p>
+                &bull;clear 속성 : 지워진 요소 옆에 어떤 요소가 떠 다닐 수 있는지 지정 (float 속성을 사용한 후)<br>
+                플로트를 지울 때는 클리어와 플로트를 일치시켜야함. 요소가 왼쪽에 떠 있으면 왼쪽으로 지워야 함
+                플로팅 된 요소는 계속 플로팅되지만 클리어 된 요소는 웹 페이지 아래에 나타남
+            </p>
+            <table>
+                <tr><td>none</td><td>(기본값) 양면에 플로팅 요소 허용</td></tr>
+                <tr><td>left</td><td>왼쪽에 부동 요소가 허용되지 않음</td></tr>
+                <tr><td>right</td><td>오른쪽에 부동 요소가 허용되지 않음</td></tr>
+                <tr><td>both</td><td>왼쪽 또는 오른쪽에 부동요소가 허용되지 않음</td></tr>
+                <tr><td>inherit</td><td>요소는 부모의 값을 상속함</td></tr>
+            </table> <br>
             
         </div>
 

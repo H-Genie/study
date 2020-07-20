@@ -656,6 +656,46 @@ Function myFunction(a,b) {
             지역 변수는 함수가 시작될 때 생성되고 함수가 완료되면 삭제됨
         </p> <br><br>
 
+        <div class="content_box">
+            <p>
+                &lt;함수 표현식>  <br><br>
+               
+                함수 표현식이 변수에 저장된 후에는 변수를 함수로 사용할 수 있음 <br><br>
+
+<pre>
+&lt;p id="demo">&lt;/p>
+&lt;script>
+var x = function (a,b) {return a * b};
+document.getElementById("demo").onnerHTML = x(4,3);
+&lt;/script>
+</pre>
+            </p>
+        </div>
+
+        <div class="content_box">
+            <p>
+                &lt;함수 매개변수와 인수>  <br><br>
+               
+                함수에는 arguments라는 내장객체가 있음. <br>
+                arguments 객체는 함수가 호출될 때 사용된 인수 배열을 포함 <br><br>
+
+<pre>
+&lt;p id="demo">&lt;/p>
+&lt;script>
+function findMax() {
+    var i;
+    var max = - Infinity;
+    for (i=0; i &lt; arguments.lenght; i++) {
+        if (arguments[i] > max) {
+            max = arguments[i]; }
+    } return max;
+}
+document.getElementById("demo").innerHTML = findMax(4,5,6);
+&lt;/script>
+</pre>
+            </p>
+        </div>
+
     </div>
 
 
@@ -1319,6 +1359,73 @@ window.onload = function() { //클라이언트에서는 함수로 실행해야 �
     document.getElementById("canvas_image").getContext("2d").drawImage(document.getElementById("original_img"), 10, 10); 
     //drawImage(미디어의 Element, 좌측상단의 x좌표, 좌측상단의 y좌표)
 }
+</pre> <br><br>
+
+    <p>&lt;Canvas Animation></p>
+    <canvas id="canvas_ani" width="500" height="500" style="border: 1px solid black;"></canvas>
+    <script>
+        var xx = 250;
+        var yy = 250;
+        var dx = Math.ceil ( Math.random() * 10 );
+        var dy = Math.ceil ( Math.random() * 10 );
+
+        function draw() {
+            document.getElementById("canvas_ani").getContext("2d").clearRect(0,0,500,500); //좌표 사이의 캔버스 요소를 지움
+            document.getElementById('canvas_ani').getContext("2d").beginPath();
+            document.getElementById('canvas_ani').getContext("2d").arc(xx,yy,20,0,Math.PI * 2);
+            document.getElementById('canvas_ani').getContext("2d").lineWidth = 10;
+            document.getElementById('canvas_ani').getContext("2d").fillStyle = "red";            
+            document.getElementById('canvas_ani').getContext("2d").stroke();
+        }
+              
+       function aniStart() {                   
+           xx += dx;
+           yy += dy;
+           var tt = setTimeout(aniStart,20);
+
+           if(xx > 480) {dx = -dx;} else if (xx <20) {dx = -dx;}
+           if(yy > 480) {dy = -dy;} else if (yy <20) {dy = -dy;}
+           draw();                        
+        }       
+       aniStart();        
+    </script>
+<pre>
+var xx = 250;
+var yy = 250;
+var dx = Math.ceil ( Math.random() * 10 );
+var dy = Math.ceil ( Math.random() * 10 );
+
+function draw() {
+    document.getElementById("canvas_gradient").getContext("2d").clearRect(0,0,500,500); //좌표 사이의 캔버스 요소를 지움
+    document.getElementById('canvas_gradient').getContext("2d").beginPath();
+    document.getElementById('canvas_gradient').getContext("2d").arc(xx,yy,20,0,Math.PI * 2);
+    document.getElementById('canvas_gradient').getContext("2d").lineWidth = 10;
+    document.getElementById('canvas_gradient').getContext("2d").fillStyle = "red";            
+    document.getElementById('canvas_gradient').getContext("2d").stroke();
+}
+
+// 반대편으로 튕기기
+function aniStart() {                   
+    xx += dx;
+    yy += dy;
+    var tt = setTimeout(aniStart,20);
+
+    if(xx > 480) {dx = -dx;} else if (xx &lt; 20) {dx = -dx;}
+    if(yy > 480) {dy = -dy;} else if (yy &lt; 20) {dy = -dy;}
+    draw();                        
+}
+
+// y축 충돌감지
+function aniStart() {        
+    xx += dx;
+    yy += dy;
+    var tt = setTimeout(aniStart,10);
+                
+    if(yy > 480) {clearTimeout(tt)}
+    draw();
+}
+
+aniStart();        
 </pre>
 
     </div>

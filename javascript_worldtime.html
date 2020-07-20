@@ -75,6 +75,8 @@
             }
 
             document.getElementById('utc_time').innerHTML = `Coordinated Universal Time ☞ ${hour12_adjustment(date_adjustment(0))} : ${minDigit_adjustment(utcMin)} : ${minDigit_adjustment(utcSec)} ${meridiem(date_adjustment(0))}`
+
+            document.getElementById('your_time').innerHTML = `your local time ☞ ${hour12_adjustment(new Date().getHours())} : ${minDigit_adjustment(new Date().getMinutes())} : ${minDigit_adjustment(new Date().getSeconds())} ${meridiem(date_adjustment(new Date().getHours()))}`
         
             document.getElementById('utc-10').innerHTML = `UTC-10 (호놀룰루) ☞ ${hour12_adjustment(date_adjustment(-10))} : ${minDigit_adjustment(utcMin)} ${meridiem(date_adjustment(-10))}`
             document.getElementById('utc-8').innerHTML = `UTC-8 (LA) ☞ ${hour12_adjustment(date_adjustment(-8))} : ${minDigit_adjustment(utcMin)} ${meridiem(date_adjustment(-8))}`
@@ -91,11 +93,6 @@
             document.getElementById('utc+8').innerHTML = `UTC+8 (중국 전역, 싱가포르, 쿠알라룸푸르, 마닐라) ☞ ${hour12_adjustment(date_adjustment(8))} : ${minDigit_adjustment(utcMin)} ${meridiem(date_adjustment(8))}`
             document.getElementById('utc+9').innerHTML = `UTC+9 (서울, 도쿄) ☞ ${hour12_adjustment(date_adjustment(9))} : ${minDigit_adjustment(utcMin)} ${meridiem(date_adjustment(9))}`
             document.getElementById('utc+10').innerHTML = `UTC+10 (시드니) ☞ ${hour12_adjustment(date_adjustment(10))} : ${minDigit_adjustment(utcMin)} ${meridiem(date_adjustment(10))}`
-
-            var your_hour = new Date().getHours();
-            var your_min = new Date().getMinutes();
-            var your_sec = new Date().getSeconds();
-            document.getElementById('your_time').innerHTML = `your local time ☞ ${hour12_adjustment(date_adjustment(your_hour))} : ${minDigit_adjustment(your_min)} : ${minDigit_adjustment(your_sec)} ${meridiem(date_adjustment(your_hour))}`
         }
 
         worldTime();
