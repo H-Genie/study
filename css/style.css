@@ -25,6 +25,7 @@ a {color: blue; text-decoration: underline;}
     .CSS {color: #007BC8;}
     .Javascript {color: #F78223;}
     .w3c {color: #005A9C;}
+    .backend {color: black;}
 
 .link {width: fit-content; display: flex;}
     .link .outer {display: flex; flex-direction: column; text-align: center; margin: 1px;}
@@ -33,6 +34,7 @@ a {color: blue; text-decoration: underline;}
     .link .outer .down {display: flex;}        
     .link_inner {width: 50px; height: 50px; display: flex; justify-content: center; align-items: center; text-align: center; border: 1px solid black; cursor: pointer; font-size: smaller; margin: 1px;}
     .link_inner:hover {background: rgb(255,255,255);background: linear-gradient(45deg, rgba(255,255,255,1) 0%, rgba(255,255,0,1) 40%, rgba(123,182,227,1) 70%), rgba(255,255,255,1) 100%;}
+
 
 
 /* content */
