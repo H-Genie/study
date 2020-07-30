@@ -484,6 +484,96 @@
 
         </div>
 
+
+
+        <!--PHP File Handling-->
+        <div class="chapter_box" id="ch10">
+
+            <p class="subject">PHP File Handling</p> <br>
+                
+            <div class="content_box">
+                <p>
+                    &lt;readfile()> <br><br>
+                    파일을 읽고 출력버퍼에 씀 <br><br>
+<pre>
+&lt;?php
+    echo readfile("webdictionary.txt");
+?>
+</pre>                    
+                </p>
+            </div>
+
+            <div class="content_box">
+                <p>
+                    &lt;fopen()> <br><br>
+                    첫번째 매개변수 : 열 파일의 이름 <br>
+                    두번째 매개변수 : 파일을 열 모드 <br>
+                    ※ 파일을 작성할때도 사용 <br><br>
+<pre>
+&lt;?php
+    $myfile = fopen("webdictionary.txt", "r") or die("Unable to open file!");
+    echo fread($myfile,filesize("webdictionary.txt"));
+    fclose($myfile);
+?>
+</pre> <br>
+                    <table>
+                        <tr><td>Modes</td><td>Description</td></tr>
+                        <tr><td>r</td><td>Open a file for read only</td></tr>
+                        <tr><td>w</td><td>Open a file for write only / 새 파일을 만들거나, 파일의 기존 데이터를 지움</td></tr>
+                        <tr><td>a</td><td>Open a file for write only / 파일의 기존 데이터가 유지</td></tr>
+                        <tr><td>x</td><td>Creates a new file for write only / 이미 파일이 존재하면 false 반환</td></tr>
+                        <tr><td>r+</td><td>Open a file for read/write</td></tr>
+                        <tr><td>w+</td><td>Open a file for read/write / 새 파일을 만들거나, 파일의 기존 데이터를 지움</td></tr>
+                        <tr><td>a+</td><td>Open a file for read/write / 파일의 기존 데이터가 유지</td></tr>
+                        <tr><td>x+</td><td>Creates a new file for read/write / 이미 파일이 존재하면 false 반환</td></tr>
+                    </table>               
+                </p>
+            </div>
+
+            <div class="content_box">
+                <p>
+                    &lt;fread()> <br><br>
+                    첫번째 매개변수 : 읽을 파일 이름 <br>
+                    두번째 매개변수 : 읽을 최대 파이트수 <br><br>
+<pre>
+&lt;?php
+    fread($myfile,filesize("webdictionary.txt"));
+?>
+</pre>                    
+                </p>
+            </div>
+
+            <div class="content_box">
+                <p>
+                    &lt;fclose()> <br><br>
+                    닫으려는 파일 이름 혹은 변수(파일 이름을 보유한)가 필요 <br><br>
+<pre>
+&lt;?php
+    $myfile = fopen("webdictionary.txt", "r");    
+    fclose($myfile);
+?>
+</pre>                    
+                </p>
+            </div>
+
+            <div class="content_box">
+                <p>
+                    &lt;fwrite()> <br><br>
+                    첫번째 매개변수 : 쓸 파일 이름 <br>
+                    두번째 매개변수 : 쓸 문자열 <br><br>
+<pre>
+&lt;?php
+    $myfile = fopen("newfile.txt", "w") or die("Unable to open file!");
+    $txt = "John Doe\n";
+    fwrite($myfile, $txt);    
+    fclose($myfile);
+?>
+</pre>                    
+                </p>
+            </div>
+
+        </div>
+
         
     <!--body 끝--> </body>
 
