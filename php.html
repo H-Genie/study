@@ -152,7 +152,7 @@
 
             <p class="subject">PHP Operator</p> <br>
 
-            <a href="javascript.html#ch3" target="_blank">자바스크립트 연산자 참조</a> <br><br>
+            <a href="Javascript.html#ch3" target="_blank">자바스크립트 연산자 참조</a> <br><br>
                 
             <p>
                 비교 연산자
@@ -572,6 +572,133 @@
                 </p>
             </div>
 
+        </div>
+
+
+        <!--PHP + MySQL : connect-->
+        <div class="chapter_box" id="ch11">
+
+            <p class="subject">MySQL Connect</p> <br>
+
+<pre>
+&lt;?php
+    $servername = "localhost";
+    $username = "username";
+    $password = "password";
+
+    // Create connection (변수대신 직접 적어도 됨)
+    $conn = mysqli_connect($servername, $username, $password);
+
+    // Check connection
+    if (!$conn) {
+        die("Connection failed: " . mysqli_connect_error());
+    }
+    echo "Connected successfully";
+?>
+</pre>
+           
+        </div>
+
+
+        <!--PHP + MySQL : Insert Data-->
+        <div class="chapter_box" id="ch12">
+
+            <p class="subject">MySQL Insert Data</p> <br>
+
+            <div class="content_box">
+                <p>                  
+                    &lt;SQL Insert Into> <br><br>  
+
+                    INSERT INTO table_name (column1, column2, column3,...) <br>
+                    VALUES (value1, value2, value3,...) <br>
+                </p>
+            </div>
+<pre>
+&lt;?php
+    $servername = "localhost";
+    $username = "username";
+    $password = "password";
+    $dbname = "myDB"; #데이터베이스 이름
+
+    // Create connection
+    $conn = mysqli_connect($servername, $username, $password, $dbname);
+    // Check connection
+    if (!$conn) {
+        die("Connection failed: " . mysqli_connect_error());
+    }
+
+                        #테이블 이름
+    $sql = "<Span style="color: blue;">INSERT INTO</Span> MyGuests (firstname, lastname, email)
+    <span style="color: blue;">VALUES</span> ('John', 'Doe', 'john@example.com')";
+
+    if (mysqli_query($conn, $sql)) {
+        echo "New record created successfully";
+    } else {
+        echo "Error: " . $sql . "&lt;br>" . mysqli_error($conn);
+    }
+
+    mysqli_close($conn);
+?>
+</pre>
+
+    <div class="content_box">
+        <p>                    
+            &bull;VALUE()안의 인수는 괄호안에 넣어야 함 <br><br>
+            &bull;각 데이터를 $_POST 변수로 선언한 후 VALUE()안에 넣어도 됨 <br>
+            ex) $id = $_POST['id'];
+        </p>
+    </div>
+           
+        </div>
+
+
+        <!--PHP + MySQL : Select Data-->
+        <div class="chapter_box" id="ch13">
+
+            <p class="subject">MySQL Select TOP</p> <br>
+
+            <div class="content_box">
+                <p>                  
+                    &lt;SQL Insert Into> <br><br>  
+
+                    SELECT column_name(s) <br>
+                    FROM table_name <br>
+                    WHERE condition <br>
+                    LIMIT number;
+                </p>
+            </div>
+<pre>
+&lt;?php
+    $servername = "localhost";
+    $username = "username";
+    $password = "password";
+    $dbname = "myDB"; #데이터베이스 이름
+
+    // Create connection
+    $conn = mysqli_connect($servername, $username, $password, $dbname);
+    
+    // Check connection
+    if (!$conn) {
+        die("Connection failed: " . mysqli_connect_error());
+    }
+
+                                                #테이블 이름
+    $sql = "<span style="color: blue;">SELECT</span> id, firstname, lastname <span style="color: blue;">FROM</span> MyGuests";
+    $result = mysqli_query($conn, $sql);
+
+    if (mysqli_num_rows($result) > 0) {
+    // output data of each row
+        while($row = mysqli_fetch_assoc($result)) {
+            echo "id: " . $row["id"]. " - Name: " . $row["firstname"]. " " . $row["lastname"]. "&lt;br>";
+        }
+    } else {
+        echo "0 results";
+    }
+
+    mysqli_close($conn);
+?>
+</pre>
+           
         </div>
 
         
